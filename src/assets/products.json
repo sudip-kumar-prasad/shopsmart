@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "Nexus Pro Max",
+    "brand": "SMARTPHONES",
+    "price": 1199.00,
+    "category": "Electronics",
+    "rating": 4.8,
+    "numReviews": 125,
+    "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=400",
+    "isNew": false
+  },
+  {
+    "id": 2,
+    "name": "Sonic Pure ANC",
+    "brand": "AUDIO",
+    "price": 349.00,
+    "category": "Electronics",
+    "rating": 4.6,
+    "numReviews": 84,
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400",
+    "isNew": true
+  },
+  {
+    "id": 3,
+    "name": "ZenBook Air 13",
+    "brand": "LAPTOPS",
+    "price": 1450.00,
+    "category": "Electronics",
+    "rating": 4.7,
+    "numReviews": 92,
+    "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80&w=400",
+    "isNew": false
+  },
+  {
+    "id": 4,
+    "name": "Aura Watch 2",
+    "brand": "WEARABLES",
+    "price": 299.00,
+    "category": "Electronics",
+    "rating": 4.9,
+    "numReviews": 212,
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=400",
+    "isNew": false
+  },
+  {
+    "id": 5,
+    "name": "Titan X Pro",
+    "brand": "LAPTOPS",
+    "price": 2499.00,
+    "category": "Electronics",
+    "rating": 4.8,
+    "numReviews": 75,
+    "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=400",
+    "isNew": true
+  },
+  {
+    "id": 6,
+    "name": "Vibe Go Portable",
+    "brand": "AUDIO",
+    "price": 129.00,
+    "category": "Electronics",
+    "rating": 4.5,
+    "numReviews": 42,
+    "image": "https://images.unsplash.com/photo-1608156639585-34052e35a962?auto=format&fit=crop&q=80&w=400",
+    "isNew": false
+  }
+]
