@@ -30,8 +30,8 @@ const HomePage = () => {
           <div className="hero-image">
             <div className="image-placeholder">
               {/* Placeholder image that looks like the empty graphic icon in the design */}
-              <div className="placeholder-icon">
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+              <div className="placeholder-icon" style={{width: '100%', height: '100%', borderRadius: '1rem', overflow: 'hidden'}}>
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=1000" alt="Hero Fashion" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
               </div>
             </div>
           </div>
@@ -84,8 +84,8 @@ const HomePage = () => {
               <h3>Sports</h3>
               <p>High-end athletic gear.</p>
             </div>
-            <div className="placeholder-icon-small">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" strokeWidth="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            <div className="placeholder-icon-small" style={{width: '100%', height: '100%', marginTop: 'auto', marginBottom: '2rem', borderRadius: '0.75rem', overflow: 'hidden'}}>
+              <img src="https://images.unsplash.com/photo-1515523110800-9418602b75fba?auto=format&fit=crop&q=80&w=400" alt="Sports Gear" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
             </div>
           </div>
         </div>
