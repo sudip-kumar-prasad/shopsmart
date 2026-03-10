@@ -2,38 +2,37 @@ import React from 'react';
 import { ArrowRight, Star, Heart, ShoppingBag } from 'lucide-react';
 import './HomePage.css';
 
-const categories = [
-  { id: 1, name: 'Electronics', icon: '🎧', color: '#f3f4f6' },
-  { id: 2, name: 'Fashion', icon: '👗', color: '#fef3c7', image: 'https://images.unsplash.com/photo-1539109132314-34a959df99b3?auto=format&fit=crop&q=80&w=400' },
-  { id: 3, name: 'Home', icon: '🏠', color: '#e0f2fe' },
-  { id: 4, name: 'Sports', icon: '⚽', color: '#f5f3ff' },
-];
+// We'll hardcode the category cards to match the specific masonry layout
+
 
 const featuredProducts = [
-  { id: 101, name: 'Acoustic Pro Headphones', brand: 'BLUE TRENDS', price: 299.0, image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400' },
-  { id: 102, name: 'Essential Timepiece', brand: 'ACCESSORIES', price: 185.0, image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=400' },
-  { id: 103, name: 'Cognac Leather Tote', brand: 'FASHION', price: 420.0, image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80&w=400' },
-  { id: 104, name: 'Veloce Runner', brand: 'SPORTS', price: 145.0, image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=400' },
+  { id: 101, name: 'Acoustic Pro Headphones', brand: 'BLUE TRENDS', price: 299.0, bg: 'linear-gradient(to bottom right, #51543d, #27281c)', image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400' },
+  { id: 102, name: 'Essential Timepiece', brand: 'ACCESSORIES', price: 185.0, bg: '#000000', image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=400' },
+  { id: 103, name: 'Cognac Leather Tote', brand: 'FASHION', price: 420.0, bg: '#f1f5f9', image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80&w=400' },
+  { id: 104, name: 'Veloce Runner', brand: 'SPORTS', price: 145.0, bg: 'linear-gradient(to bottom right, #1a1a1a, #300f0f)', image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=400' },
 ];
 
 const HomePage = () => {
   return (
     <div className="home-page">
       {/* Hero Section */}
-      <section className="hero-section">
-        <div className="container hero-container">
+      <section className="hero-section container">
+        <div className="hero-container">
           <div className="hero-content">
             <span className="hero-badge">SUMMER COLLECTION 2024</span>
-            <h1>Define Your Modern Style.</h1>
+            <h1>Define Your<br/>Modern<br/>Style.</h1>
             <p>Curated selections from global artisans, delivered with the precision your lifestyle demands.</p>
             <div className="hero-btns">
-              <button className="btn btn-primary">Shop New Arrivals</button>
-              <button className="btn btn-secondary">View Lookbook</button>
+              <button className="btn btn-primary-orange">Shop New Arrivals</button>
+              <button className="btn btn-secondary-white">View Lookbook</button>
             </div>
           </div>
           <div className="hero-image">
             <div className="image-placeholder">
-              <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=1000" alt="Hero" />
+              {/* Placeholder image that looks like the empty graphic icon in the design */}
+              <div className="placeholder-icon">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+              </div>
             </div>
           </div>
         </div>
@@ -47,17 +46,48 @@ const HomePage = () => {
             <p>Explore our curated collections of premium goods.</p>
           </div>
         </div>
-        <div className="categories-grid">
-          {categories.map(cat => (
-            <div key={cat.id} className="category-card" style={{ backgroundColor: cat.color }}>
-              <div className="category-info">
-                <div className="category-icon">{cat.icon}</div>
-                <h3>{cat.name}</h3>
-                <p>Premium {cat.name.toLowerCase()} tools.</p>
-              </div>
-              {cat.image && <img src={cat.image} alt={cat.name} className="category-img" />}
+        <div className="categories-masonry">
+          {/* Electronics - Square */}
+          <div className="category-card cat-electronics">
+            <div className="category-info">
+              <div className="category-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 14.899A7 7 0 1 1 20 14.9V19a2 2 0 0 1-2 2h-1.5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h1.5M4 14.9V19a2 2 0 0 0 2 2h1.5a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H6"/></svg></div>
+              <h3>Electronics</h3>
+              <p>Next-gen performance tools.</p>
             </div>
-          ))}
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=300" alt="Electronics" className="category-img-center" />
+          </div>
+
+          {/* Fashion - Wide Rectangle */}
+          <div className="category-card cat-fashion">
+            <div className="category-info">
+              <div className="category-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z"/></svg></div>
+              <h3>Fashion</h3>
+              <p>Sustainable, timeless apparel.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1539109132314-34a959df99b3?auto=format&fit=crop&q=80&w=400" alt="Fashion" className="category-img-right" />
+          </div>
+
+          {/* Home - Wide Rectangle */}
+          <div className="category-card cat-home">
+            <div className="category-info">
+              <div className="category-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+              <h3>Home</h3>
+              <p>Art for the living space.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1618220179428-22790b46a013?auto=format&fit=crop&q=80&w=400" alt="Home" className="category-img-right-split" />
+          </div>
+
+          {/* Sports - Square */}
+          <div className="category-card cat-sports">
+            <div className="category-info">
+              <div className="category-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="2" x2="12" y2="22"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/><path d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10"/></svg></div>
+              <h3>Sports</h3>
+              <p>High-end athletic gear.</p>
+            </div>
+            <div className="placeholder-icon-small">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" strokeWidth="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -73,7 +103,7 @@ const HomePage = () => {
         <div className="products-grid">
           {featuredProducts.map(product => (
             <div key={product.id} className="product-card">
-              <div className="product-img-wrapper">
+              <div className="product-img-wrapper" style={{ background: product.bg }}>
                 <img src={product.image} alt={product.name} />
                 <div className="product-actions">
                   <button className="action-btn"><Heart size={18} /></button>
