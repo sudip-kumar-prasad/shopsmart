@@ -2,7 +2,13 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
+const db = require('./config/db.js');
+const userRoutes = require('./routes/userRoutes.js');
+
 dotenv.config();
+
+// Connect to database
+db();
 
 const app = express();
 
@@ -14,6 +20,9 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send('ShopSmart API is running...');
 });
+
+// Routes
+app.use('/api/users', userRoutes);
 
 // Start Server
 const PORT = process.env.PORT || 5000;
