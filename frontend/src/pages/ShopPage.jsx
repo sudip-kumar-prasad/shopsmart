@@ -1,11 +1,24 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ListFilter, Heart, ShoppingBag, Star } from 'lucide-react';
+import axios from 'axios';
 import productsData from '../assets/products.json';
 import './ShopPage.css';
 
 const ShopPage = () => {
-  const [products] = useState(productsData);
+  const [products, setProducts] = useState(productsData);
+
+  React.useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const { data } = await axios.get('/api/products');
+        setProducts(data);
+      } catch (error) {
+        console.log('Backend not active, using dummy data fallback for ShopPage');
+      }
+    };
+    fetchProducts();
+  }, []);
 
   return (
     <div className="shop-page container">
@@ -81,7 +94,7 @@ const ShopPage = () => {
               <div key={product.id} className="product-card">
                 <div className="product-img-wrapper">
                   {product.isNew && <span className="new-badge">NEW ARRIVAL</span>}
-                  <Link to={`/product/${product.id}`}>
+                  <Link to={`/product/${product._id || product.id}`}>
                     <img src={product.image} alt={product.name} />
                   </Link>
                   <div className="product-actions">
@@ -91,7 +104,7 @@ const ShopPage = () => {
                 </div>
                 <div className="product-info">
                   <span className="product-brand">{product.brand}</span>
-                  <h3><Link to={`/product/${product.id}`}>{product.name}</Link></h3>
+                  <h3><Link to={`/product/${product._id || product.id}`}>{product.name}</Link></h3>
                   <div className="product-rating">
                     <Star size={14} fill="#fbbf24" color="#fbbf24" />
                     <span>{product.rating} ({product.numReviews} reviews)</span>

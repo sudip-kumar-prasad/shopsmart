@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Star, Heart, ShoppingBag } from 'lucide-react';
+import axios from 'axios';
 import './HomePage.css';
 
 // We'll hardcode the category cards to match the specific masonry layout
@@ -13,6 +14,34 @@ const featuredProducts = [
 ];
 
 const HomePage = () => {
+  const [featured, setFeatured] = useState(featuredProducts);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchFeatured = async () => {
+      setLoading(true);
+      try {
+        const { data } = await axios.get('/api/products');
+        // Take first 4 as featured
+        if (data && data.length >= 4) {
+          const latestProducts = data.slice(0, 4).map((p, i) => ({
+            id: p._id,
+            name: p.name,
+            brand: p.brand,
+            price: p.price,
+            bg: featuredProducts[i].bg, // retain the stylistic bg from UI design
+            image: p.image
+          }));
+          setFeatured(latestProducts);
+        }
+      } catch (err) {
+        console.log('Backend not active, using default featured layout');
+      }
+      setLoading(false);
+    };
+    fetchFeatured();
+  }, []);
+
   return (
     <div className="home-page">
       {/* Hero Section */}
@@ -101,7 +130,7 @@ const HomePage = () => {
           </div>
         </div>
         <div className="products-grid">
-          {featuredProducts.map(product => (
+          {featured.map(product => (
             <div key={product.id} className="product-card">
               <div className="product-img-wrapper" style={{ background: product.bg }}>
                 <img src={product.image} alt={product.name} />

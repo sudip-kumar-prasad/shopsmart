@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Star, Heart, ShoppingBag, Truck, RotateCcw, Plus, Minus } from 'lucide-react';
+import axios from 'axios';
 import productsData from '../assets/products.json';
 import './ProductPage.css';
 
@@ -18,9 +19,26 @@ const reviews = [
 
 const ProductPage = () => {
   const { id } = useParams();
-  const product = productsData.find(p => p.id === parseInt(id)) || productsData[0];
+  
+  // Fallback to dummy data immediately on mount just in case
+  const fallbackProduct = productsData.find(p => p.id === parseInt(id) || p._id === id) || productsData[0];
+  const [product, setProduct] = useState(fallbackProduct);
   const [selectedImg, setSelectedImg] = useState(0);
   const [qty, setQty] = useState(1);
+
+  React.useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const { data } = await axios.get(`/api/products/${id}`);
+        setProduct(data);
+        setSelectedImg(0); // reset image for new product
+      } catch (error) {
+        console.log('Backend not active, using dummy data fallback for ProductPage');
+      }
+    };
+    fetchProduct();
+    window.scrollTo(0,0);
+  }, [id]);
 
   const thumbnails = [
     product.image,
