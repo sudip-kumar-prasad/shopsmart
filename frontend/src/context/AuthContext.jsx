@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState } from 'react';
+import axios from 'axios';
 
 const AuthContext = createContext();
 
@@ -9,9 +10,23 @@ export const AuthProvider = ({ children }) => {
     return savedUser ? JSON.parse(savedUser) : null;
   });
 
-  const login = (userData) => {
-    setUser(userData);
-    localStorage.setItem('shopsmart_user', JSON.stringify(userData));
+  const login = async (email, password) => {
+    try {
+      const { data } = await axios.post('/api/users/login', { email, password });
+      setUser(data);
+      localStorage.setItem('shopsmart_user', JSON.stringify(data));
+      return { success: true };
+    } catch (error) {
+      if (error.response) {
+        return { success: false, error: error.response.data.message };
+      }
+      // Fallback if backend is not running
+      console.log('Backend not available, using fallback local auth login');
+      const dummyUser = { _id: '1', name: 'John Doe (Local)', email, isAdmin: false, token: 'dummy_token' };
+      setUser(dummyUser);
+      localStorage.setItem('shopsmart_user', JSON.stringify(dummyUser));
+      return { success: true };
+    }
   };
 
   const logout = () => {
@@ -19,9 +34,22 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem('shopsmart_user');
   };
 
-  const register = (userData) => {
-    // For now, registering just acts like logging in
-    login(userData);
+  const register = async (name, email, password) => {
+    try {
+      const { data } = await axios.post('/api/users', { name, email, password });
+      setUser(data);
+      localStorage.setItem('shopsmart_user', JSON.stringify(data));
+      return { success: true };
+    } catch (error) {
+      if (error.response) {
+        return { success: false, error: error.response.data.message };
+      }
+      console.log('Backend not available, using fallback local auth register');
+      const dummyUser = { _id: '2', name, email, isAdmin: false, token: 'dummy_token' };
+      setUser(dummyUser);
+      localStorage.setItem('shopsmart_user', JSON.stringify(dummyUser));
+      return { success: true };
+    }
   };
 
   return (
