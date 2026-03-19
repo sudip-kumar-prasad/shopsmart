@@ -6,8 +6,16 @@ import './Navbar.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
   const { totalItems } = useCart();
   const navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    if (e.key === 'Enter' && searchTerm.trim()) {
+      navigate(`/shop?search=${searchTerm}`);
+      setIsMenuOpen(false);
+    }
+  };
 
   return (
     <nav className="navbar">
@@ -27,7 +35,13 @@ const Navbar = () => {
 
         {/* Search Bar */}
         <div className="navbar-search">
-          <input type="text" placeholder="Search for products..." />
+          <input 
+            type="text" 
+            placeholder="Search for products..." 
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onKeyDown={handleSearch}
+          />
           <Search className="search-icon" size={18} />
         </div>
 

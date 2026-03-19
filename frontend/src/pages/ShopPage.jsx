@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { ListFilter, Heart, ShoppingBag, Star } from 'lucide-react';
 import axios from 'axios';
 import productsData from '../assets/products.json';
@@ -7,18 +7,30 @@ import './ShopPage.css';
 
 const ShopPage = () => {
   const [products, setProducts] = useState(productsData);
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const searchQuery = searchParams.get('search') || '';
 
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchProducts = async () => {
       try {
         const { data } = await axios.get('/api/products');
-        setProducts(data);
+        let filtered = data;
+        if (searchQuery) {
+          filtered = data.filter(p => p.name.toLowerCase().includes(searchQuery.toLowerCase()));
+        }
+        setProducts(filtered);
       } catch (error) {
         console.log('Backend not active, using dummy data fallback for ShopPage');
+        if (searchQuery) {
+          setProducts(productsData.filter(p => p.name.toLowerCase().includes(searchQuery.toLowerCase())));
+        } else {
+          setProducts(productsData);
+        }
       }
     };
     fetchProducts();
-  }, []);
+  }, [searchQuery]);
 
   return (
     <div className="shop-page container">
