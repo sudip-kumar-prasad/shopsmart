@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ListFilter, Heart, ShoppingBag, Star } from 'lucide-react';
 import axios from 'axios';
+import { useCart } from '../context/CartContext';
 import productsData from '../assets/products.json';
 import './ShopPage.css';
 
@@ -11,6 +12,8 @@ const ShopPage = () => {
   const searchParams = new URLSearchParams(location.search);
   const searchQuery = searchParams.get('search') || '';
   const [selectedCategory, setSelectedCategory] = useState('');
+  const { addToCart } = useCart();
+  const [limit, setLimit] = useState(12);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -105,7 +108,7 @@ const ShopPage = () => {
           </div>
 
           <div className="products-grid">
-            {products.map(product => (
+            {products.slice(0, limit).map(product => (
               <div key={product.id} className="product-card">
                 <div className="product-img-wrapper">
                   {product.isNew && <span className="new-badge">NEW ARRIVAL</span>}
@@ -113,8 +116,8 @@ const ShopPage = () => {
                     <img src={product.image} alt={product.name} />
                   </Link>
                   <div className="product-actions">
-                    <button className="action-btn"><Heart size={18} /></button>
-                    <button className="action-btn"><ShoppingBag size={18} /></button>
+                    <button onClick={() => alert('Added to Wishlist!')} className="action-btn"><Heart size={18} /></button>
+                    <button onClick={() => addToCart({...product, id: product.id || product._id}, 1)} className="action-btn"><ShoppingBag size={18} /></button>
                   </div>
                 </div>
                 <div className="product-info">
@@ -131,11 +134,13 @@ const ShopPage = () => {
           </div>
 
           <div className="shop-pagination">
-             <p>Showing {products.length} of 40 products</p>
+             <p>Showing {Math.min(limit, products.length)} of {products.length} products</p>
              <div className="pagination-bar">
-                <div className="pagination-progress" style={{ width: '15%' }}></div>
+                <div className="pagination-progress" style={{ width: `${(Math.min(limit, products.length) / products.length) * 100}%` }}></div>
              </div>
-             <button className="btn btn-secondary">Load More Products</button>
+             {limit < products.length && (
+               <button onClick={() => setLimit(l => l + 12)} className="btn btn-secondary">Load More Products</button>
+             )}
           </div>
         </main>
       </div>

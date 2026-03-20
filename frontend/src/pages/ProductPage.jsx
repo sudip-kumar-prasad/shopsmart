@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Star, Heart, ShoppingBag, Truck, RotateCcw, Plus, Minus } from 'lucide-react';
 import axios from 'axios';
+import { useCart } from '../context/CartContext';
+import { useNavigate } from 'react-router-dom';
 import productsData from '../assets/products.json';
 import './ProductPage.css';
 
@@ -25,6 +27,13 @@ const ProductPage = () => {
   const [product, setProduct] = useState(fallbackProduct);
   const [selectedImg, setSelectedImg] = useState(0);
   const [qty, setQty] = useState(1);
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+
+  const handleBuyNow = () => {
+    addToCart({...product, id: product.id || product._id}, qty);
+    navigate('/checkout');
+  };
 
   React.useEffect(() => {
     const fetchProduct = async () => {
@@ -70,7 +79,7 @@ const ProductPage = () => {
           </div>
           <div className="main-image">
             <img src={thumbnails[selectedImg]} alt={product.name} />
-            <button className="wishlist-btn"><Heart size={20} /></button>
+            <button onClick={() => alert('Added to Wishlist!')} className="wishlist-btn"><Heart size={20} /></button>
           </div>
         </div>
 
@@ -107,8 +116,8 @@ const ProductPage = () => {
           </div>
 
           <div className="product-ctas">
-            <button className="btn btn-cta-cart"><ShoppingBag size={18} /> Add to Cart</button>
-            <button className="btn btn-cta-buy">Buy It Now</button>
+            <button onClick={() => addToCart({...product, id: product.id || product._id}, qty)} className="btn btn-cta-cart"><ShoppingBag size={18} /> Add to Cart</button>
+            <button onClick={handleBuyNow} className="btn btn-cta-buy">Buy It Now</button>
           </div>
 
           <div className="product-guarantees">
@@ -143,7 +152,7 @@ const ProductPage = () => {
       <section className="reviews-section section">
         <div className="reviews-header">
           <h2>User Voices</h2>
-          <button className="btn btn-secondary">Write a Review</button>
+          <button onClick={() => alert('Review portal opening soon!')} className="btn btn-secondary">Write a Review</button>
         </div>
         <div className="reviews-layout">
           <div className="rating-summary">

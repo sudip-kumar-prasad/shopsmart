@@ -41,7 +41,7 @@ const Footer = () => {
           <p>Subscribe for early access and exclusive updates.</p>
           <div className="newsletter-form">
             <input type="email" placeholder="email@address.com" />
-            <button className="btn-primary">Join</button>
+            <button onClick={() => alert('Thanks for subscribing!')} className="btn-primary">Join</button>
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Star, Heart, ShoppingBag } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useCart } from '../context/CartContext';
 import './HomePage.css';
 
 // We'll hardcode the category cards to match the specific masonry layout
@@ -16,6 +18,15 @@ const featuredProducts = [
 const HomePage = () => {
   const [featured, setFeatured] = useState(featuredProducts);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const { addToCart } = useCart();
+
+  const handleScroll = (dir) => {
+    const grid = document.querySelector('.featured-section .products-grid');
+    if (grid) {
+      grid.scrollBy({ left: dir === 'next' ? 300 : -300, behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const fetchFeatured = async () => {
@@ -52,8 +63,8 @@ const HomePage = () => {
             <h1>Define Your<br/>Modern<br/>Style.</h1>
             <p>Curated selections from global artisans, delivered with the precision your lifestyle demands.</p>
             <div className="hero-btns">
-              <button className="btn btn-primary-orange">Shop New Arrivals</button>
-              <button className="btn btn-secondary-white">View Lookbook</button>
+              <button onClick={() => navigate('/shop')} className="btn btn-primary-orange">Shop New Arrivals</button>
+              <button onClick={() => navigate('/shop')} className="btn btn-secondary-white">View Lookbook</button>
             </div>
           </div>
           <div className="hero-image">
@@ -119,8 +130,8 @@ const HomePage = () => {
         <div className="section-header">
           <h2>Featured Products</h2>
           <div className="scroll-btns">
-            <button className="scroll-btn prev">‹</button>
-            <button className="scroll-btn next">›</button>
+            <button onClick={() => handleScroll('prev')} className="scroll-btn prev">‹</button>
+            <button onClick={() => handleScroll('next')} className="scroll-btn next">›</button>
           </div>
         </div>
         <div className="products-grid">
@@ -129,8 +140,8 @@ const HomePage = () => {
               <div className="product-img-wrapper" style={{ background: product.bg }}>
                 <img src={product.image} alt={product.name} />
                 <div className="product-actions">
-                  <button className="action-btn"><Heart size={18} /></button>
-                  <button className="action-btn"><ShoppingBag size={18} /></button>
+                  <button onClick={() => alert('Added to Wishlist!')} className="action-btn"><Heart size={18} /></button>
+                  <button onClick={() => addToCart({...product, id: product.id || product._id}, 1)} className="action-btn"><ShoppingBag size={18} /></button>
                 </div>
               </div>
               <div className="product-info">
@@ -165,7 +176,7 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
-            <button className="btn btn-primary trending-all-btn">
+            <button onClick={() => navigate('/shop')} className="btn btn-primary trending-all-btn">
               View All Trending <ArrowRight size={16} />
             </button>
           </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import './AuthPages.css';
 
 // register page - wip
@@ -11,18 +12,25 @@ const RegisterPage = () => {
     confirmPassword: ''
   });
 
+  const { register } = useAuth();
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: add actual registration logic
     if (formData.password !== formData.confirmPassword) {
       alert('Passwords do not match!');
       return;
     }
-    console.log('register data', formData);
+    const res = await register(formData.name, formData.email, formData.password);
+    if (res.success) {
+      navigate('/');
+    } else {
+      alert(res.error || 'Registration failed. Please try again.');
+    }
   };
 
   return (

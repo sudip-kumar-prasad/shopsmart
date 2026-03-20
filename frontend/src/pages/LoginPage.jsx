@@ -1,15 +1,23 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import './AuthPages.css';
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
   const handleChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    alert('Login logic coming soon!');
+    const res = await login(formData.email, formData.password);
+    if (res.success) {
+      navigate('/');
+    } else {
+      alert(res.error || 'Login failed. Please check credentials.');
+    }
   };
 
   return (
