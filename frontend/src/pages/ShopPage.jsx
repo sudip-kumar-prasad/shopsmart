@@ -10,27 +10,30 @@ const ShopPage = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const searchQuery = searchParams.get('search') || '';
+  const [selectedCategory, setSelectedCategory] = useState('');
 
   useEffect(() => {
     const fetchProducts = async () => {
+      let data = [];
       try {
-        const { data } = await axios.get('/api/products');
-        let filtered = data;
-        if (searchQuery) {
-          filtered = data.filter(p => p.name.toLowerCase().includes(searchQuery.toLowerCase()));
-        }
-        setProducts(filtered);
+        const res = await axios.get('/api/products');
+        data = res.data;
       } catch (error) {
         console.log('Backend not active, using dummy data fallback for ShopPage');
-        if (searchQuery) {
-          setProducts(productsData.filter(p => p.name.toLowerCase().includes(searchQuery.toLowerCase())));
-        } else {
-          setProducts(productsData);
-        }
+        data = productsData;
       }
+      
+      let filtered = data;
+      if (searchQuery) {
+        filtered = filtered.filter(p => p.name.toLowerCase().includes(searchQuery.toLowerCase()));
+      }
+      if (selectedCategory) {
+        filtered = filtered.filter(p => p.category === selectedCategory);
+      }
+      setProducts(filtered);
     };
     fetchProducts();
-  }, [searchQuery]);
+  }, [searchQuery, selectedCategory]);
 
   return (
     <div className="shop-page container">
@@ -47,10 +50,10 @@ const ShopPage = () => {
             <div className="filter-category">
               <h4>CATEGORY</h4>
               <ul>
-                <li><label><input type="checkbox" defaultChecked /> Electronics</label></li>
-                <li><label><input type="checkbox" /> Laptops</label></li>
-                <li><label><input type="checkbox" /> Audio</label></li>
-                <li><label><input type="checkbox" /> Wearables</label></li>
+                <li><label><input type="radio" name="cat" checked={selectedCategory===''} onChange={() => setSelectedCategory('')} /> All</label></li>
+                <li><label><input type="radio" name="cat" checked={selectedCategory==='Electronics'} onChange={() => setSelectedCategory('Electronics')} /> Electronics</label></li>
+                <li><label><input type="radio" name="cat" checked={selectedCategory==='Fashion'} onChange={() => setSelectedCategory('Fashion')} /> Fashion</label></li>
+                <li><label><input type="radio" name="cat" checked={selectedCategory==='Sports'} onChange={() => setSelectedCategory('Sports')} /> Sports</label></li>
               </ul>
             </div>
 
