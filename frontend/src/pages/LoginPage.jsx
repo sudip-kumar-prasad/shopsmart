@@ -14,11 +14,17 @@ const LoginPage = () => {
 
   return (
     <div className="auth-page">
-      <div className="auth-card">
-        <div className="auth-header">
-          <h1>Shop<span>Smart</span></h1>
-          <p>Welcome back! Sign in to continue.</p>
+      <div className="auth-card auth-card-wide">
+        <div className="auth-banner auth-banner-login">
+          <h2>Welcome Back.</h2>
+          <p>Sign in to access your curated collection, saved orders, and exclusive deals.</p>
         </div>
+        
+        <div className="auth-form-side">
+          <div className="auth-header">
+            <h1>Shop<span>Smart</span></h1>
+            <p>Welcome back! Sign in to continue.</p>
+          </div>
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-group">
             <label>Email Address</label>
@@ -35,6 +41,7 @@ const LoginPage = () => {
           <button type="submit" className="btn btn-cta-cart auth-submit">Sign In</button>
         </form>
         <p className="auth-switch">Don't have an account? <Link to="/register">Create one</Link></p>
+        </div>
       </div>
     </div>
   );
