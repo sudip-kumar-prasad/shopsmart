@@ -82,8 +82,8 @@ const HomePage = () => {
               <div className="category-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 14.899A7 7 0 1 1 20 14.9V19a2 2 0 0 1-2 2h-1.5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h1.5M4 14.9V19a2 2 0 0 0 2 2h1.5a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H6"/></svg></div>
               <h3>Electronics</h3>
               <p>Next-gen performance tools.</p>
+              <p>Next-gen performance tools.</p>
             </div>
-            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=300" alt="Electronics" className="category-img-center" />
           </div>
 
           {/* Fashion - Wide Rectangle */}
@@ -92,8 +92,8 @@ const HomePage = () => {
               <div className="category-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z"/></svg></div>
               <h3>Fashion</h3>
               <p>Sustainable, timeless apparel.</p>
+              <p>Sustainable, timeless apparel.</p>
             </div>
-            <img src="https://images.unsplash.com/photo-1539109132314-34a959df99b3?auto=format&fit=crop&q=80&w=400" alt="Fashion" className="category-img-right" />
           </div>
 
           {/* Home - Wide Rectangle */}
@@ -102,8 +102,8 @@ const HomePage = () => {
               <div className="category-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
               <h3>Home</h3>
               <p>Art for the living space.</p>
+              <p>Art for the living space.</p>
             </div>
-            <img src="https://images.unsplash.com/photo-1618220179428-22790b46a013?auto=format&fit=crop&q=80&w=400" alt="Home" className="category-img-right-split" />
           </div>
 
           {/* Sports - Square */}
@@ -112,9 +112,7 @@ const HomePage = () => {
               <div className="category-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="2" x2="12" y2="22"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/><path d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10"/></svg></div>
               <h3>Sports</h3>
               <p>High-end athletic gear.</p>
-            </div>
-            <div className="placeholder-icon-small" style={{width: '100%', height: '100%', marginTop: 'auto', marginBottom: '2rem', borderRadius: '0.75rem', overflow: 'hidden'}}>
-              <img src="https://images.unsplash.com/photo-1515523110800-9418602b75fba?auto=format&fit=crop&q=80&w=400" alt="Sports Gear" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+              <p>High-end athletic gear.</p>
             </div>
           </div>
         </div>

@@ -115,32 +115,36 @@
 .cat-electronics {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
-  background-color: #f1f5f9;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&q=80&w=800') center/cover no-repeat;
+  color: white;
 }
 
 .cat-fashion {
   grid-column: 2 / 4;
   grid-row: 1 / 2;
-  background-color: #fbd38d; /* Orange/Yellow tone */
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&q=80&w=800') center/center/cover no-repeat;
+  color: white;
 }
 
 .cat-home {
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  background-color: #faebd7; /* Antique white/Beige */
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1618220179428-22790b46a013?auto=format&fit=crop&q=80&w=800') center/cover no-repeat;
+  color: white;
 }
 
 .cat-sports {
   grid-column: 3 / 4;
   grid-row: 2 / 3;
-  background-color: #f1f5f9; /* Light blue/gray */
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=800') center/cover no-repeat;
+  color: white;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-start;
 }
 
 .cat-sports .category-info {
-  align-self: flex-start;
+  align-self: flex-end;
   width: 100%;
 }
 
@@ -152,22 +156,23 @@
 
 .category-icon {
   margin-bottom: 1rem;
-  color: #1d4ed8;
+  color: #fff;
 }
 
 .cat-fashion .category-icon, .cat-home .category-icon {
-  color: #000;
+  color: #fff;
 }
 
 .category-info h3 {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
+  color: #fff;
 }
 
 .category-info p {
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: #e2e8f0;
 }
 
 .category-img-center {
