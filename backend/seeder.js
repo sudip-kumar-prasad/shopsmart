@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const users = require('./data/users.js');
-const products = require('./data/products.js');
+const products = require('./data/products_expanded.js');
 const User = require('./models/userModel.js');
 const Product = require('./models/productModel.js');
 const Order = require('./models/orderModel.js');
@@ -18,6 +18,7 @@ const importData = async () => {
     await User.deleteMany();
 
     const createdUsers = await User.insertMany(users);
+
     const adminUser = createdUsers[0]._id;
 
     const sampleProducts = products.map((product) => {
@@ -29,7 +30,7 @@ const importData = async () => {
     console.log('Data Imported!');
     process.exit();
   } catch (error) {
-    console.error(`Error: \${error.message}`);
+    console.error(`${error}`);
     process.exit(1);
   }
 };
@@ -43,7 +44,7 @@ const destroyData = async () => {
     console.log('Data Destroyed!');
     process.exit();
   } catch (error) {
-    console.error(`Error: \${error.message}`);
+    console.error(`${error}`);
     process.exit(1);
   }
 };
