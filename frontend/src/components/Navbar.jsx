@@ -51,7 +51,7 @@ const Navbar = () => {
         <div className="navbar-icons">
           {user ? (
             <div className="user-menu">
-              <span className="user-name">Hi, {user.name.split(' ')[0]}</span>
+              <Link to="/profile" className="user-name" style={{textDecoration: 'none'}}>Hi, {user.name.split(' ')[0]}</Link>
               <button onClick={logout} className="icon-link logout-btn" title="Logout">
                 <LogOut size={20} />
               </button>

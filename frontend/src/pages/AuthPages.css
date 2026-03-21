@@ -1,19 +1,20 @@
 .auth-page {
-  min-height: 80vh;
+  min-height: calc(100vh - 80px); /* Fill the screen after navbar */
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background-color: #f9fafb;
+  background-color: var(--bg-color); /* Strict off-white */
 }
 
 .auth-card {
-  background: #fff;
-  border-radius: 1.25rem;
+  background-color: var(--card-bg);
+  border-radius: 1.5rem;
   padding: 3rem;
   width: 100%;
   max-width: 440px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  box-shadow: var(--card-shadow);
+  border: none;
 }
 
 .auth-header {
@@ -144,8 +145,8 @@
   justify-content: center;
   gap: 0.5rem;
   padding: 0.75rem;
-  background: white;
-  border: 1px solid #e5e7eb;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 0.5rem;
   font-size: 0.9rem;
   font-weight: 500;
@@ -209,5 +210,62 @@
 
   .auth-form-side {
     padding: 3.5rem;
+  }
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.1rem;
+}
+
+.form-group input {
+  padding: 0.9rem 1.2rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 0.85rem;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #ffffff;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(255, 60, 0, 0.08);
+  background-color: #fff;
+  transform: translateY(-1px);
+}
+
+.form-group input::placeholder {
+  color: #9ca3af;
+  opacity: 0.7;
+}
+
+.auth-submit {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 0.75rem;
+  border-radius: 0.85rem;
+  transition: all 0.2s;
+}
+
+.auth-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 60, 0, 0.2);
+}
+
+/* responsive refinements */
+@media (max-width: 600px) {
+  .auth-card {
+    padding: 2rem 1.5rem;
   }
 }

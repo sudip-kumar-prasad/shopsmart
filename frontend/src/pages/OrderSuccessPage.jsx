@@ -1,39 +1,106 @@
 import React, { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { CheckCircle2, Package, ArrowRight } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { CheckCircle2, ShoppingBag, FileText, MessageSquare, ArrowRight } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import './OrderSuccessPage.css';
 
 const OrderSuccessPage = () => {
   const { clearCart } = useCart();
-  const navigate = useNavigate();
+  const location = useLocation();
+  const orderId = "ORD-5290F"; // Static for mockup matching
 
-  // Clear cart on mount
   useEffect(() => {
     clearCart();
-    // In a real app, this should only happen if coming from checkout
-  }, []);
+  }, [clearCart]);
+
+  const orderItems = [
+    { name: 'Air-Max Pro Runner', size: 'US 10', qty: 1, price: 189.99, image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=200' },
+    { name: 'SmartPulse Watch Series 4', size: 'One Size', qty: 1, price: 299.00, image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=200' }
+  ];
 
   return (
     <div className="order-success-page container">
-      <div className="success-content">
-        <CheckCircle2 size={80} color="#16a34a" strokeWidth={1.5} />
-        <h1>Order Confirmed!</h1>
-        <p className="order-number">Order #ORD-{Math.floor(100000 + Math.random() * 900000)}</p>
-        
-        <p className="success-desc">
-          Thank you for your purchase. We've received your order and will begin processing it right away. 
-          A confirmation email has been sent to your provided email address.
-        </p>
-
-        <div className="success-actions">
-          <Link to="/orders" className="btn btn-secondary action-btn">
-            <Package size={18} /> View My Orders
-          </Link>
-          <Link to="/shop" className="btn btn-cta-cart action-btn">
-            Continue Shopping <ArrowRight size={18} />
-          </Link>
+      <div className="success-header-section">
+        <div className="success-icon-wrapper">
+          <CheckCircle2 size={64} className="check-icon" />
         </div>
+        <h1>Thank You for Your Order!</h1>
+        <p className="order-id-label">Order ID: <span>{orderId}</span></p>
+      </div>
+
+      <div className="order-details-grid">
+        {/* Left Column: Order Summary */}
+        <div className="success-card order-summary-section">
+          <h3>Order Summary</h3>
+          <div className="success-item-list">
+            {orderItems.map((item, index) => (
+              <div key={index} className="success-item-row">
+                <div className="item-img">
+                  <img src={item.image} alt={item.name} />
+                </div>
+                <div className="item-info">
+                  <h4>{item.name}</h4>
+                  <p>Size: {item.size} • Qty: {item.qty}</p>
+                </div>
+                <div className="item-price">
+                  ${item.price.toFixed(2)}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="success-totals">
+            <div className="total-row">
+              <span>Subtotal</span>
+              <span>$518.99</span>
+            </div>
+            <div className="total-row">
+              <span>Shipping</span>
+              <span>FREE</span>
+            </div>
+            <div className="total-row final-total">
+              <span>Total</span>
+              <span>$518.99</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column: Delivery Details & Help */}
+        <div className="details-sidebar">
+          <div className="success-card delivery-details">
+            <h3>Delivery Details</h3>
+            <p className="delivery-date">Estimated Delivery: <strong>Friday, Oct 25, 2023</strong></p>
+            <div className="delivery-address">
+              <strong>Alex Thompson</strong>
+              <p>2356 Highland Avenue</p>
+              <p>Suite 405, Brooklyn, NY 11201</p>
+              <p>United States</p>
+            </div>
+            <div className="shipping-method">
+              <ShoppingBag size={18} />
+              <div>
+                <strong>Standard Express</strong>
+                <p>Tracked shipment in 2-4 days</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="help-card">
+            <h4>Need Help?</h4>
+            <p>Our customer support team is available 24/7 with your order.</p>
+            <button className="contact-btn">
+              <MessageSquare size={16} /> Contact Support
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="success-page-actions">
+        <Link to="/shop" className="continue-btn">
+          Continue Shopping
+        </Link>
+        <button className="download-btn">
+          <FileText size={18} /> Download Invoice
+        </button>
       </div>
     </div>
   );

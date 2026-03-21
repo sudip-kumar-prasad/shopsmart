@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Package, Search, ChevronRight } from 'lucide-react';
+import { Package, Search, ChevronRight, MapPin } from 'lucide-react';
 import './MyOrdersPage.css';
 
 const dummyOrders = [
@@ -29,7 +29,7 @@ const MyOrdersPage = () => {
   return (
     <div className="orders-page container">
       <div className="orders-header">
-        <h1>My Orders</h1>
+        <h1 className="page-title">My Orders</h1>
         <div className="orders-search">
           <input type="text" placeholder="Search by order ID or product..." />
           <Search size={18} />
@@ -38,39 +38,42 @@ const MyOrdersPage = () => {
 
       <div className="orders-list">
         {orders.length === 0 ? (
-          <div className="no-orders">
-            <Package size={48} />
+          <div className="no-orders text-center">
+            <Package size={64} className="mb-4 text-muted" />
             <h2>No orders yet</h2>
-            <p>When you place an order, it will appear here.</p>
+            <p>Collections you've ordered will appear here.</p>
           </div>
         ) : (
           orders.map(order => (
-            <div key={order.id} className="order-card">
-              <div className="order-header">
-                <div>
-                  <span className="order-id">{order.id}</span>
-                  <span className="order-date">Placed on {order.date}</span>
+            <div key={order.id} className="order-item-card">
+              <div className="order-row-header">
+                <div className="order-meta">
+                  <span className="o-id">{order.id}</span>
+                  <span className="o-date">Placed on {order.date}</span>
                 </div>
-                <div className="order-status-total">
-                  <span className={`status-badge ${order.status.toLowerCase()}`}>
-                    {order.status}
-                  </span>
-                  <span className="order-total">${order.total.toFixed(2)}</span>
-                </div>
+                <div className={`o-status ${order.status.toLowerCase()}`}>{order.status}</div>
               </div>
 
-              <div className="order-items-preview">
+              <div className="order-row-body">
                 {order.items.map((item, idx) => (
-                  <div key={idx} className="order-item-mini">
-                    <img src={item.image} alt={item.name} />
-                    <span>{item.name}</span>
+                  <div key={idx} className="o-product-info">
+                    <div className="o-img">
+                      <img src={item.image} alt={item.name} />
+                    </div>
+                    <div className="o-details">
+                      <h4>{item.name}</h4>
+                      <p>Qty: 1 • Color: Space Black</p>
+                    </div>
                   </div>
                 ))}
+                <div className="o-price-area">
+                  <span className="o-total">${order.total.toFixed(2)}</span>
+                </div>
               </div>
 
-              <div className="order-footer">
-                <button className="btn-link">Track Package</button>
-                <button className="btn-link">View Details <ChevronRight size={16} /></button>
+              <div className="order-row-footer">
+                <button className="link-action">Track Package</button>
+                <button className="link-action secondary">View Details <ChevronRight size={14} /></button>
               </div>
             </div>
           ))

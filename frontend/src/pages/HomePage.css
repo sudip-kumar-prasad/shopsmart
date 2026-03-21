@@ -283,7 +283,7 @@
 }
 
 .action-btn {
-  background-color: #fff;
+  background-color: var(--card-bg);
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -318,12 +318,12 @@
 .trending-container {
   display: flex;
   gap: 4rem;
-  background-color: #fff;
+  background-color: var(--card-bg);
   border-radius: 2rem;
   padding: 4rem;
   align-items: center;
-  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.04);
-  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  border: none;
 }
 
 .trending-sidebar {
@@ -391,7 +391,7 @@
   position: absolute;
   bottom: 2rem;
   left: 2rem;
-  background-color: #fff;
+  background-color: var(--card-bg);
   padding: 1rem 1.5rem;
   border-radius: 1rem;
   display: flex;

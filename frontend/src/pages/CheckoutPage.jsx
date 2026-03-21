@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { CreditCard, Wallet, MapPin } from 'lucide-react';
+import { CreditCard, MapPin, ChevronLeft, Lock } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import axios from 'axios';
 import './CheckoutPage.css';
@@ -25,7 +25,6 @@ const CheckoutPage = () => {
         totalPrice: totalPrice * 1.08,
       };
 
-      // Try Backend API
       await axios.post('/api/orders', orderData, {
         headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('shopsmart_user'))?.token}` }
       });
@@ -33,7 +32,7 @@ const CheckoutPage = () => {
       clearCart();
       navigate('/order-success');
     } catch (error) {
-      console.log('Backend not available, using localized fallback to process order');
+      console.log('Backend not available, using localized fallback');
       clearCart();
       navigate('/order-success');
     }
@@ -41,97 +40,152 @@ const CheckoutPage = () => {
 
   return (
     <div className="checkout-page container">
+      <div className="checkout-back">
+        <Link to="/cart"><ChevronLeft size={16} /> Back to Cart</Link>
+      </div>
+      
       <h1>Checkout</h1>
+      
       <div className="checkout-layout">
-        {/* Left Form */}
-        <div className="checkout-forms">
-          {/* Shipping Address */}
-          <div className="checkout-section">
-            <h2><MapPin size={20} /> Shipping Address</h2>
-            <div className="form-grid">
-              <div className="form-group">
-                <label>First Name</label>
-                <input type="text" placeholder="Alex" />
-              </div>
-              <div className="form-group">
-                <label>Last Name</label>
-                <input type="text" placeholder="Johnson" />
-              </div>
-              <div className="form-group full-width">
-                <label>Address Line</label>
-                <input type="text" placeholder="123 Main Street" />
-              </div>
-              <div className="form-group">
-                <label>City</label>
-                <input type="text" placeholder="New York" />
-              </div>
-              <div className="form-group">
-                <label>ZIP Code</label>
-                <input type="text" placeholder="10001" />
-              </div>
-              <div className="form-group full-width">
-                <label>Country</label>
-                <select><option>United States</option><option>India</option></select>
-              </div>
+        {/* Left Form Area */}
+        <div className="checkout-main">
+          <section className="checkout-card">
+            <div className="card-header-row">
+              <span className="step-num">1</span>
+              <h2>Shipping Address</h2>
             </div>
-          </div>
+            
+            <form className="checkout-form">
+              <div className="input-row">
+                <div className="input-field">
+                  <label>First Name</label>
+                  <input type="text" placeholder="Alex" required />
+                </div>
+                <div className="input-field">
+                  <label>Last Name</label>
+                  <input type="text" placeholder="Thompson" required />
+                </div>
+              </div>
+              <div className="input-field">
+                <label>Street Address</label>
+                <input type="text" placeholder="2356 Highland Avenue" required />
+              </div>
+              <div className="input-row">
+                <div className="input-field">
+                  <label>City</label>
+                  <input type="text" placeholder="Brooklyn" required />
+                </div>
+                <div className="input-field">
+                  <label>State / Province</label>
+                  <input type="text" placeholder="NY" required />
+                </div>
+              </div>
+              <div className="input-row">
+                <div className="input-field">
+                  <label>Zip Code</label>
+                  <input type="text" placeholder="11201" required />
+                </div>
+                <div className="input-field">
+                  <label>Country</label>
+                  <select required>
+                    <option value="US">United States</option>
+                    <option value="IN">India</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </section>
 
-          {/* Payment */}
-          <div className="checkout-section">
-            <h2><CreditCard size={20} /> Payment Options</h2>
-            <div className="payment-methods">
-              {['card', 'paypal', 'gpay', 'upi'].map(m => (
-                <button
-                  key={m}
-                  className={`payment-btn ${payMethod === m ? 'active' : ''}`}
-                  onClick={() => setPayMethod(m)}
-                >
-                  {m === 'card' ? '💳' : m === 'paypal' ? 'PayPal' : m === 'gpay' ? 'G Pay' : 'UPI'}
-                </button>
-              ))}
+          <section className="checkout-card">
+            <div className="card-header-row">
+              <span className="step-num">2</span>
+              <h2>Payment Options</h2>
             </div>
+            
+            <div className="payment-selector">
+              <button className={`p-method ${payMethod==='card' ? 'active' : ''}`} onClick={() => setPayMethod('card')}>
+                <div className="p-radio"></div>
+                <span>Credit Card / Debit Card</span>
+              </button>
+              <button className={`p-method ${payMethod==='paypal' ? 'active' : ''}`} onClick={() => setPayMethod('paypal')}>
+                <div className="p-radio"></div>
+                <span>PayPal</span>
+              </button>
+              <button className={`p-method ${payMethod==='gpay' ? 'active' : ''}`} onClick={() => setPayMethod('gpay')}>
+                <div className="p-radio"></div>
+                <span>Google Pay</span>
+              </button>
+            </div>
+
             {payMethod === 'card' && (
-              <div className="form-grid">
-                <div className="form-group full-width">
+              <div className="card-details-form">
+                <div className="input-field">
                   <label>Card Number</label>
-                  <input type="text" placeholder="4242 4242 4242 4242" />
+                  <input type="text" placeholder="0000 0000 0000 0000" />
                 </div>
-                <div className="form-group">
-                  <label>Expiry</label>
-                  <input type="text" placeholder="MM / YY" />
-                </div>
-                <div className="form-group">
-                  <label>CVV</label>
-                  <input type="text" placeholder="•••" />
+                <div className="input-row">
+                  <div className="input-field">
+                    <label>Expiry Date</label>
+                    <input type="text" placeholder="MM / YY" />
+                  </div>
+                  <div className="input-field">
+                    <label>CVV</label>
+                    <input type="password" placeholder="***" />
+                  </div>
                 </div>
               </div>
             )}
-          </div>
+          </section>
         </div>
 
-        {/* Right Summary */}
-        <div className="order-summary">
-          <h2>Order Summary</h2>
-          {items.map(item => (
-            <div key={item.id} className="summary-item">
-              <img src={item.image} alt={item.name} />
-              <div>
-                <p>{item.name}</p>
-                <span>Qty: {item.qty}</span>
-              </div>
-              <p>${(item.price * item.qty).toFixed(2)}</p>
+        {/* Right Sidebar Summary */}
+        <aside className="checkout-sidebar">
+          <div className="summary-card">
+            <h3>Order Summary</h3>
+            <div className="summary-items-list">
+              {items.map(item => (
+                <div key={item.id} className="s-item">
+                  <div className="s-item-img">
+                    <img src={item.image} alt={item.name} />
+                  </div>
+                  <div className="s-item-info">
+                    <h4>{item.name}</h4>
+                    <p>Qty: {item.qty} • Size: XL</p>
+                  </div>
+                  <p className="s-item-price">${(item.price * item.qty).toFixed(2)}</p>
+                </div>
+              ))}
             </div>
-          ))}
-          <div className="summary-divider"></div>
-          <div className="summary-row"><span>Subtotal</span><span>${totalPrice.toFixed(2)}</span></div>
-          <div className="summary-row"><span>Shipping</span><span className="free">Free</span></div>
-          <div className="summary-row"><span>Tax (8%)</span><span>${(totalPrice * 0.08).toFixed(2)}</span></div>
-          <div className="summary-divider"></div>
-          <div className="summary-row total"><span>TOTAL</span><span>${(totalPrice * 1.08).toFixed(2)}</span></div>
-          <button onClick={handlePlaceOrder} className="btn btn-cta-cart checkout-btn">
-            Confirm Purchase
-          </button>
-        </div>
+
+            <div className="summary-totals">
+              <div className="s-row">
+                <span>Subtotal</span>
+                <span>${totalPrice.toFixed(2)}</span>
+              </div>
+              <div className="s-row">
+                <span>Shipping</span>
+                <span className="s-free">FREE</span>
+              </div>
+              <div className="s-row">
+                <span>Estimated Tax</span>
+                <span>${(totalPrice * 0.08).toFixed(2)}</span>
+              </div>
+              <div className="s-divider"></div>
+              <div className="s-row s-total">
+                <span>Total Amount</span>
+                <span>${(totalPrice * 1.08).toFixed(2)}</span>
+              </div>
+            </div>
+
+            <button onClick={handlePlaceOrder} className="place-order-btn">
+              Place Order Now
+            </button>
+            
+            <p className="secure-text">
+              <Lock size={12} /> Secure Checkout - SSL Encrypted
+            </p>
+          </div>
+        </aside>
       </div>
     </div>
   );
