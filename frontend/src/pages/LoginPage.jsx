@@ -22,34 +22,43 @@ const LoginPage = () => {
 
   return (
     <div className="auth-page">
-      <div className="auth-card auth-card-wide">
-        <div className="auth-banner auth-banner-login">
-          <h2>Welcome Back.</h2>
-          <p>Sign in to access your curated collection, saved orders, and exclusive deals.</p>
+      <div className="auth-card">
+        <div className="auth-header">
+          <h1>Shop<span>Smart</span></h1>
+          <p>Welcome back to your curated space.</p>
         </div>
         
-        <div className="auth-form-side">
-          <div className="auth-header">
-            <h1>Shop<span>Smart</span></h1>
-            <p>Welcome back! Sign in to continue.</p>
-          </div>
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-group">
-            <label>Email Address</label>
+            <label>Email</label>
             <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="you@example.com" required />
           </div>
           <div className="form-group">
-            <label>Password</label>
+            <div className="label-row">
+              <label>Password</label>
+              <Link to="/forgot-password" className="forgot-link">Forgot password?</Link>
+            </div>
             <input type="password" name="password" value={formData.password} onChange={handleChange} placeholder="••••••••" required />
           </div>
-          <div className="auth-row">
+          <div className="auth-row" style={{ marginTop: '-0.5rem' }}>
             <label className="checkbox-label"><input type="checkbox" /> Remember me</label>
-            <Link to="/forgot-password">Forgot password?</Link>
           </div>
           <button type="submit" className="btn btn-cta-cart auth-submit">Sign In</button>
         </form>
-        <p className="auth-switch">Don't have an account? <Link to="/register">Create one</Link></p>
+
+        <div className="social-login-container">
+          <div className="divider">
+            <span>Or continue with</span>
+          </div>
+          <div className="social-buttons">
+            <button className="social-button google" style={{ width: '100%' }}>
+              <img src="https://fonts.gstatic.com/s/i/productlogos/googleg/v6/24px.svg" alt="Google" width="18" height="18" />
+              Continue with Google
+            </button>
+          </div>
         </div>
+        
+        <p className="auth-switch">Don't have an account? <Link to="/register">Sign up</Link></p>
       </div>
     </div>
   );

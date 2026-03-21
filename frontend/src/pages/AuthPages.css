@@ -80,6 +80,84 @@
   font-weight: 600;
 }
 
+/* Form Additions */
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgot-link {
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.checkbox-label a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Social Login */
+.social-login-container {
+  margin-top: 2rem;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.divider::before {
+  margin-right: .5em;
+}
+
+.divider::after {
+  margin-left: .5em;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.social-button:hover {
+  background-color: #f9fafb;
+}
+
 /* also used in register page */
 .auth-banner {
   display: none;
@@ -87,7 +165,7 @@
 
 @media (min-width: 900px) {
   .auth-card-wide {
-    max-width: 800px;
+    max-width: 850px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
@@ -98,28 +176,38 @@
   .auth-banner {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     padding: 3rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&q=80&w=1200') center/cover no-repeat;
-    color: white;
   }
   
-  .auth-banner-login {
-    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1200') center/cover no-repeat;
+  .banner-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: auto;
+  }
+  
+  .banner-content {
+    margin-top: auto;
+  }
+
+  .auth-banner-register {
+    background: linear-gradient(to top, rgba(14, 21, 58, 0.9) 20%, rgba(30, 58, 138, 0.7)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1200') center/cover no-repeat;
+    color: white;
   }
 
   .auth-banner h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     line-height: 1.2;
     margin-bottom: 1rem;
   }
 
   .auth-banner p {
-    opacity: 0.8;
-    font-size: 0.9rem;
+    opacity: 0.85;
+    font-size: 1rem;
+    line-height: 1.5;
   }
 
   .auth-form-side {
-    padding: 3rem;
+    padding: 3.5rem;
   }
 }

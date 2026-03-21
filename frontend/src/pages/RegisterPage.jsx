@@ -36,15 +36,18 @@ const RegisterPage = () => {
   return (
     <div className="auth-page">
       <div className="auth-card auth-card-wide">
-        <div className="auth-banner">
-          <h2>Elevate your daily shopping.</h2>
-          <p>Join thousands of shoppers who trust ShopSmart for their everyday purchases.</p>
+        <div className="auth-banner auth-banner-register">
+          <h2 className="banner-logo">ShopSmart</h2>
+          <div className="banner-content">
+            <h2>Elevate your daily shopping.</h2>
+            <p>Join an exclusive community of smart shoppers who value quality, curation, and seamless experiences.</p>
+          </div>
         </div>
 
         <div className="auth-form-side">
           <div className="auth-header">
             <h1>Create Account</h1>
-            <p>Fill in the details below to get started.</p>
+            <p>Start your curated shopping journey today.</p>
           </div>
 
           <form onSubmit={handleSubmit} className="auth-form">
@@ -92,6 +95,12 @@ const RegisterPage = () => {
                 placeholder="Re-enter password"
                 required
               />
+            </div>
+            <div className="auth-row" style={{ marginTop: '0.2rem', marginBottom: '0.5rem' }}>
+              <label className="checkbox-label" style={{ alignItems: 'flex-start' }}>
+                <input type="checkbox" required style={{ marginTop: '0.25rem' }} /> 
+                <span style={{ fontSize: '0.8rem', lineHeight: '1.4' }}>I agree to the <a href="#">Terms of Conditions</a> and <a href="#">Privacy Policy</a>.</span>
+              </label>
             </div>
             <button type="submit" className="btn btn-cta-cart auth-submit">
               Create Account

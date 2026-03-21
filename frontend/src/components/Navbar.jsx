@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Search, User, ShoppingBag, Menu, X } from 'lucide-react';
+import { Search, User, ShoppingBag, Menu, X, LogOut } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const { totalItems } = useCart();
+  const { user, logout } = useAuth();
   const navigate = useNavigate();
 
   const handleSearch = (e) => {
@@ -47,9 +49,18 @@ const Navbar = () => {
 
         {/* Icons Area */}
         <div className="navbar-icons">
-          <Link to="/login" className="icon-link">
-            <User size={22} />
-          </Link>
+          {user ? (
+            <div className="user-menu">
+              <span className="user-name">Hi, {user.name.split(' ')[0]}</span>
+              <button onClick={logout} className="icon-link logout-btn" title="Logout">
+                <LogOut size={20} />
+              </button>
+            </div>
+          ) : (
+            <Link to="/login" className="icon-link" title="Login / Register">
+              <User size={22} />
+            </Link>
+          )}
           <button className="icon-link cart-btn" onClick={() => navigate('/cart')}>
             <ShoppingBag size={22} />
             {totalItems > 0 && <span className="cart-badge">{totalItems}</span>}
@@ -75,7 +86,11 @@ const Navbar = () => {
           <Link to="/shop" onClick={() => setIsMenuOpen(false)}>Categories</Link>
           <Link to="/shop" onClick={() => setIsMenuOpen(false)}>Deals</Link>
           <Link to="/orders" onClick={() => setIsMenuOpen(false)}>Orders</Link>
-          <Link to="/login" onClick={() => setIsMenuOpen(false)}>Account / Login</Link>
+          {user ? (
+            <button className="mobile-logout" onClick={() => { logout(); setIsMenuOpen(false); }}>Logout</button>
+          ) : (
+            <Link to="/login" onClick={() => setIsMenuOpen(false)}>Account / Login</Link>
+          )}
         </div>
       )}
     </nav>

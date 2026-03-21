@@ -19,11 +19,13 @@ const ForgotPasswordPage = () => {
     <div className="auth-page">
       <div className="auth-card">
         <div className="auth-header">
-          <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>
-            <KeyRound size={48} color="#2563eb" />
+          <div style={{ fontSize: '3rem', marginBottom: '1rem', display: 'flex', justifyContent: 'center' }}>
+            <div style={{ background: '#eff6ff', borderRadius: '50%', width: '64px', height: '64px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+               <KeyRound size={32} color="#2563eb" />
+            </div>
           </div>
           <h1>Reset your password</h1>
-          <p>Enter your email and we'll send you a reset link.</p>
+          <p style={{ marginTop: '0.5rem', lineHeight: '1.5' }}>Enter your email address and we'll send you a link to reset your password.</p>
         </div>
 
         {sent ? (
@@ -36,7 +38,7 @@ const ForgotPasswordPage = () => {
         ) : (
           <form onSubmit={handleSubmit} className="auth-form">
             <div className="form-group">
-              <label>Email Address</label>
+              <label>Email</label>
               <input
                 type="email"
                 value={email}
@@ -45,11 +47,11 @@ const ForgotPasswordPage = () => {
                 required
               />
             </div>
-            <button type="submit" className="btn btn-cta-cart auth-submit">
-              Send Reset Link 📨
+            <button type="submit" className="btn btn-cta-cart auth-submit" style={{ marginTop: '1rem' }}>
+              Send Reset Link
             </button>
-            <Link to="/login" className="auth-switch" style={{ display: 'block', textAlign: 'center' }}>
-              ← Back to Login
+            <Link to="/login" className="auth-switch" style={{ display: 'block', textAlign: 'center', marginTop: '1.5rem', fontSize: '0.9rem', color: '#6b7280', fontWeight: '500' }}>
+              Wait, I remember my password
             </Link>
           </form>
         )}
