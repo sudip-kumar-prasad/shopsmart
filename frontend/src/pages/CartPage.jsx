@@ -1,15 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Trash2, Plus, Minus, ArrowRight } from 'lucide-react';
+import { Trash2, Plus, Minus, ArrowRight, Lock, RotateCcw } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import './CartPage.css';
 
 const CartPage = () => {
-  const { items, removeItem, updateQty, totalPrice } = useCart();
+  const { items, removeItem, updateQty, totalPrice, totalItems } = useCart();
 
   return (
     <div className="cart-page container">
-      <h1 className="cart-title">Your selection.</h1>
+      <div className="cart-header">
+        <h1 className="cart-title">Shopping Cart</h1>
+        <p className="cart-subtitle">
+          {items.length === 0 
+            ? 'Your selection is currently empty.' 
+            : `You have ${totalItems} ${totalItems === 1 ? 'item' : 'items'} in your selection.`}
+        </p>
+      </div>
 
       {items.length === 0 ? (
         <div className="cart-empty success-card">
@@ -86,9 +93,15 @@ const CartPage = () => {
                 Proceed to Checkout
               </Link>
               
-              <div className="payment-icons">
-                {/* Simplified placeholder for icons */}
-                <span>Secured Payment</span>
+              <div className="summary-badges">
+                <div className="badge-item">
+                  <Lock size={14} />
+                  <span>SECURE SSL 256 BIT ENCRYPTION</span>
+                </div>
+                <div className="badge-item">
+                  <RotateCcw size={14} />
+                  <span>EASY RETURNS</span>
+                </div>
               </div>
             </div>
           </div>

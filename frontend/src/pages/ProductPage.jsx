@@ -27,11 +27,11 @@ const ProductPage = () => {
   const [product, setProduct] = useState(fallbackProduct);
   const [selectedImg, setSelectedImg] = useState(0);
   const [qty, setQty] = useState(1);
-  const { addToCart } = useCart();
+  const { addItem } = useCart();
   const navigate = useNavigate();
 
   const handleBuyNow = () => {
-    addToCart({...product, id: product.id || product._id}, qty);
+    addItem({...product, id: product.id || product._id, qty});
     navigate('/checkout');
   };
 
@@ -116,7 +116,7 @@ const ProductPage = () => {
           </div>
 
           <div className="product-ctas">
-            <button onClick={() => addToCart({...product, id: product.id || product._id}, qty)} className="btn btn-cta-cart"><ShoppingBag size={18} /> Add to Cart</button>
+            <button onClick={() => addItem({...product, id: product.id || product._id, qty})} className="btn btn-cta-cart"><ShoppingBag size={18} /> Add to Cart</button>
             <button onClick={handleBuyNow} className="btn btn-cta-buy">Buy It Now</button>
           </div>
 

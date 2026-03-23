@@ -12,7 +12,7 @@ const ShopPage = () => {
   const searchParams = new URLSearchParams(location.search);
   const searchQuery = searchParams.get('search') || '';
   const [selectedCategory, setSelectedCategory] = useState('');
-  const { addToCart } = useCart();
+  const { addItem } = useCart();
   const [limit, setLimit] = useState(12);
 
   useEffect(() => {
@@ -142,7 +142,7 @@ const ShopPage = () => {
                   </Link>
                   <div className="hover-actions">
                     <button className="h-btn"><Heart size={18} /></button>
-                    <button onClick={() => addToCart({...product, id: product.id || product._id}, 1)} className="h-btn active"><ShoppingBag size={18} /></button>
+                    <button onClick={() => addItem({...product, id: product.id || product._id, qty: 1})} className="h-btn active"><ShoppingBag size={18} /></button>
                   </div>
                 </div>
                 <div className="shop-product-info">

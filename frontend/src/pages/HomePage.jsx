@@ -19,7 +19,7 @@ const HomePage = () => {
   const [featured, setFeatured] = useState(featuredProducts);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const { addToCart } = useCart();
+  const { addItem } = useCart();
 
   const handleScroll = (dir) => {
     const grid = document.querySelector('.featured-section .products-grid');
@@ -141,7 +141,7 @@ const HomePage = () => {
                 <img src={product.image} alt={product.name} />
                 <div className="product-actions">
                   <button onClick={() => alert('Added to Wishlist!')} className="action-btn"><Heart size={18} /></button>
-                  <button onClick={() => addToCart({...product, id: product.id || product._id}, 1)} className="action-btn"><ShoppingBag size={18} /></button>
+                  <button onClick={() => addItem({...product, id: product.id || product._id, qty: 1})} className="action-btn"><ShoppingBag size={18} /></button>
                 </div>
               </div>
               <div className="product-info">
