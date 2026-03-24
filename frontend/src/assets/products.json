@@ -1,68 +1,2897 @@
 [
   {
-    "id": 1,
-    "name": "Nexus Pro Max",
-    "brand": "SMARTPHONES",
-    "price": 1199.00,
+    "user": "69c236c96dfd96167594a218",
+    "name": "Apple MacBook Pro 14 Inch Space Grey",
+    "image": "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/1.webp",
+      "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/2.webp",
+      "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The MacBook Pro 14 Inch in Space Grey is a powerful and sleek laptop, featuring Apple's M1 Pro chip for exceptional performance and a stunning Retina display."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Apple",
     "category": "Electronics",
-    "rating": 4.8,
-    "numReviews": 125,
-    "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=400",
-    "isNew": false
+    "description": "The MacBook Pro 14 Inch in Space Grey is a powerful and sleek laptop, featuring Apple's M1 Pro chip for exceptional performance and a stunning Retina display.",
+    "rating": 3.65,
+    "numReviews": 3,
+    "price": 1999.99,
+    "countInStock": 24,
+    "id": 1
   },
   {
-    "id": 2,
-    "name": "Sonic Pure ANC",
-    "brand": "AUDIO",
-    "price": 349.00,
+    "user": "69c236c96dfd96167594a218",
+    "name": "Asus Zenbook Pro Dual Screen Laptop",
+    "image": "https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/1.webp",
+      "https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/2.webp",
+      "https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Asus Zenbook Pro Dual Screen Laptop is a high-performance device with dual screens, providing productivity and versatility for creative professionals."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Asus",
     "category": "Electronics",
-    "rating": 4.6,
-    "numReviews": 84,
-    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400",
-    "isNew": true
+    "description": "The Asus Zenbook Pro Dual Screen Laptop is a high-performance device with dual screens, providing productivity and versatility for creative professionals.",
+    "rating": 3.95,
+    "numReviews": 3,
+    "price": 1799.99,
+    "countInStock": 45,
+    "id": 2
   },
   {
-    "id": 3,
-    "name": "ZenBook Air 13",
-    "brand": "LAPTOPS",
-    "price": 1450.00,
+    "user": "69c236c96dfd96167594a218",
+    "name": "Huawei Matebook X Pro",
+    "image": "https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/1.webp",
+      "https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/2.webp",
+      "https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Huawei Matebook X Pro is a slim and stylish laptop with a high-resolution touchscreen display, offering a premium experience for users on the go."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Huawei",
     "category": "Electronics",
-    "rating": 4.7,
-    "numReviews": 92,
-    "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80&w=400",
-    "isNew": false
+    "description": "The Huawei Matebook X Pro is a slim and stylish laptop with a high-resolution touchscreen display, offering a premium experience for users on the go.",
+    "rating": 4.98,
+    "numReviews": 3,
+    "price": 1399.99,
+    "countInStock": 75,
+    "id": 3
   },
   {
-    "id": 4,
-    "name": "Aura Watch 2",
-    "brand": "WEARABLES",
-    "price": 299.00,
+    "user": "69c236c96dfd96167594a218",
+    "name": "Lenovo Yoga 920",
+    "image": "https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/1.webp",
+      "https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/2.webp",
+      "https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Lenovo Yoga 920 is a 2-in-1 convertible laptop with a flexible hinge, allowing you to use it as a laptop or tablet, offering versatility and portability."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Lenovo",
     "category": "Electronics",
+    "description": "The Lenovo Yoga 920 is a 2-in-1 convertible laptop with a flexible hinge, allowing you to use it as a laptop or tablet, offering versatility and portability.",
+    "rating": 2.86,
+    "numReviews": 3,
+    "price": 1099.99,
+    "countInStock": 40,
+    "id": 4
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "New DELL XPS 13 9300 Laptop",
+    "image": "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/1.webp",
+      "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/2.webp",
+      "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The New DELL XPS 13 9300 Laptop is a compact and powerful device, featuring a virtually borderless InfinityEdge display and high-end performance for various tasks."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Dell",
+    "category": "Electronics",
+    "description": "The New DELL XPS 13 9300 Laptop is a compact and powerful device, featuring a virtually borderless InfinityEdge display and high-end performance for various tasks.",
+    "rating": 2.67,
+    "numReviews": 3,
+    "price": 1499.99,
+    "countInStock": 74,
+    "id": 5
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Blue & Black Check Shirt",
+    "image": "https://cdn.dummyjson.com/product-images/mens-shirts/blue-&-black-check-shirt/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mens-shirts/blue-&-black-check-shirt/1.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shirts/blue-&-black-check-shirt/2.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shirts/blue-&-black-check-shirt/3.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shirts/blue-&-black-check-shirt/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Blue & Black Check Shirt is a stylish and comfortable men's shirt featuring a classic check pattern. Made from high-quality fabric, it's suitable for both casual and semi-formal occasions."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion Trends",
+    "category": "Fashion",
+    "description": "The Blue & Black Check Shirt is a stylish and comfortable men's shirt featuring a classic check pattern. Made from high-quality fabric, it's suitable for both casual and semi-formal occasions.",
+    "rating": 3.64,
+    "numReviews": 3,
+    "price": 29.99,
+    "countInStock": 38,
+    "id": 6
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Gigabyte Aorus Men Tshirt",
+    "image": "https://cdn.dummyjson.com/product-images/mens-shirts/gigabyte-aorus-men-tshirt/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mens-shirts/gigabyte-aorus-men-tshirt/1.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shirts/gigabyte-aorus-men-tshirt/2.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shirts/gigabyte-aorus-men-tshirt/3.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shirts/gigabyte-aorus-men-tshirt/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Gigabyte Aorus Men Tshirt is a cool and casual shirt for gaming enthusiasts. With the Aorus logo and sleek design, it's perfect for expressing your gaming style."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Gigabyte",
+    "category": "Fashion",
+    "description": "The Gigabyte Aorus Men Tshirt is a cool and casual shirt for gaming enthusiasts. With the Aorus logo and sleek design, it's perfect for expressing your gaming style.",
+    "rating": 3.18,
+    "numReviews": 3,
+    "price": 24.99,
+    "countInStock": 90,
+    "id": 7
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Man Plaid Shirt",
+    "image": "https://cdn.dummyjson.com/product-images/mens-shirts/man-plaid-shirt/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mens-shirts/man-plaid-shirt/1.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shirts/man-plaid-shirt/2.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shirts/man-plaid-shirt/3.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shirts/man-plaid-shirt/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Man Plaid Shirt is a timeless and versatile men's shirt with a classic plaid pattern. Its comfortable fit and casual style make it a wardrobe essential for various occasions."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Classic Wear",
+    "category": "Fashion",
+    "description": "The Man Plaid Shirt is a timeless and versatile men's shirt with a classic plaid pattern. Its comfortable fit and casual style make it a wardrobe essential for various occasions.",
+    "rating": 3.46,
+    "numReviews": 3,
+    "price": 34.99,
+    "countInStock": 82,
+    "id": 8
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Man Short Sleeve Shirt",
+    "image": "https://cdn.dummyjson.com/product-images/mens-shirts/man-short-sleeve-shirt/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mens-shirts/man-short-sleeve-shirt/1.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shirts/man-short-sleeve-shirt/2.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shirts/man-short-sleeve-shirt/3.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shirts/man-short-sleeve-shirt/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Man Short Sleeve Shirt is a breezy and stylish option for warm days. With a comfortable fit and short sleeves, it's perfect for a laid-back yet polished look."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Casual Comfort",
+    "category": "Fashion",
+    "description": "The Man Short Sleeve Shirt is a breezy and stylish option for warm days. With a comfortable fit and short sleeves, it's perfect for a laid-back yet polished look.",
+    "rating": 2.9,
+    "numReviews": 3,
+    "price": 19.99,
+    "countInStock": 2,
+    "id": 9
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Men Check Shirt",
+    "image": "https://cdn.dummyjson.com/product-images/mens-shirts/men-check-shirt/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mens-shirts/men-check-shirt/1.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shirts/men-check-shirt/2.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shirts/men-check-shirt/3.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shirts/men-check-shirt/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Men Check Shirt is a classic and versatile shirt featuring a stylish check pattern. Suitable for various occasions, it adds a smart and polished touch to your wardrobe."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Urban Chic",
+    "category": "Fashion",
+    "description": "The Men Check Shirt is a classic and versatile shirt featuring a stylish check pattern. Suitable for various occasions, it adds a smart and polished touch to your wardrobe.",
+    "rating": 2.72,
+    "numReviews": 3,
+    "price": 27.99,
+    "countInStock": 95,
+    "id": 10
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Nike Air Jordan 1 Red And Black",
+    "image": "https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/1.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/2.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/3.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shoes/nike-air-jordan-1-red-and-black/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Nike Air Jordan 1 in Red and Black is an iconic basketball sneaker known for its stylish design and high-performance features, making it a favorite among sneaker enthusiasts and athletes."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Nike",
+    "category": "Fashion",
+    "description": "The Nike Air Jordan 1 in Red and Black is an iconic basketball sneaker known for its stylish design and high-performance features, making it a favorite among sneaker enthusiasts and athletes.",
+    "rating": 4.77,
+    "numReviews": 3,
+    "price": 149.99,
+    "countInStock": 7,
+    "id": 11
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Nike Baseball Cleats",
+    "image": "https://cdn.dummyjson.com/product-images/mens-shoes/nike-baseball-cleats/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mens-shoes/nike-baseball-cleats/1.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shoes/nike-baseball-cleats/2.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shoes/nike-baseball-cleats/3.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shoes/nike-baseball-cleats/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "Nike Baseball Cleats are designed for maximum traction and performance on the baseball field. They provide stability and support for players during games and practices."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Nike",
+    "category": "Fashion",
+    "description": "Nike Baseball Cleats are designed for maximum traction and performance on the baseball field. They provide stability and support for players during games and practices.",
+    "rating": 3.88,
+    "numReviews": 3,
+    "price": 79.99,
+    "countInStock": 12,
+    "id": 12
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Puma Future Rider Trainers",
+    "image": "https://cdn.dummyjson.com/product-images/mens-shoes/puma-future-rider-trainers/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mens-shoes/puma-future-rider-trainers/1.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shoes/puma-future-rider-trainers/2.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shoes/puma-future-rider-trainers/3.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shoes/puma-future-rider-trainers/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Puma Future Rider Trainers offer a blend of retro style and modern comfort. Perfect for casual wear, these trainers provide a fashionable and comfortable option for everyday use."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Puma",
+    "category": "Fashion",
+    "description": "The Puma Future Rider Trainers offer a blend of retro style and modern comfort. Perfect for casual wear, these trainers provide a fashionable and comfortable option for everyday use.",
     "rating": 4.9,
-    "numReviews": 212,
-    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=400",
-    "isNew": false
+    "numReviews": 3,
+    "price": 89.99,
+    "countInStock": 90,
+    "id": 13
   },
   {
-    "id": 5,
-    "name": "Titan X Pro",
-    "brand": "LAPTOPS",
-    "price": 2499.00,
-    "category": "Electronics",
-    "rating": 4.8,
-    "numReviews": 75,
-    "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=400",
-    "isNew": true
+    "user": "69c236c96dfd96167594a218",
+    "name": "Sports Sneakers Off White & Red",
+    "image": "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-&-red/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-&-red/1.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-&-red/2.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-&-red/3.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-&-red/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Sports Sneakers in Off White and Red combine style and functionality, making them a fashionable choice for sports enthusiasts. The red and off-white color combination adds a bold and energetic touch."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Off White",
+    "category": "Fashion",
+    "description": "The Sports Sneakers in Off White and Red combine style and functionality, making them a fashionable choice for sports enthusiasts. The red and off-white color combination adds a bold and energetic touch.",
+    "rating": 4.77,
+    "numReviews": 3,
+    "price": 119.99,
+    "countInStock": 17,
+    "id": 14
   },
   {
-    "id": 6,
-    "name": "Vibe Go Portable",
-    "brand": "AUDIO",
-    "price": 129.00,
+    "user": "69c236c96dfd96167594a218",
+    "name": "Sports Sneakers Off White Red",
+    "image": "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-red/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-red/1.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-red/2.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-red/3.webp",
+      "https://cdn.dummyjson.com/product-images/mens-shoes/sports-sneakers-off-white-red/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "Another variant of the Sports Sneakers in Off White Red, featuring a unique design. These sneakers offer style and comfort for casual occasions."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Off White",
+    "category": "Fashion",
+    "description": "Another variant of the Sports Sneakers in Off White Red, featuring a unique design. These sneakers offer style and comfort for casual occasions.",
+    "rating": 4.69,
+    "numReviews": 3,
+    "price": 109.99,
+    "countInStock": 62,
+    "id": 15
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Brown Leather Belt Watch",
+    "image": "https://cdn.dummyjson.com/product-images/mens-watches/brown-leather-belt-watch/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mens-watches/brown-leather-belt-watch/1.webp",
+      "https://cdn.dummyjson.com/product-images/mens-watches/brown-leather-belt-watch/2.webp",
+      "https://cdn.dummyjson.com/product-images/mens-watches/brown-leather-belt-watch/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Brown Leather Belt Watch is a stylish timepiece with a classic design. Featuring a genuine leather strap and a sleek dial, it adds a touch of sophistication to your look."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion Timepieces",
+    "category": "Fashion",
+    "description": "The Brown Leather Belt Watch is a stylish timepiece with a classic design. Featuring a genuine leather strap and a sleek dial, it adds a touch of sophistication to your look.",
+    "rating": 4.19,
+    "numReviews": 3,
+    "price": 89.99,
+    "countInStock": 32,
+    "id": 16
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Longines Master Collection",
+    "image": "https://cdn.dummyjson.com/product-images/mens-watches/longines-master-collection/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mens-watches/longines-master-collection/1.webp",
+      "https://cdn.dummyjson.com/product-images/mens-watches/longines-master-collection/2.webp",
+      "https://cdn.dummyjson.com/product-images/mens-watches/longines-master-collection/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Longines Master Collection is an elegant and refined watch known for its precision and craftsmanship. With a timeless design, it's a symbol of luxury and sophistication."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Longines",
+    "category": "Fashion",
+    "description": "The Longines Master Collection is an elegant and refined watch known for its precision and craftsmanship. With a timeless design, it's a symbol of luxury and sophistication.",
+    "rating": 3.87,
+    "numReviews": 3,
+    "price": 1499.99,
+    "countInStock": 100,
+    "id": 17
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Rolex Cellini Date Black Dial",
+    "image": "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-date-black-dial/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-date-black-dial/1.webp",
+      "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-date-black-dial/2.webp",
+      "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-date-black-dial/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Rolex Cellini Date with Black Dial is a classic and prestigious watch. With a black dial and date complication, it exudes sophistication and is a symbol of Rolex's heritage."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Rolex",
+    "category": "Fashion",
+    "description": "The Rolex Cellini Date with Black Dial is a classic and prestigious watch. With a black dial and date complication, it exudes sophistication and is a symbol of Rolex's heritage.",
+    "rating": 4.97,
+    "numReviews": 3,
+    "price": 8999.99,
+    "countInStock": 40,
+    "id": 18
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Rolex Cellini Moonphase",
+    "image": "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-moonphase/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-moonphase/1.webp",
+      "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-moonphase/2.webp",
+      "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-moonphase/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Rolex Cellini Moonphase is a masterpiece of horology, featuring a moon phase complication and exquisite design. It reflects Rolex's commitment to precision and elegance."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Rolex",
+    "category": "Fashion",
+    "description": "The Rolex Cellini Moonphase is a masterpiece of horology, featuring a moon phase complication and exquisite design. It reflects Rolex's commitment to precision and elegance.",
+    "rating": 2.58,
+    "numReviews": 3,
+    "price": 12999.99,
+    "countInStock": 36,
+    "id": 19
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Rolex Datejust",
+    "image": "https://cdn.dummyjson.com/product-images/mens-watches/rolex-datejust/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mens-watches/rolex-datejust/1.webp",
+      "https://cdn.dummyjson.com/product-images/mens-watches/rolex-datejust/2.webp",
+      "https://cdn.dummyjson.com/product-images/mens-watches/rolex-datejust/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Rolex Datejust is an iconic and versatile timepiece with a date window. Known for its timeless design and reliability, it's a symbol of Rolex's watchmaking excellence."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Rolex",
+    "category": "Fashion",
+    "description": "The Rolex Datejust is an iconic and versatile timepiece with a date window. Known for its timeless design and reliability, it's a symbol of Rolex's watchmaking excellence.",
+    "rating": 3.66,
+    "numReviews": 3,
+    "price": 10999.99,
+    "countInStock": 86,
+    "id": 20
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Rolex Submariner Watch",
+    "image": "https://cdn.dummyjson.com/product-images/mens-watches/rolex-submariner-watch/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mens-watches/rolex-submariner-watch/1.webp",
+      "https://cdn.dummyjson.com/product-images/mens-watches/rolex-submariner-watch/2.webp",
+      "https://cdn.dummyjson.com/product-images/mens-watches/rolex-submariner-watch/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Rolex Submariner is a legendary dive watch with a rich history. Known for its durability and water resistance, it's a symbol of adventure and exploration."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Rolex",
+    "category": "Fashion",
+    "description": "The Rolex Submariner is a legendary dive watch with a rich history. Known for its durability and water resistance, it's a symbol of adventure and exploration.",
+    "rating": 2.69,
+    "numReviews": 3,
+    "price": 13999.99,
+    "countInStock": 55,
+    "id": 21
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Amazon Echo Plus",
+    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/1.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/2.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Amazon Echo Plus is a smart speaker with built-in Alexa voice control. It features premium sound quality and serves as a hub for controlling smart home devices."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Amazon",
     "category": "Electronics",
-    "rating": 4.5,
-    "numReviews": 42,
-    "image": "https://images.unsplash.com/photo-1608156639585-34052e35a962?auto=format&fit=crop&q=80&w=400",
-    "isNew": false
+    "description": "The Amazon Echo Plus is a smart speaker with built-in Alexa voice control. It features premium sound quality and serves as a hub for controlling smart home devices.",
+    "rating": 4.99,
+    "numReviews": 3,
+    "price": 99.99,
+    "countInStock": 61,
+    "id": 22
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Apple Airpods",
+    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/1.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/2.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Apple Airpods offer a seamless wireless audio experience. With easy pairing, high-quality sound, and Siri integration, they are perfect for on-the-go listening."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Apple",
+    "category": "Electronics",
+    "description": "The Apple Airpods offer a seamless wireless audio experience. With easy pairing, high-quality sound, and Siri integration, they are perfect for on-the-go listening.",
+    "rating": 4.15,
+    "numReviews": 3,
+    "price": 129.99,
+    "countInStock": 67,
+    "id": 23
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Apple AirPods Max Silver",
+    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Apple AirPods Max in Silver are premium over-ear headphones with high-fidelity audio, adaptive EQ, and active noise cancellation. Experience immersive sound in style."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Apple",
+    "category": "Electronics",
+    "description": "The Apple AirPods Max in Silver are premium over-ear headphones with high-fidelity audio, adaptive EQ, and active noise cancellation. Experience immersive sound in style.",
+    "rating": 3.47,
+    "numReviews": 3,
+    "price": 549.99,
+    "countInStock": 59,
+    "id": 24
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Apple Airpower Wireless Charger",
+    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpower-wireless-charger/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpower-wireless-charger/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Apple AirPower Wireless Charger provides a convenient way to charge your compatible Apple devices wirelessly. Simply place your devices on the charging mat for effortless charging."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Apple",
+    "category": "Electronics",
+    "description": "The Apple AirPower Wireless Charger provides a convenient way to charge your compatible Apple devices wirelessly. Simply place your devices on the charging mat for effortless charging.",
+    "rating": 3.68,
+    "numReviews": 3,
+    "price": 79.99,
+    "countInStock": 1,
+    "id": 25
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Apple HomePod Mini Cosmic Grey",
+    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-homepod-mini-cosmic-grey/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-homepod-mini-cosmic-grey/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Apple HomePod Mini in Cosmic Grey is a compact smart speaker that delivers impressive audio and integrates seamlessly with the Apple ecosystem for a smart home experience."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Apple",
+    "category": "Electronics",
+    "description": "The Apple HomePod Mini in Cosmic Grey is a compact smart speaker that delivers impressive audio and integrates seamlessly with the Apple ecosystem for a smart home experience.",
+    "rating": 4.62,
+    "numReviews": 3,
+    "price": 99.99,
+    "countInStock": 27,
+    "id": 26
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Apple iPhone Charger",
+    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/1.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/2.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Apple iPhone Charger is a high-quality charger designed for fast and efficient charging of your iPhone. Ensure your device stays powered up and ready to go."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Apple",
+    "category": "Electronics",
+    "description": "The Apple iPhone Charger is a high-quality charger designed for fast and efficient charging of your iPhone. Ensure your device stays powered up and ready to go.",
+    "rating": 4.15,
+    "numReviews": 3,
+    "price": 19.99,
+    "countInStock": 31,
+    "id": 27
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Apple MagSafe Battery Pack",
+    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/1.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/2.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Apple MagSafe Battery Pack is a portable and convenient way to add extra battery life to your MagSafe-compatible iPhone. Attach it magnetically for a secure connection."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Apple",
+    "category": "Electronics",
+    "description": "The Apple MagSafe Battery Pack is a portable and convenient way to add extra battery life to your MagSafe-compatible iPhone. Attach it magnetically for a secure connection.",
+    "rating": 3.62,
+    "numReviews": 3,
+    "price": 99.99,
+    "countInStock": 1,
+    "id": 28
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Apple Watch Series 4 Gold",
+    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/1.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/2.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Apple Watch Series 4 in Gold is a stylish and advanced smartwatch with features like heart rate monitoring, fitness tracking, and a beautiful Retina display."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Apple",
+    "category": "Electronics",
+    "description": "The Apple Watch Series 4 in Gold is a stylish and advanced smartwatch with features like heart rate monitoring, fitness tracking, and a beautiful Retina display.",
+    "rating": 2.74,
+    "numReviews": 3,
+    "price": 349.99,
+    "countInStock": 33,
+    "id": 29
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Beats Flex Wireless Earphones",
+    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/beats-flex-wireless-earphones/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/beats-flex-wireless-earphones/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Beats Flex Wireless Earphones offer a comfortable and versatile audio experience. With magnetic earbuds and up to 12 hours of battery life, they are ideal for everyday use."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Beats",
+    "category": "Electronics",
+    "description": "The Beats Flex Wireless Earphones offer a comfortable and versatile audio experience. With magnetic earbuds and up to 12 hours of battery life, they are ideal for everyday use.",
+    "rating": 4.24,
+    "numReviews": 3,
+    "price": 49.99,
+    "countInStock": 50,
+    "id": 30
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "iPhone 12 Silicone Case with MagSafe Plum",
+    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/1.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/2.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/3.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The iPhone 12 Silicone Case with MagSafe in Plum is a stylish and protective case designed for the iPhone 12. It features MagSafe technology for easy attachment of accessories."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Apple",
+    "category": "Electronics",
+    "description": "The iPhone 12 Silicone Case with MagSafe in Plum is a stylish and protective case designed for the iPhone 12. It features MagSafe technology for easy attachment of accessories.",
+    "rating": 3.62,
+    "numReviews": 3,
+    "price": 29.99,
+    "countInStock": 69,
+    "id": 31
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Monopod",
+    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/1.webp",
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/2.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Monopod is a versatile camera accessory for stable and adjustable shooting. Perfect for capturing selfies, group photos, and videos with ease."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "TechGear",
+    "category": "Electronics",
+    "description": "The Monopod is a versatile camera accessory for stable and adjustable shooting. Perfect for capturing selfies, group photos, and videos with ease.",
+    "rating": 4.43,
+    "numReviews": 3,
+    "price": 19.99,
+    "countInStock": 48,
+    "id": 32
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Selfie Lamp with iPhone",
+    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-lamp-with-iphone/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-lamp-with-iphone/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Selfie Lamp with iPhone is a portable and adjustable LED light designed to enhance your selfies and video calls. Attach it to your iPhone for well-lit photos."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "GadgetMaster",
+    "category": "Electronics",
+    "description": "The Selfie Lamp with iPhone is a portable and adjustable LED light designed to enhance your selfies and video calls. Attach it to your iPhone for well-lit photos.",
+    "rating": 3.55,
+    "numReviews": 3,
+    "price": 14.99,
+    "countInStock": 58,
+    "id": 33
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Selfie Stick Monopod",
+    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-stick-monopod/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-stick-monopod/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Selfie Stick Monopod is a extendable and foldable device for capturing the perfect selfie or group photo. Compatible with smartphones and cameras."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "SnapTech",
+    "category": "Electronics",
+    "description": "The Selfie Stick Monopod is a extendable and foldable device for capturing the perfect selfie or group photo. Compatible with smartphones and cameras.",
+    "rating": 3.88,
+    "numReviews": 3,
+    "price": 12.99,
+    "countInStock": 11,
+    "id": 34
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "TV Studio Camera Pedestal",
+    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/tv-studio-camera-pedestal/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/mobile-accessories/tv-studio-camera-pedestal/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The TV Studio Camera Pedestal is a professional-grade camera support system for smooth and precise camera movements in a studio setting. Ideal for broadcast and production."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "ProVision",
+    "category": "Electronics",
+    "description": "The TV Studio Camera Pedestal is a professional-grade camera support system for smooth and precise camera movements in a studio setting. Ideal for broadcast and production.",
+    "rating": 2.78,
+    "numReviews": 3,
+    "price": 499.99,
+    "countInStock": 15,
+    "id": 35
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "iPhone 5s",
+    "image": "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The iPhone 5s is a classic smartphone known for its compact design and advanced features during its release. While it's an older model, it still provides a reliable user experience."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Apple",
+    "category": "Electronics",
+    "description": "The iPhone 5s is a classic smartphone known for its compact design and advanced features during its release. While it's an older model, it still provides a reliable user experience.",
+    "rating": 2.83,
+    "numReviews": 3,
+    "price": 199.99,
+    "countInStock": 25,
+    "id": 36
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "iPhone 6",
+    "image": "https://cdn.dummyjson.com/product-images/smartphones/iphone-6/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-6/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-6/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-6/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The iPhone 6 is a stylish and capable smartphone with a larger display and improved performance. It introduced new features and design elements, making it a popular choice in its time."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Apple",
+    "category": "Electronics",
+    "description": "The iPhone 6 is a stylish and capable smartphone with a larger display and improved performance. It introduced new features and design elements, making it a popular choice in its time.",
+    "rating": 3.41,
+    "numReviews": 3,
+    "price": 299.99,
+    "countInStock": 60,
+    "id": 37
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "iPhone 13 Pro",
+    "image": "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The iPhone 13 Pro is a cutting-edge smartphone with a powerful camera system, high-performance chip, and stunning display. It offers advanced features for users who demand top-notch technology."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Apple",
+    "category": "Electronics",
+    "description": "The iPhone 13 Pro is a cutting-edge smartphone with a powerful camera system, high-performance chip, and stunning display. It offers advanced features for users who demand top-notch technology.",
+    "rating": 4.12,
+    "numReviews": 3,
+    "price": 1099.99,
+    "countInStock": 56,
+    "id": 38
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "iPhone X",
+    "image": "https://cdn.dummyjson.com/product-images/smartphones/iphone-x/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-x/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-x/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/iphone-x/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The iPhone X is a flagship smartphone featuring a bezel-less OLED display, facial recognition technology (Face ID), and impressive performance. It represents a milestone in iPhone design and innovation."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Apple",
+    "category": "Electronics",
+    "description": "The iPhone X is a flagship smartphone featuring a bezel-less OLED display, facial recognition technology (Face ID), and impressive performance. It represents a milestone in iPhone design and innovation.",
+    "rating": 2.51,
+    "numReviews": 3,
+    "price": 899.99,
+    "countInStock": 37,
+    "id": 39
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Oppo A57",
+    "image": "https://cdn.dummyjson.com/product-images/smartphones/oppo-a57/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/oppo-a57/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/oppo-a57/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/oppo-a57/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Oppo A57 is a mid-range smartphone known for its sleek design and capable features. It offers a balance of performance and affordability, making it a popular choice."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Oppo",
+    "category": "Electronics",
+    "description": "The Oppo A57 is a mid-range smartphone known for its sleek design and capable features. It offers a balance of performance and affordability, making it a popular choice.",
+    "rating": 3.94,
+    "numReviews": 3,
+    "price": 249.99,
+    "countInStock": 19,
+    "id": 40
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Oppo F19 Pro Plus",
+    "image": "https://cdn.dummyjson.com/product-images/smartphones/oppo-f19-pro-plus/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/oppo-f19-pro-plus/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/oppo-f19-pro-plus/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/oppo-f19-pro-plus/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Oppo F19 Pro Plus is a feature-rich smartphone with a focus on camera capabilities. It boasts advanced photography features and a powerful performance for a premium user experience."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Oppo",
+    "category": "Electronics",
+    "description": "The Oppo F19 Pro Plus is a feature-rich smartphone with a focus on camera capabilities. It boasts advanced photography features and a powerful performance for a premium user experience.",
+    "rating": 3.51,
+    "numReviews": 3,
+    "price": 399.99,
+    "countInStock": 78,
+    "id": 41
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Oppo K1",
+    "image": "https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/3.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Oppo K1 series offers a range of smartphones with various features and specifications. Known for their stylish design and reliable performance, the Oppo K1 series caters to diverse user preferences."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Oppo",
+    "category": "Electronics",
+    "description": "The Oppo K1 series offers a range of smartphones with various features and specifications. Known for their stylish design and reliable performance, the Oppo K1 series caters to diverse user preferences.",
+    "rating": 4.25,
+    "numReviews": 3,
+    "price": 299.99,
+    "countInStock": 55,
+    "id": 42
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Realme C35",
+    "image": "https://cdn.dummyjson.com/product-images/smartphones/realme-c35/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/realme-c35/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/realme-c35/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/realme-c35/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Realme C35 is a budget-friendly smartphone with a focus on providing essential features for everyday use. It offers a reliable performance and user-friendly experience."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Realme",
+    "category": "Electronics",
+    "description": "The Realme C35 is a budget-friendly smartphone with a focus on providing essential features for everyday use. It offers a reliable performance and user-friendly experience.",
+    "rating": 4.2,
+    "numReviews": 3,
+    "price": 149.99,
+    "countInStock": 48,
+    "id": 43
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Realme X",
+    "image": "https://cdn.dummyjson.com/product-images/smartphones/realme-x/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/realme-x/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/realme-x/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/realme-x/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Realme X is a mid-range smartphone known for its sleek design and impressive display. It offers a good balance of performance and camera capabilities for users seeking a quality device."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Realme",
+    "category": "Electronics",
+    "description": "The Realme X is a mid-range smartphone known for its sleek design and impressive display. It offers a good balance of performance and camera capabilities for users seeking a quality device.",
+    "rating": 3.7,
+    "numReviews": 3,
+    "price": 299.99,
+    "countInStock": 12,
+    "id": 44
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Realme XT",
+    "image": "https://cdn.dummyjson.com/product-images/smartphones/realme-xt/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/realme-xt/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/realme-xt/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/realme-xt/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Realme XT is a feature-rich smartphone with a focus on camera technology. It comes equipped with advanced camera sensors, delivering high-quality photos and videos for photography enthusiasts."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Realme",
+    "category": "Electronics",
+    "description": "The Realme XT is a feature-rich smartphone with a focus on camera technology. It comes equipped with advanced camera sensors, delivering high-quality photos and videos for photography enthusiasts.",
+    "rating": 4.58,
+    "numReviews": 3,
+    "price": 349.99,
+    "countInStock": 80,
+    "id": 45
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Samsung Galaxy S7",
+    "image": "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s7/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s7/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s7/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s7/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Samsung Galaxy S7 is a flagship smartphone known for its sleek design and advanced features. It features a high-resolution display, powerful camera, and robust performance."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Samsung",
+    "category": "Electronics",
+    "description": "The Samsung Galaxy S7 is a flagship smartphone known for its sleek design and advanced features. It features a high-resolution display, powerful camera, and robust performance.",
+    "rating": 3.3,
+    "numReviews": 3,
+    "price": 299.99,
+    "countInStock": 67,
+    "id": 46
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Samsung Galaxy S8",
+    "image": "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s8/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s8/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s8/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s8/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Samsung Galaxy S8 is a premium smartphone with an Infinity Display, offering a stunning visual experience. It boasts advanced camera capabilities and cutting-edge technology."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Samsung",
+    "category": "Electronics",
+    "description": "The Samsung Galaxy S8 is a premium smartphone with an Infinity Display, offering a stunning visual experience. It boasts advanced camera capabilities and cutting-edge technology.",
+    "rating": 4.4,
+    "numReviews": 3,
+    "price": 499.99,
+    "countInStock": 0,
+    "id": 47
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Samsung Galaxy S10",
+    "image": "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Samsung Galaxy S10 is a flagship device featuring a dynamic AMOLED display, versatile camera system, and powerful performance. It represents innovation and excellence in smartphone technology."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Samsung",
+    "category": "Electronics",
+    "description": "The Samsung Galaxy S10 is a flagship device featuring a dynamic AMOLED display, versatile camera system, and powerful performance. It represents innovation and excellence in smartphone technology.",
+    "rating": 3.06,
+    "numReviews": 3,
+    "price": 699.99,
+    "countInStock": 19,
+    "id": 48
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Vivo S1",
+    "image": "https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Vivo S1 is a stylish and mid-range smartphone offering a blend of design and performance. It features a vibrant display, capable camera system, and reliable functionality."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Vivo",
+    "category": "Electronics",
+    "description": "The Vivo S1 is a stylish and mid-range smartphone offering a blend of design and performance. It features a vibrant display, capable camera system, and reliable functionality.",
+    "rating": 3.5,
+    "numReviews": 3,
+    "price": 249.99,
+    "countInStock": 50,
+    "id": 49
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Vivo V9",
+    "image": "https://cdn.dummyjson.com/product-images/smartphones/vivo-v9/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/vivo-v9/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/vivo-v9/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/vivo-v9/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Vivo V9 is a smartphone known for its sleek design and emphasis on capturing high-quality selfies. It features a notch display, dual-camera setup, and a modern design."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Vivo",
+    "category": "Electronics",
+    "description": "The Vivo V9 is a smartphone known for its sleek design and emphasis on capturing high-quality selfies. It features a notch display, dual-camera setup, and a modern design.",
+    "rating": 3.6,
+    "numReviews": 3,
+    "price": 299.99,
+    "countInStock": 82,
+    "id": 50
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Vivo X21",
+    "image": "https://cdn.dummyjson.com/product-images/smartphones/vivo-x21/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/smartphones/vivo-x21/1.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/vivo-x21/2.webp",
+      "https://cdn.dummyjson.com/product-images/smartphones/vivo-x21/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Vivo X21 is a premium smartphone with a focus on cutting-edge technology. It features an in-display fingerprint sensor, a high-resolution display, and advanced camera capabilities."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Vivo",
+    "category": "Electronics",
+    "description": "The Vivo X21 is a premium smartphone with a focus on cutting-edge technology. It features an in-display fingerprint sensor, a high-resolution display, and advanced camera capabilities.",
+    "rating": 4.26,
+    "numReviews": 3,
+    "price": 499.99,
+    "countInStock": 7,
+    "id": 51
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "American Football",
+    "image": "https://cdn.dummyjson.com/product-images/sports-accessories/american-football/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/american-football/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The American Football is a classic ball used in American football games. It is designed for throwing and catching, making it an essential piece of equipment for the sport."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Sports",
+    "category": "Sports",
+    "description": "The American Football is a classic ball used in American football games. It is designed for throwing and catching, making it an essential piece of equipment for the sport.",
+    "rating": 4.91,
+    "numReviews": 3,
+    "price": 19.99,
+    "countInStock": 53,
+    "id": 52
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Baseball Ball",
+    "image": "https://cdn.dummyjson.com/product-images/sports-accessories/baseball-ball/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/baseball-ball/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Baseball Ball is a standard baseball used in baseball games. It features a durable leather cover and is designed for pitching, hitting, and fielding in the game of baseball."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Sports",
+    "category": "Sports",
+    "description": "The Baseball Ball is a standard baseball used in baseball games. It features a durable leather cover and is designed for pitching, hitting, and fielding in the game of baseball.",
+    "rating": 2.57,
+    "numReviews": 3,
+    "price": 8.99,
+    "countInStock": 100,
+    "id": 53
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Baseball Glove",
+    "image": "https://cdn.dummyjson.com/product-images/sports-accessories/baseball-glove/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/baseball-glove/1.webp",
+      "https://cdn.dummyjson.com/product-images/sports-accessories/baseball-glove/2.webp",
+      "https://cdn.dummyjson.com/product-images/sports-accessories/baseball-glove/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Baseball Glove is a protective glove worn by baseball players. It is designed to catch and field the baseball, providing players with comfort and control during the game."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Sports",
+    "category": "Sports",
+    "description": "The Baseball Glove is a protective glove worn by baseball players. It is designed to catch and field the baseball, providing players with comfort and control during the game.",
+    "rating": 3.96,
+    "numReviews": 3,
+    "price": 24.99,
+    "countInStock": 22,
+    "id": 54
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Basketball",
+    "image": "https://cdn.dummyjson.com/product-images/sports-accessories/basketball/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/basketball/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Basketball is a standard ball used in basketball games. It is designed for dribbling, shooting, and passing in the game of basketball, suitable for both indoor and outdoor play."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Sports",
+    "category": "Sports",
+    "description": "The Basketball is a standard ball used in basketball games. It is designed for dribbling, shooting, and passing in the game of basketball, suitable for both indoor and outdoor play.",
+    "rating": 4.66,
+    "numReviews": 3,
+    "price": 14.99,
+    "countInStock": 75,
+    "id": 55
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Basketball Rim",
+    "image": "https://cdn.dummyjson.com/product-images/sports-accessories/basketball-rim/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/basketball-rim/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Basketball Rim is a sturdy hoop and net assembly mounted on a basketball backboard. It provides a target for shooting and scoring in the game of basketball."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Sports",
+    "category": "Sports",
+    "description": "The Basketball Rim is a sturdy hoop and net assembly mounted on a basketball backboard. It provides a target for shooting and scoring in the game of basketball.",
+    "rating": 4.6,
+    "numReviews": 3,
+    "price": 39.99,
+    "countInStock": 43,
+    "id": 56
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Cricket Ball",
+    "image": "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-ball/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-ball/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Cricket Ball is a hard leather ball used in the sport of cricket. It is bowled and batted in the game, and its hardness and seam contribute to the dynamics of cricket play."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Sports",
+    "category": "Sports",
+    "description": "The Cricket Ball is a hard leather ball used in the sport of cricket. It is bowled and batted in the game, and its hardness and seam contribute to the dynamics of cricket play.",
+    "rating": 3.53,
+    "numReviews": 3,
+    "price": 12.99,
+    "countInStock": 30,
+    "id": 57
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Cricket Bat",
+    "image": "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-bat/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-bat/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Cricket Bat is an essential piece of cricket equipment used by batsmen to hit the cricket ball. It is made of wood and comes in various sizes and designs."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Sports",
+    "category": "Sports",
+    "description": "The Cricket Bat is an essential piece of cricket equipment used by batsmen to hit the cricket ball. It is made of wood and comes in various sizes and designs.",
+    "rating": 3.17,
+    "numReviews": 3,
+    "price": 29.99,
+    "countInStock": 98,
+    "id": 58
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Cricket Helmet",
+    "image": "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-helmet/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-helmet/1.webp",
+      "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-helmet/2.webp",
+      "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-helmet/3.webp",
+      "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-helmet/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Cricket Helmet is a protective headgear worn by cricket players, especially batsmen and wicketkeepers. It provides protection against fast bowling and bouncers."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Sports",
+    "category": "Sports",
+    "description": "The Cricket Helmet is a protective headgear worn by cricket players, especially batsmen and wicketkeepers. It provides protection against fast bowling and bouncers.",
+    "rating": 4.69,
+    "numReviews": 3,
+    "price": 44.99,
+    "countInStock": 10,
+    "id": 59
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Cricket Wicket",
+    "image": "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-wicket/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/cricket-wicket/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Cricket Wicket is a set of three stumps and two bails, forming a wicket used in the sport of cricket. Batsmen aim to protect the wicket while scoring runs."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Sports",
+    "category": "Sports",
+    "description": "The Cricket Wicket is a set of three stumps and two bails, forming a wicket used in the sport of cricket. Batsmen aim to protect the wicket while scoring runs.",
+    "rating": 4.73,
+    "numReviews": 3,
+    "price": 29.99,
+    "countInStock": 25,
+    "id": 60
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Feather Shuttlecock",
+    "image": "https://cdn.dummyjson.com/product-images/sports-accessories/feather-shuttlecock/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/feather-shuttlecock/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Feather Shuttlecock is used in the sport of badminton. It features natural feathers and is designed for high-speed play, providing stability and accuracy during matches."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Sports",
+    "category": "Sports",
+    "description": "The Feather Shuttlecock is used in the sport of badminton. It features natural feathers and is designed for high-speed play, providing stability and accuracy during matches.",
+    "rating": 2.85,
+    "numReviews": 3,
+    "price": 5.99,
+    "countInStock": 95,
+    "id": 61
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Football",
+    "image": "https://cdn.dummyjson.com/product-images/sports-accessories/football/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/football/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Football, also known as a soccer ball, is the standard ball used in the sport of football (soccer). It is designed for kicking and passing in the game."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Sports",
+    "category": "Sports",
+    "description": "The Football, also known as a soccer ball, is the standard ball used in the sport of football (soccer). It is designed for kicking and passing in the game.",
+    "rating": 3.28,
+    "numReviews": 3,
+    "price": 17.99,
+    "countInStock": 96,
+    "id": 62
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Golf Ball",
+    "image": "https://cdn.dummyjson.com/product-images/sports-accessories/golf-ball/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/golf-ball/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Golf Ball is a small ball used in the sport of golf. It features dimples on its surface, providing aerodynamic lift and distance when struck by a golf club."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Sports",
+    "category": "Sports",
+    "description": "The Golf Ball is a small ball used in the sport of golf. It features dimples on its surface, providing aerodynamic lift and distance when struck by a golf club.",
+    "rating": 4.3,
+    "numReviews": 3,
+    "price": 9.99,
+    "countInStock": 84,
+    "id": 63
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Iron Golf",
+    "image": "https://cdn.dummyjson.com/product-images/sports-accessories/iron-golf/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/iron-golf/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Iron Golf is a type of golf club designed for various golf shots. It features a solid metal head and is used for approach shots, chipping, and other golfing techniques."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Sports",
+    "category": "Sports",
+    "description": "The Iron Golf is a type of golf club designed for various golf shots. It features a solid metal head and is used for approach shots, chipping, and other golfing techniques.",
+    "rating": 4.41,
+    "numReviews": 3,
+    "price": 49.99,
+    "countInStock": 90,
+    "id": 64
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Metal Baseball Bat",
+    "image": "https://cdn.dummyjson.com/product-images/sports-accessories/metal-baseball-bat/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/metal-baseball-bat/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Metal Baseball Bat is a durable and lightweight baseball bat made from metal alloys. It is commonly used in baseball games for hitting and batting practice."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Sports",
+    "category": "Sports",
+    "description": "The Metal Baseball Bat is a durable and lightweight baseball bat made from metal alloys. It is commonly used in baseball games for hitting and batting practice.",
+    "rating": 4.66,
+    "numReviews": 3,
+    "price": 29.99,
+    "countInStock": 16,
+    "id": 65
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Tennis Ball",
+    "image": "https://cdn.dummyjson.com/product-images/sports-accessories/tennis-ball/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/tennis-ball/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Tennis Ball is a standard ball used in the sport of tennis. It is designed for bouncing and hitting with tennis rackets during matches or practice sessions."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Sports",
+    "category": "Sports",
+    "description": "The Tennis Ball is a standard ball used in the sport of tennis. It is designed for bouncing and hitting with tennis rackets during matches or practice sessions.",
+    "rating": 4.06,
+    "numReviews": 3,
+    "price": 6.99,
+    "countInStock": 28,
+    "id": 66
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Tennis Racket",
+    "image": "https://cdn.dummyjson.com/product-images/sports-accessories/tennis-racket/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/tennis-racket/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Tennis Racket is an essential piece of equipment used in the sport of tennis. It features a frame with strings and a grip, allowing players to hit the tennis ball."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Sports",
+    "category": "Sports",
+    "description": "The Tennis Racket is an essential piece of equipment used in the sport of tennis. It features a frame with strings and a grip, allowing players to hit the tennis ball.",
+    "rating": 4.03,
+    "numReviews": 3,
+    "price": 49.99,
+    "countInStock": 6,
+    "id": 67
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Volleyball",
+    "image": "https://cdn.dummyjson.com/product-images/sports-accessories/volleyball/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sports-accessories/volleyball/1.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Volleyball is a standard ball used in the sport of volleyball. It is designed for passing, setting, and spiking over the net during volleyball matches."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Sports",
+    "category": "Sports",
+    "description": "The Volleyball is a standard ball used in the sport of volleyball. It is designed for passing, setting, and spiking over the net during volleyball matches.",
+    "rating": 3.84,
+    "numReviews": 3,
+    "price": 11.99,
+    "countInStock": 0,
+    "id": 68
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Black Sun Glasses",
+    "image": "https://cdn.dummyjson.com/product-images/sunglasses/black-sun-glasses/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sunglasses/black-sun-glasses/1.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/black-sun-glasses/2.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/black-sun-glasses/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Black Sun Glasses are a classic and stylish choice, featuring a sleek black frame and tinted lenses. They provide both UV protection and a fashionable look."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion Shades",
+    "category": "Fashion",
+    "description": "The Black Sun Glasses are a classic and stylish choice, featuring a sleek black frame and tinted lenses. They provide both UV protection and a fashionable look.",
+    "rating": 4.41,
+    "numReviews": 3,
+    "price": 29.99,
+    "countInStock": 60,
+    "id": 69
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Classic Sun Glasses",
+    "image": "https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/1.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/2.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Classic Sun Glasses offer a timeless design with a neutral frame and UV-protected lenses. These sunglasses are versatile and suitable for various occasions."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion Shades",
+    "category": "Fashion",
+    "description": "The Classic Sun Glasses offer a timeless design with a neutral frame and UV-protected lenses. These sunglasses are versatile and suitable for various occasions.",
+    "rating": 3.86,
+    "numReviews": 3,
+    "price": 24.99,
+    "countInStock": 1,
+    "id": 70
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Green and Black Glasses",
+    "image": "https://cdn.dummyjson.com/product-images/sunglasses/green-and-black-glasses/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sunglasses/green-and-black-glasses/1.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/green-and-black-glasses/2.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/green-and-black-glasses/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Green and Black Glasses feature a bold combination of green and black colors, adding a touch of vibrancy to your eyewear collection. They are both stylish and eye-catching."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion Shades",
+    "category": "Fashion",
+    "description": "The Green and Black Glasses feature a bold combination of green and black colors, adding a touch of vibrancy to your eyewear collection. They are both stylish and eye-catching.",
+    "rating": 4.55,
+    "numReviews": 3,
+    "price": 34.99,
+    "countInStock": 24,
+    "id": 71
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Party Glasses",
+    "image": "https://cdn.dummyjson.com/product-images/sunglasses/party-glasses/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sunglasses/party-glasses/1.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/party-glasses/2.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/party-glasses/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Party Glasses are designed to add flair to your party outfit. With unique shapes or colorful frames, they're perfect for adding a playful touch to your look during celebrations."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion Fun",
+    "category": "Fashion",
+    "description": "The Party Glasses are designed to add flair to your party outfit. With unique shapes or colorful frames, they're perfect for adding a playful touch to your look during celebrations.",
+    "rating": 2.79,
+    "numReviews": 3,
+    "price": 19.99,
+    "countInStock": 86,
+    "id": 72
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Sunglasses",
+    "image": "https://cdn.dummyjson.com/product-images/sunglasses/sunglasses/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/sunglasses/sunglasses/1.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/sunglasses/2.webp",
+      "https://cdn.dummyjson.com/product-images/sunglasses/sunglasses/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Sunglasses offer a classic and simple design with a focus on functionality. These sunglasses provide essential UV protection while maintaining a timeless look."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion Shades",
+    "category": "Fashion",
+    "description": "The Sunglasses offer a classic and simple design with a focus on functionality. These sunglasses provide essential UV protection while maintaining a timeless look.",
+    "rating": 3.02,
+    "numReviews": 3,
+    "price": 22.99,
+    "countInStock": 27,
+    "id": 73
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "iPad Mini 2021 Starlight",
+    "image": "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/1.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/2.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/3.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/ipad-mini-2021-starlight/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The iPad Mini 2021 in Starlight is a compact and powerful tablet from Apple. Featuring a stunning Retina display, powerful A-series chip, and a sleek design, it offers a premium tablet experience."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Apple",
+    "category": "Electronics",
+    "description": "The iPad Mini 2021 in Starlight is a compact and powerful tablet from Apple. Featuring a stunning Retina display, powerful A-series chip, and a sleek design, it offers a premium tablet experience.",
+    "rating": 3.18,
+    "numReviews": 3,
+    "price": 499.99,
+    "countInStock": 47,
+    "id": 74
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Samsung Galaxy Tab S8 Plus Grey",
+    "image": "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/1.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/2.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/3.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-s8-plus-grey/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Samsung Galaxy Tab S8 Plus in Grey is a high-performance Android tablet by Samsung. With a large AMOLED display, powerful processor, and S Pen support, it's ideal for productivity and entertainment."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Samsung",
+    "category": "Electronics",
+    "description": "The Samsung Galaxy Tab S8 Plus in Grey is a high-performance Android tablet by Samsung. With a large AMOLED display, powerful processor, and S Pen support, it's ideal for productivity and entertainment.",
+    "rating": 4.68,
+    "numReviews": 3,
+    "price": 599.99,
+    "countInStock": 62,
+    "id": 75
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Samsung Galaxy Tab White",
+    "image": "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/1.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/2.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/3.webp",
+      "https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Samsung Galaxy Tab in White is a sleek and versatile Android tablet. With a vibrant display, long-lasting battery, and a range of features, it offers a great user experience for various tasks."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Samsung",
+    "category": "Electronics",
+    "description": "The Samsung Galaxy Tab in White is a sleek and versatile Android tablet. With a vibrant display, long-lasting battery, and a range of features, it offers a great user experience for various tasks.",
+    "rating": 3.72,
+    "numReviews": 3,
+    "price": 349.99,
+    "countInStock": 92,
+    "id": 76
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Blue Frock",
+    "image": "https://cdn.dummyjson.com/product-images/tops/blue-frock/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/tops/blue-frock/1.webp",
+      "https://cdn.dummyjson.com/product-images/tops/blue-frock/2.webp",
+      "https://cdn.dummyjson.com/product-images/tops/blue-frock/3.webp",
+      "https://cdn.dummyjson.com/product-images/tops/blue-frock/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Blue Frock is a charming and stylish dress for various occasions. With a vibrant blue color and a comfortable design, it adds a touch of elegance to your wardrobe."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion",
+    "category": "Fashion",
+    "description": "The Blue Frock is a charming and stylish dress for various occasions. With a vibrant blue color and a comfortable design, it adds a touch of elegance to your wardrobe.",
+    "rating": 4.17,
+    "numReviews": 3,
+    "price": 29.99,
+    "countInStock": 52,
+    "id": 77
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Girl Summer Dress",
+    "image": "https://cdn.dummyjson.com/product-images/tops/girl-summer-dress/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/tops/girl-summer-dress/1.webp",
+      "https://cdn.dummyjson.com/product-images/tops/girl-summer-dress/2.webp",
+      "https://cdn.dummyjson.com/product-images/tops/girl-summer-dress/3.webp",
+      "https://cdn.dummyjson.com/product-images/tops/girl-summer-dress/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Girl Summer Dress is a cute and breezy dress designed for warm weather. With playful patterns and lightweight fabric, it's perfect for keeping cool and stylish during the summer."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion",
+    "category": "Fashion",
+    "description": "The Girl Summer Dress is a cute and breezy dress designed for warm weather. With playful patterns and lightweight fabric, it's perfect for keeping cool and stylish during the summer.",
+    "rating": 4.77,
+    "numReviews": 3,
+    "price": 19.99,
+    "countInStock": 43,
+    "id": 78
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Gray Dress",
+    "image": "https://cdn.dummyjson.com/product-images/tops/gray-dress/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/tops/gray-dress/1.webp",
+      "https://cdn.dummyjson.com/product-images/tops/gray-dress/2.webp",
+      "https://cdn.dummyjson.com/product-images/tops/gray-dress/3.webp",
+      "https://cdn.dummyjson.com/product-images/tops/gray-dress/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Gray Dress is a versatile and chic option for various occasions. With a neutral gray color, it can be dressed up or down, making it a wardrobe staple for any fashion-forward individual."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion",
+    "category": "Fashion",
+    "description": "The Gray Dress is a versatile and chic option for various occasions. With a neutral gray color, it can be dressed up or down, making it a wardrobe staple for any fashion-forward individual.",
+    "rating": 2.72,
+    "numReviews": 3,
+    "price": 34.99,
+    "countInStock": 55,
+    "id": 79
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Short Frock",
+    "image": "https://cdn.dummyjson.com/product-images/tops/short-frock/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/tops/short-frock/1.webp",
+      "https://cdn.dummyjson.com/product-images/tops/short-frock/2.webp",
+      "https://cdn.dummyjson.com/product-images/tops/short-frock/3.webp",
+      "https://cdn.dummyjson.com/product-images/tops/short-frock/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Short Frock is a playful and trendy dress with a shorter length. Ideal for casual outings or special occasions, it combines style and comfort for a fashionable look."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion",
+    "category": "Fashion",
+    "description": "The Short Frock is a playful and trendy dress with a shorter length. Ideal for casual outings or special occasions, it combines style and comfort for a fashionable look.",
+    "rating": 3.23,
+    "numReviews": 3,
+    "price": 24.99,
+    "countInStock": 22,
+    "id": 80
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Tartan Dress",
+    "image": "https://cdn.dummyjson.com/product-images/tops/tartan-dress/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/tops/tartan-dress/1.webp",
+      "https://cdn.dummyjson.com/product-images/tops/tartan-dress/2.webp",
+      "https://cdn.dummyjson.com/product-images/tops/tartan-dress/3.webp",
+      "https://cdn.dummyjson.com/product-images/tops/tartan-dress/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Tartan Dress features a classic tartan pattern, bringing a timeless and sophisticated touch to your wardrobe. Perfect for fall and winter, it adds a hint of traditional charm."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion",
+    "category": "Fashion",
+    "description": "The Tartan Dress features a classic tartan pattern, bringing a timeless and sophisticated touch to your wardrobe. Perfect for fall and winter, it adds a hint of traditional charm.",
+    "rating": 4.05,
+    "numReviews": 3,
+    "price": 39.99,
+    "countInStock": 73,
+    "id": 81
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Blue Women's Handbag",
+    "image": "https://cdn.dummyjson.com/product-images/womens-bags/blue-women's-handbag/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-bags/blue-women's-handbag/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-bags/blue-women's-handbag/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-bags/blue-women's-handbag/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Blue Women's Handbag is a stylish and spacious accessory for everyday use. With a vibrant blue color and multiple compartments, it combines fashion and functionality."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashionista",
+    "category": "Fashion",
+    "description": "The Blue Women's Handbag is a stylish and spacious accessory for everyday use. With a vibrant blue color and multiple compartments, it combines fashion and functionality.",
+    "rating": 2.92,
+    "numReviews": 3,
+    "price": 49.99,
+    "countInStock": 76,
+    "id": 82
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Heshe Women's Leather Bag",
+    "image": "https://cdn.dummyjson.com/product-images/womens-bags/heshe-women's-leather-bag/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-bags/heshe-women's-leather-bag/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-bags/heshe-women's-leather-bag/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-bags/heshe-women's-leather-bag/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Heshe Women's Leather Bag is a luxurious and high-quality leather bag for the sophisticated woman. With a timeless design and durable craftsmanship, it's a versatile accessory."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Heshe",
+    "category": "Fashion",
+    "description": "The Heshe Women's Leather Bag is a luxurious and high-quality leather bag for the sophisticated woman. With a timeless design and durable craftsmanship, it's a versatile accessory.",
+    "rating": 4.92,
+    "numReviews": 3,
+    "price": 129.99,
+    "countInStock": 99,
+    "id": 83
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Prada Women Bag",
+    "image": "https://cdn.dummyjson.com/product-images/womens-bags/prada-women-bag/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-bags/prada-women-bag/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-bags/prada-women-bag/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-bags/prada-women-bag/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Prada Women Bag is an iconic designer bag that exudes elegance and luxury. Crafted with precision and featuring the Prada logo, it's a statement piece for fashion enthusiasts."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Prada",
+    "category": "Fashion",
+    "description": "The Prada Women Bag is an iconic designer bag that exudes elegance and luxury. Crafted with precision and featuring the Prada logo, it's a statement piece for fashion enthusiasts.",
+    "rating": 2.71,
+    "numReviews": 3,
+    "price": 599.99,
+    "countInStock": 75,
+    "id": 84
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "White Faux Leather Backpack",
+    "image": "https://cdn.dummyjson.com/product-images/womens-bags/white-faux-leather-backpack/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-bags/white-faux-leather-backpack/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-bags/white-faux-leather-backpack/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-bags/white-faux-leather-backpack/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The White Faux Leather Backpack is a trendy and practical backpack for the modern woman. With a sleek white design and ample storage space, it's perfect for both casual and on-the-go styles."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Urban Chic",
+    "category": "Fashion",
+    "description": "The White Faux Leather Backpack is a trendy and practical backpack for the modern woman. With a sleek white design and ample storage space, it's perfect for both casual and on-the-go styles.",
+    "rating": 3.36,
+    "numReviews": 3,
+    "price": 39.99,
+    "countInStock": 39,
+    "id": 85
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Women Handbag Black",
+    "image": "https://cdn.dummyjson.com/product-images/womens-bags/women-handbag-black/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-bags/women-handbag-black/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-bags/women-handbag-black/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-bags/women-handbag-black/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Women Handbag in Black is a classic and versatile accessory that complements various outfits. With a timeless black color and functional design, it's a must-have in every woman's wardrobe."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Elegance Collection",
+    "category": "Fashion",
+    "description": "The Women Handbag in Black is a classic and versatile accessory that complements various outfits. With a timeless black color and functional design, it's a must-have in every woman's wardrobe.",
+    "rating": 2.89,
+    "numReviews": 3,
+    "price": 59.99,
+    "countInStock": 11,
+    "id": 86
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Black Women's Gown",
+    "image": "https://cdn.dummyjson.com/product-images/womens-dresses/black-women's-gown/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-dresses/black-women's-gown/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-dresses/black-women's-gown/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-dresses/black-women's-gown/3.webp",
+      "https://cdn.dummyjson.com/product-images/womens-dresses/black-women's-gown/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Black Women's Gown is an elegant and timeless evening gown. With a sleek black design, it's perfect for formal events and special occasions, exuding sophistication and style."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion",
+    "category": "Fashion",
+    "description": "The Black Women's Gown is an elegant and timeless evening gown. With a sleek black design, it's perfect for formal events and special occasions, exuding sophistication and style.",
+    "rating": 3.64,
+    "numReviews": 3,
+    "price": 129.99,
+    "countInStock": 25,
+    "id": 87
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Corset Leather With Skirt",
+    "image": "https://cdn.dummyjson.com/product-images/womens-dresses/corset-leather-with-skirt/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-dresses/corset-leather-with-skirt/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-dresses/corset-leather-with-skirt/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-dresses/corset-leather-with-skirt/3.webp",
+      "https://cdn.dummyjson.com/product-images/womens-dresses/corset-leather-with-skirt/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Corset Leather With Skirt is a bold and edgy ensemble that combines a stylish corset with a matching skirt. Ideal for fashion-forward individuals, it makes a statement at any event."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion",
+    "category": "Fashion",
+    "description": "The Corset Leather With Skirt is a bold and edgy ensemble that combines a stylish corset with a matching skirt. Ideal for fashion-forward individuals, it makes a statement at any event.",
+    "rating": 3.05,
+    "numReviews": 3,
+    "price": 89.99,
+    "countInStock": 30,
+    "id": 88
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Corset With Black Skirt",
+    "image": "https://cdn.dummyjson.com/product-images/womens-dresses/corset-with-black-skirt/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-dresses/corset-with-black-skirt/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-dresses/corset-with-black-skirt/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-dresses/corset-with-black-skirt/3.webp",
+      "https://cdn.dummyjson.com/product-images/womens-dresses/corset-with-black-skirt/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Corset With Black Skirt is a chic and versatile outfit that pairs a fashionable corset with a classic black skirt. It offers a trendy and coordinated look for various occasions."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion",
+    "category": "Fashion",
+    "description": "The Corset With Black Skirt is a chic and versatile outfit that pairs a fashionable corset with a classic black skirt. It offers a trendy and coordinated look for various occasions.",
+    "rating": 4.52,
+    "numReviews": 3,
+    "price": 79.99,
+    "countInStock": 33,
+    "id": 89
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Dress Pea",
+    "image": "https://cdn.dummyjson.com/product-images/womens-dresses/dress-pea/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-dresses/dress-pea/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-dresses/dress-pea/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-dresses/dress-pea/3.webp",
+      "https://cdn.dummyjson.com/product-images/womens-dresses/dress-pea/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Dress Pea is a stylish and comfortable dress with a pea pattern. Perfect for casual outings, it adds a playful and fun element to your wardrobe, making it a great choice for day-to-day wear."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion",
+    "category": "Fashion",
+    "description": "The Dress Pea is a stylish and comfortable dress with a pea pattern. Perfect for casual outings, it adds a playful and fun element to your wardrobe, making it a great choice for day-to-day wear.",
+    "rating": 4.88,
+    "numReviews": 3,
+    "price": 49.99,
+    "countInStock": 6,
+    "id": 90
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Marni Red & Black Suit",
+    "image": "https://cdn.dummyjson.com/product-images/womens-dresses/marni-red-&-black-suit/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-dresses/marni-red-&-black-suit/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-dresses/marni-red-&-black-suit/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-dresses/marni-red-&-black-suit/3.webp",
+      "https://cdn.dummyjson.com/product-images/womens-dresses/marni-red-&-black-suit/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Marni Red & Black Suit is a sophisticated and fashion-forward suit ensemble. With a combination of red and black tones, it showcases a modern design for a bold and confident look."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion",
+    "category": "Fashion",
+    "description": "The Marni Red & Black Suit is a sophisticated and fashion-forward suit ensemble. With a combination of red and black tones, it showcases a modern design for a bold and confident look.",
+    "rating": 4.48,
+    "numReviews": 3,
+    "price": 179.99,
+    "countInStock": 62,
+    "id": 91
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Green Crystal Earring",
+    "image": "https://cdn.dummyjson.com/product-images/womens-jewellery/green-crystal-earring/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-jewellery/green-crystal-earring/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-jewellery/green-crystal-earring/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-jewellery/green-crystal-earring/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Green Crystal Earring is a dazzling accessory that features a vibrant green crystal. With a classic design, it adds a touch of elegance to your ensemble, perfect for formal or special occasions."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion",
+    "category": "Fashion",
+    "description": "The Green Crystal Earring is a dazzling accessory that features a vibrant green crystal. With a classic design, it adds a touch of elegance to your ensemble, perfect for formal or special occasions.",
+    "rating": 3.96,
+    "numReviews": 3,
+    "price": 29.99,
+    "countInStock": 54,
+    "id": 92
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Green Oval Earring",
+    "image": "https://cdn.dummyjson.com/product-images/womens-jewellery/green-oval-earring/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-jewellery/green-oval-earring/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-jewellery/green-oval-earring/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-jewellery/green-oval-earring/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Green Oval Earring is a stylish and versatile accessory with a unique oval shape. Whether for casual or dressy occasions, its green hue and contemporary design make it a standout piece."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion",
+    "category": "Fashion",
+    "description": "The Green Oval Earring is a stylish and versatile accessory with a unique oval shape. Whether for casual or dressy occasions, its green hue and contemporary design make it a standout piece.",
+    "rating": 3.57,
+    "numReviews": 3,
+    "price": 24.99,
+    "countInStock": 73,
+    "id": 93
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Tropical Earring",
+    "image": "https://cdn.dummyjson.com/product-images/womens-jewellery/tropical-earring/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-jewellery/tropical-earring/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-jewellery/tropical-earring/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-jewellery/tropical-earring/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Tropical Earring is a fun and playful accessory inspired by tropical elements. Featuring vibrant colors and a lively design, it's perfect for adding a touch of summer to your look."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion",
+    "category": "Fashion",
+    "description": "The Tropical Earring is a fun and playful accessory inspired by tropical elements. Featuring vibrant colors and a lively design, it's perfect for adding a touch of summer to your look.",
+    "rating": 4.4,
+    "numReviews": 3,
+    "price": 19.99,
+    "countInStock": 1,
+    "id": 94
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Black & Brown Slipper",
+    "image": "https://cdn.dummyjson.com/product-images/womens-shoes/black-&-brown-slipper/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-shoes/black-&-brown-slipper/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-shoes/black-&-brown-slipper/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-shoes/black-&-brown-slipper/3.webp",
+      "https://cdn.dummyjson.com/product-images/womens-shoes/black-&-brown-slipper/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Black & Brown Slipper is a comfortable and stylish choice for casual wear. Featuring a blend of black and brown colors, it adds a touch of sophistication to your relaxation."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Comfort Trends",
+    "category": "Fashion",
+    "description": "The Black & Brown Slipper is a comfortable and stylish choice for casual wear. Featuring a blend of black and brown colors, it adds a touch of sophistication to your relaxation.",
+    "rating": 2.53,
+    "numReviews": 3,
+    "price": 19.99,
+    "countInStock": 3,
+    "id": 95
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Calvin Klein Heel Shoes",
+    "image": "https://cdn.dummyjson.com/product-images/womens-shoes/calvin-klein-heel-shoes/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-shoes/calvin-klein-heel-shoes/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-shoes/calvin-klein-heel-shoes/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-shoes/calvin-klein-heel-shoes/3.webp",
+      "https://cdn.dummyjson.com/product-images/womens-shoes/calvin-klein-heel-shoes/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "Calvin Klein Heel Shoes are elegant and sophisticated, designed for formal occasions. With a classic design and high-quality materials, they complement your stylish ensemble."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Calvin Klein",
+    "category": "Fashion",
+    "description": "Calvin Klein Heel Shoes are elegant and sophisticated, designed for formal occasions. With a classic design and high-quality materials, they complement your stylish ensemble.",
+    "rating": 4.92,
+    "numReviews": 3,
+    "price": 79.99,
+    "countInStock": 93,
+    "id": 96
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Golden Shoes Woman",
+    "image": "https://cdn.dummyjson.com/product-images/womens-shoes/golden-shoes-woman/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-shoes/golden-shoes-woman/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-shoes/golden-shoes-woman/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-shoes/golden-shoes-woman/3.webp",
+      "https://cdn.dummyjson.com/product-images/womens-shoes/golden-shoes-woman/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Golden Shoes for Women are a glamorous choice for special occasions. Featuring a golden hue and stylish design, they add a touch of luxury to your outfit."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion Diva",
+    "category": "Fashion",
+    "description": "The Golden Shoes for Women are a glamorous choice for special occasions. Featuring a golden hue and stylish design, they add a touch of luxury to your outfit.",
+    "rating": 3.26,
+    "numReviews": 3,
+    "price": 49.99,
+    "countInStock": 88,
+    "id": 97
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Pampi Shoes",
+    "image": "https://cdn.dummyjson.com/product-images/womens-shoes/pampi-shoes/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-shoes/pampi-shoes/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-shoes/pampi-shoes/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-shoes/pampi-shoes/3.webp",
+      "https://cdn.dummyjson.com/product-images/womens-shoes/pampi-shoes/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "Pampi Shoes offer a blend of comfort and style for everyday use. With a versatile design, they are suitable for various casual occasions, providing a trendy and relaxed look."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Pampi",
+    "category": "Fashion",
+    "description": "Pampi Shoes offer a blend of comfort and style for everyday use. With a versatile design, they are suitable for various casual occasions, providing a trendy and relaxed look.",
+    "rating": 3.05,
+    "numReviews": 3,
+    "price": 29.99,
+    "countInStock": 49,
+    "id": 98
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Red Shoes",
+    "image": "https://cdn.dummyjson.com/product-images/womens-shoes/red-shoes/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-shoes/red-shoes/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-shoes/red-shoes/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-shoes/red-shoes/3.webp",
+      "https://cdn.dummyjson.com/product-images/womens-shoes/red-shoes/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Red Shoes make a bold statement with their vibrant red color. Whether for a party or a casual outing, these shoes add a pop of color and style to your wardrobe."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion Express",
+    "category": "Fashion",
+    "description": "The Red Shoes make a bold statement with their vibrant red color. Whether for a party or a casual outing, these shoes add a pop of color and style to your wardrobe.",
+    "rating": 3.25,
+    "numReviews": 3,
+    "price": 34.99,
+    "countInStock": 7,
+    "id": 99
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "IWC Ingenieur Automatic Steel",
+    "image": "https://cdn.dummyjson.com/product-images/womens-watches/iwc-ingenieur-automatic-steel/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-watches/iwc-ingenieur-automatic-steel/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-watches/iwc-ingenieur-automatic-steel/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-watches/iwc-ingenieur-automatic-steel/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The IWC Ingenieur Automatic Steel watch is a durable and sophisticated timepiece. With a stainless steel case and automatic movement, it combines precision and style for watch enthusiasts."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "IWC",
+    "category": "Fashion",
+    "description": "The IWC Ingenieur Automatic Steel watch is a durable and sophisticated timepiece. With a stainless steel case and automatic movement, it combines precision and style for watch enthusiasts.",
+    "rating": 2.93,
+    "numReviews": 3,
+    "price": 4999.99,
+    "countInStock": 90,
+    "id": 100
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Rolex Cellini Moonphase",
+    "image": "https://cdn.dummyjson.com/product-images/womens-watches/rolex-cellini-moonphase/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-watches/rolex-cellini-moonphase/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-watches/rolex-cellini-moonphase/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-watches/rolex-cellini-moonphase/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Rolex Cellini Moonphase watch is a masterpiece of horology. Featuring a moon phase complication, it showcases the craftsmanship and elegance that Rolex is renowned for."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Rolex",
+    "category": "Fashion",
+    "description": "The Rolex Cellini Moonphase watch is a masterpiece of horology. Featuring a moon phase complication, it showcases the craftsmanship and elegance that Rolex is renowned for.",
+    "rating": 3.83,
+    "numReviews": 3,
+    "price": 15999.99,
+    "countInStock": 52,
+    "id": 101
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Rolex Datejust Women",
+    "image": "https://cdn.dummyjson.com/product-images/womens-watches/rolex-datejust-women/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-watches/rolex-datejust-women/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-watches/rolex-datejust-women/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-watches/rolex-datejust-women/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Rolex Datejust Women's watch is an iconic timepiece designed for women. With a timeless design and a date complication, it offers both elegance and functionality."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Rolex",
+    "category": "Fashion",
+    "description": "The Rolex Datejust Women's watch is an iconic timepiece designed for women. With a timeless design and a date complication, it offers both elegance and functionality.",
+    "rating": 2.86,
+    "numReviews": 3,
+    "price": 10999.99,
+    "countInStock": 4,
+    "id": 102
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Watch Gold for Women",
+    "image": "https://cdn.dummyjson.com/product-images/womens-watches/watch-gold-for-women/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-watches/watch-gold-for-women/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-watches/watch-gold-for-women/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-watches/watch-gold-for-women/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Gold Women's Watch is a stunning accessory that combines luxury and style. Featuring a gold-plated case and a chic design, it adds a touch of glamour to any outfit."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion Gold",
+    "category": "Fashion",
+    "description": "The Gold Women's Watch is a stunning accessory that combines luxury and style. Featuring a gold-plated case and a chic design, it adds a touch of glamour to any outfit.",
+    "rating": 4.24,
+    "numReviews": 3,
+    "price": 799.99,
+    "countInStock": 0,
+    "id": 103
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Women's Wrist Watch",
+    "image": "https://cdn.dummyjson.com/product-images/womens-watches/women's-wrist-watch/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/womens-watches/women's-wrist-watch/1.webp",
+      "https://cdn.dummyjson.com/product-images/womens-watches/women's-wrist-watch/2.webp",
+      "https://cdn.dummyjson.com/product-images/womens-watches/women's-wrist-watch/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Women's Wrist Watch is a versatile and fashionable timepiece for everyday wear. With a comfortable strap and a simple yet elegant design, it complements various styles."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Fashion Co.",
+    "category": "Fashion",
+    "description": "The Women's Wrist Watch is a versatile and fashionable timepiece for everyday wear. With a comfortable strap and a simple yet elegant design, it complements various styles.",
+    "rating": 3.52,
+    "numReviews": 3,
+    "price": 129.99,
+    "countInStock": 12,
+    "id": 104
   }
 ]

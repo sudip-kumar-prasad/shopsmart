@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Star, Heart, ShoppingBag, Truck, RotateCcw, Plus, Minus } from 'lucide-react';
 import axios from 'axios';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import productsData from '../assets/products.json';
 import './ProductPage.css';
@@ -28,9 +29,22 @@ const ProductPage = () => {
   const [selectedImg, setSelectedImg] = useState(0);
   const [qty, setQty] = useState(1);
   const { addItem } = useCart();
+  const { user } = useAuth();
   const navigate = useNavigate();
 
+  const handleAddToCart = () => {
+    if (!user) {
+      navigate(`/login?redirect=/product/${id}`);
+      return;
+    }
+    addItem({...product, id: product.id || product._id, qty});
+  };
+
   const handleBuyNow = () => {
+    if (!user) {
+      navigate(`/login?redirect=/product/${id}`);
+      return;
+    }
     addItem({...product, id: product.id || product._id, qty});
     navigate('/checkout');
   };
@@ -49,10 +63,10 @@ const ProductPage = () => {
     window.scrollTo(0,0);
   }, [id]);
 
-  const thumbnails = [
+  const thumbnails = product.images && product.images.length >= 3 ? product.images : [
     product.image,
-    'https://images.unsplash.com/photo-1583394293884-b32c35b3c8a5?auto=format&fit=crop&q=80&w=200',
-    'https://images.unsplash.com/photo-1608156639585-34052e35a962?auto=format&fit=crop&q=80&w=200',
+    product.image,
+    product.image
   ];
 
   return (
@@ -116,7 +130,7 @@ const ProductPage = () => {
           </div>
 
           <div className="product-ctas">
-            <button onClick={() => addItem({...product, id: product.id || product._id, qty})} className="btn btn-cta-cart"><ShoppingBag size={18} /> Add to Cart</button>
+            <button onClick={handleAddToCart} className="btn btn-cta-cart"><ShoppingBag size={18} /> Add to Cart</button>
             <button onClick={handleBuyNow} className="btn btn-cta-buy">Buy It Now</button>
           </div>
 
@@ -135,14 +149,26 @@ const ProductPage = () => {
           <div className="quality-block">
             <h3>Uncompromising Quality</h3>
             <div className="quality-tabs">
-              <div className="quality-tab active">
-                <strong>Sonic Precision</strong>
-                <p>Dual 40mm drivers for ultra-fine resolution and extraordinary dynamic range in your music experience.</p>
-              </div>
-              <div className="quality-tab blue">
-                <span className="highlight-stat">40H</span>
-                <p>Listening time on a single charge, 5-minute instant charge for 2 hours of music.</p>
-              </div>
+              {product.qualityHighlights ? (
+                product.qualityHighlights.map((highlight, index) => (
+                  <div key={index} className={`quality-tab ${index === 1 ? 'blue' : 'active'}`}>
+                    {highlight.title && <strong>{highlight.title}</strong>}
+                    {highlight.highlightStat && <span className="highlight-stat">{highlight.highlightStat}</span>}
+                    <p>{highlight.description}</p>
+                  </div>
+                ))
+              ) : (
+                <>
+                  <div className="quality-tab active">
+                    <strong>Default Benchmark</strong>
+                    <p>Exceptional quality and reliability come standard with all our selections.</p>
+                  </div>
+                  <div className="quality-tab blue">
+                    <span className="highlight-stat">100%</span>
+                    <p>Guaranteed satisfaction from precision engineering.</p>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>

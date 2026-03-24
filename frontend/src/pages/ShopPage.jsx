@@ -1,19 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ListFilter, Heart, ShoppingBag, Star, ChevronRight } from 'lucide-react';
 import axios from 'axios';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 import productsData from '../assets/products.json';
 import './ShopPage.css';
 
 const ShopPage = () => {
   const [products, setProducts] = useState(productsData);
   const location = useLocation();
+  const navigate = useNavigate();
   const searchParams = new URLSearchParams(location.search);
   const searchQuery = searchParams.get('search') || '';
   const [selectedCategory, setSelectedCategory] = useState('');
   const { addItem } = useCart();
+  const { user } = useAuth();
   const [limit, setLimit] = useState(12);
+
+  const handleAddToCart = (product) => {
+    if (!user) {
+      navigate('/login?redirect=/shop');
+      return;
+    }
+    addItem(product);
+  };
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -142,7 +153,7 @@ const ShopPage = () => {
                   </Link>
                   <div className="hover-actions">
                     <button className="h-btn"><Heart size={18} /></button>
-                    <button onClick={() => addItem({...product, id: product.id || product._id, qty: 1})} className="h-btn active"><ShoppingBag size={18} /></button>
+                    <button onClick={() => handleAddToCart({...product, id: product.id || product._id, qty: 1})} className="h-btn active"><ShoppingBag size={18} /></button>
                   </div>
                 </div>
                 <div className="shop-product-info">

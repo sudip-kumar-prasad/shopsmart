@@ -47,7 +47,12 @@ const importDummyData = async () => {
       return {
         user: adminUser._id,
         name: p.title,
-        image: p.images && p.images.length > 0 ? p.images[0] : p.thumbnail, // Use first real image for better quality
+        image: p.images && p.images.length > 0 ? p.images[0] : p.thumbnail,
+        images: p.images && p.images.length > 0 ? p.images : [p.thumbnail, p.thumbnail, p.thumbnail],
+        qualityHighlights: [
+          { title: "Product Overview", description: p.description },
+          { highlightStat: `${Math.round(p.rating)}/5 Stars`, description: `Highly rated and trusted by customers globally.` }
+        ],
         brand: p.brand || mainCategory,
         category: mainCategory,
         description: p.description,
@@ -61,6 +66,12 @@ const importDummyData = async () => {
     console.log(`Inserting ${sampleProducts.length} refined products...`);
     await Product.insertMany(sampleProducts);
     
+    const fs = require('fs');
+    const path = require('path');
+    const frontendDataPath = path.join(__dirname, '..', 'frontend', 'src', 'assets', 'products.json');
+    const mappedForFrontend = sampleProducts.map((p, i) => ({ ...p, id: i + 1 }));
+    fs.writeFileSync(frontendDataPath, JSON.stringify(mappedForFrontend, null, 2));
+
     console.log('DummyJSON Products Imported Successfully!');
     process.exit();
   } catch (error) {

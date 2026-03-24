@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import './AuthPages.css';
 
 const LoginPage = () => {
-  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [formData, setFormData] = useState({ email: 'admin@example.com', password: 'password123' });
   const { login } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const redirectPath = new URLSearchParams(location.search).get('redirect') || '/';
 
   const handleChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -14,7 +16,7 @@ const LoginPage = () => {
     e.preventDefault();
     const res = await login(formData.email, formData.password);
     if (res.success) {
-      navigate('/');
+      navigate(redirectPath);
     } else {
       alert(res.error || 'Login failed. Please check credentials.');
     }
