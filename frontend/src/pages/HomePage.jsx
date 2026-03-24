@@ -19,6 +19,7 @@ const featuredProducts = [
 
 const HomePage = () => {
   const [featured, setFeatured] = useState(featuredProducts);
+  const [trendingProduct, setTrendingProduct] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { addItem } = useCart();
@@ -44,14 +45,23 @@ const HomePage = () => {
       setLoading(true);
       try {
         const { data } = await axios.get('/api/products');
-        // Take first 4 as featured
+        
+        try {
+          const { data: trendingData } = await axios.get('/api/products/trending');
+          if (trendingData && trendingData.length > 0) {
+            setTrendingProduct(trendingData[0]);
+          }
+        } catch (tErr) {
+          console.warn('Failed to fetch trending product', tErr);
+        }
+        // Take first 8 as featured so there are items to scroll through
         if (data && data.length >= 4) {
-          const latestProducts = data.slice(0, 4).map((p, i) => ({
+          const latestProducts = data.slice(0, 8).map((p, i) => ({
             id: p._id,
             name: p.name,
             brand: p.brand,
             price: p.price,
-            bg: featuredProducts[i].bg, // retain the stylistic bg from UI design
+            bg: featuredProducts[i % 4].bg, // retain the stylistic bg from UI design
             image: p.image
           }));
           setFeatured(latestProducts);
@@ -192,11 +202,33 @@ const HomePage = () => {
             </button>
           </div>
           <div className="trending-main-image">
-             <div className="trending-rating-badge">
-                <span className="rating-score">4.9/5</span>
-                <span className="rating-label">AVERAGE RATING</span>
-             </div>
-             <img src="https://images.unsplash.com/photo-1526170315870-ef6856fd3afd?auto=format&fit=crop&q=80&w=800" alt="Main Trending" />
+            {trendingProduct ? (
+              <>
+                 <div className="trending-rating-badge" style={{ zIndex: 2 }}>
+                    <span className="rating-score">{trendingProduct.rating || 4.5}/5</span>
+                    <span className="rating-label">AVERAGE RATING</span>
+                 </div>
+                 <img 
+                   src={trendingProduct.image} 
+                   alt={trendingProduct.name} 
+                   onClick={() => navigate(`/product/${trendingProduct._id || trendingProduct.id}`)}
+                   style={{ cursor: 'pointer' }}
+                 />
+                 {trendingProduct.totalQtySold && (
+                   <div style={{ position: 'absolute', top: '2rem', right: '2rem', background: '#f97316', color: 'white', padding: '0.5rem 1rem', borderRadius: '1rem', fontWeight: 700, fontSize: '0.8rem', zIndex: 2 }}>
+                     🔥 {trendingProduct.totalQtySold} BOUGHT THIS WEEK
+                   </div>
+                 )}
+              </>
+            ) : (
+              <>
+                 <div className="trending-rating-badge">
+                    <span className="rating-score">4.9/5</span>
+                    <span className="rating-label">AVERAGE RATING</span>
+                 </div>
+                 <img src="https://images.unsplash.com/photo-1526170315870-ef6856fd3afd?auto=format&fit=crop&q=80&w=800" alt="Main Trending" />
+              </>
+            )}
           </div>
         </div>
       </section>

@@ -22,4 +22,17 @@ const getProductById = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { getProducts, getProductById };
+// @desc    Fetch top trending products
+// @route   GET /api/products/trending
+// @access  Public
+const getTrending = asyncHandler(async (req, res) => {
+  try {
+    const products = await ProductService.getTrendingProducts(1, 7);
+    res.json(products);
+  } catch (error) {
+    res.status(error.status || 500);
+    throw new Error(error.message);
+  }
+});
+
+module.exports = { getProducts, getProductById, getTrending };
