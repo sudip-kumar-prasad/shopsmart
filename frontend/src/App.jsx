@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
 import ShopPage from './pages/ShopPage'
+import DealsPage from './pages/DealsPage'
 import ProductPage from './pages/ProductPage'
 import CartPage from './pages/CartPage'
 import CheckoutPage from './pages/CheckoutPage'
@@ -24,6 +25,7 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/shop" element={<ShopPage />} />
+              <Route path="/deals" element={<DealsPage />} />
               <Route path="/product/:id" element={<ProductPage />} />
               <Route path="/cart" element={<CartPage />} />
               <Route path="/checkout" element={<CheckoutPage />} />

@@ -1,6 +1,146 @@
 [
   {
     "user": "69c236c96dfd96167594a218",
+    "name": "Calvin Klein CK One",
+    "image": "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/1.webp",
+      "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/2.webp",
+      "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "CK One by Calvin Klein is a classic unisex fragrance, known for its fresh and clean scent. It's a versatile fragrance suitable for everyday wear."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Calvin Klein",
+    "category": "Fashion",
+    "description": "CK One by Calvin Klein is a classic unisex fragrance, known for its fresh and clean scent. It's a versatile fragrance suitable for everyday wear.",
+    "rating": 4.37,
+    "numReviews": 3,
+    "price": 4149,
+    "countInStock": 29,
+    "id": 1
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Chanel Coco Noir Eau De",
+    "image": "https://cdn.dummyjson.com/product-images/fragrances/chanel-coco-noir-eau-de/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/fragrances/chanel-coco-noir-eau-de/1.webp",
+      "https://cdn.dummyjson.com/product-images/fragrances/chanel-coco-noir-eau-de/2.webp",
+      "https://cdn.dummyjson.com/product-images/fragrances/chanel-coco-noir-eau-de/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "Coco Noir by Chanel is an elegant and mysterious fragrance, featuring notes of grapefruit, rose, and sandalwood. Perfect for evening occasions."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Chanel",
+    "category": "Fashion",
+    "description": "Coco Noir by Chanel is an elegant and mysterious fragrance, featuring notes of grapefruit, rose, and sandalwood. Perfect for evening occasions.",
+    "rating": 4.26,
+    "numReviews": 3,
+    "price": 10789,
+    "countInStock": 58,
+    "id": 2
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Dior J'adore",
+    "image": "https://cdn.dummyjson.com/product-images/fragrances/dior-j'adore/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/fragrances/dior-j'adore/1.webp",
+      "https://cdn.dummyjson.com/product-images/fragrances/dior-j'adore/2.webp",
+      "https://cdn.dummyjson.com/product-images/fragrances/dior-j'adore/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "J'adore by Dior is a luxurious and floral fragrance, known for its blend of ylang-ylang, rose, and jasmine. It embodies femininity and sophistication."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Dior",
+    "category": "Fashion",
+    "description": "J'adore by Dior is a luxurious and floral fragrance, known for its blend of ylang-ylang, rose, and jasmine. It embodies femininity and sophistication.",
+    "rating": 3.8,
+    "numReviews": 3,
+    "price": 7469,
+    "countInStock": 98,
+    "id": 3
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Dolce Shine Eau de",
+    "image": "https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/1.webp",
+      "https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/2.webp",
+      "https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "Dolce Shine by Dolce & Gabbana is a vibrant and fruity fragrance, featuring notes of mango, jasmine, and blonde woods. It's a joyful and youthful scent."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Dolce & Gabbana",
+    "category": "Fashion",
+    "description": "Dolce Shine by Dolce & Gabbana is a vibrant and fruity fragrance, featuring notes of mango, jasmine, and blonde woods. It's a joyful and youthful scent.",
+    "rating": 3.96,
+    "numReviews": 3,
+    "price": 5809,
+    "countInStock": 4,
+    "id": 4
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Gucci Bloom Eau de",
+    "image": "https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/1.webp",
+      "https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/2.webp",
+      "https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/3.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "Gucci Bloom by Gucci is a floral and captivating fragrance, with notes of tuberose, jasmine, and Rangoon creeper. It's a modern and romantic scent."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Gucci",
+    "category": "Fashion",
+    "description": "Gucci Bloom by Gucci is a floral and captivating fragrance, with notes of tuberose, jasmine, and Rangoon creeper. It's a modern and romantic scent.",
+    "rating": 2.74,
+    "numReviews": 3,
+    "price": 6639,
+    "countInStock": 91,
+    "id": 5
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
     "name": "Apple MacBook Pro 14 Inch Space Grey",
     "image": "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/1.webp",
     "images": [
@@ -23,9 +163,9 @@
     "description": "The MacBook Pro 14 Inch in Space Grey is a powerful and sleek laptop, featuring Apple's M1 Pro chip for exceptional performance and a stunning Retina display.",
     "rating": 3.65,
     "numReviews": 3,
-    "price": 1999.99,
+    "price": 165999,
     "countInStock": 24,
-    "id": 1
+    "id": 6
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -51,9 +191,9 @@
     "description": "The Asus Zenbook Pro Dual Screen Laptop is a high-performance device with dual screens, providing productivity and versatility for creative professionals.",
     "rating": 3.95,
     "numReviews": 3,
-    "price": 1799.99,
+    "price": 149399,
     "countInStock": 45,
-    "id": 2
+    "id": 7
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -79,9 +219,9 @@
     "description": "The Huawei Matebook X Pro is a slim and stylish laptop with a high-resolution touchscreen display, offering a premium experience for users on the go.",
     "rating": 4.98,
     "numReviews": 3,
-    "price": 1399.99,
+    "price": 116199,
     "countInStock": 75,
-    "id": 3
+    "id": 8
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -107,9 +247,9 @@
     "description": "The Lenovo Yoga 920 is a 2-in-1 convertible laptop with a flexible hinge, allowing you to use it as a laptop or tablet, offering versatility and portability.",
     "rating": 2.86,
     "numReviews": 3,
-    "price": 1099.99,
+    "price": 91299,
     "countInStock": 40,
-    "id": 4
+    "id": 9
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -135,9 +275,9 @@
     "description": "The New DELL XPS 13 9300 Laptop is a compact and powerful device, featuring a virtually borderless InfinityEdge display and high-end performance for various tasks.",
     "rating": 2.67,
     "numReviews": 3,
-    "price": 1499.99,
+    "price": 124499,
     "countInStock": 74,
-    "id": 5
+    "id": 10
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -164,9 +304,9 @@
     "description": "The Blue & Black Check Shirt is a stylish and comfortable men's shirt featuring a classic check pattern. Made from high-quality fabric, it's suitable for both casual and semi-formal occasions.",
     "rating": 3.64,
     "numReviews": 3,
-    "price": 29.99,
+    "price": 2489,
     "countInStock": 38,
-    "id": 6
+    "id": 11
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -193,9 +333,9 @@
     "description": "The Gigabyte Aorus Men Tshirt is a cool and casual shirt for gaming enthusiasts. With the Aorus logo and sleek design, it's perfect for expressing your gaming style.",
     "rating": 3.18,
     "numReviews": 3,
-    "price": 24.99,
+    "price": 2074,
     "countInStock": 90,
-    "id": 7
+    "id": 12
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -222,9 +362,9 @@
     "description": "The Man Plaid Shirt is a timeless and versatile men's shirt with a classic plaid pattern. Its comfortable fit and casual style make it a wardrobe essential for various occasions.",
     "rating": 3.46,
     "numReviews": 3,
-    "price": 34.99,
+    "price": 2904,
     "countInStock": 82,
-    "id": 8
+    "id": 13
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -251,9 +391,9 @@
     "description": "The Man Short Sleeve Shirt is a breezy and stylish option for warm days. With a comfortable fit and short sleeves, it's perfect for a laid-back yet polished look.",
     "rating": 2.9,
     "numReviews": 3,
-    "price": 19.99,
+    "price": 1659,
     "countInStock": 2,
-    "id": 9
+    "id": 14
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -280,9 +420,9 @@
     "description": "The Men Check Shirt is a classic and versatile shirt featuring a stylish check pattern. Suitable for various occasions, it adds a smart and polished touch to your wardrobe.",
     "rating": 2.72,
     "numReviews": 3,
-    "price": 27.99,
+    "price": 2323,
     "countInStock": 95,
-    "id": 10
+    "id": 15
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -309,9 +449,9 @@
     "description": "The Nike Air Jordan 1 in Red and Black is an iconic basketball sneaker known for its stylish design and high-performance features, making it a favorite among sneaker enthusiasts and athletes.",
     "rating": 4.77,
     "numReviews": 3,
-    "price": 149.99,
+    "price": 12449,
     "countInStock": 7,
-    "id": 11
+    "id": 16
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -338,9 +478,9 @@
     "description": "Nike Baseball Cleats are designed for maximum traction and performance on the baseball field. They provide stability and support for players during games and practices.",
     "rating": 3.88,
     "numReviews": 3,
-    "price": 79.99,
+    "price": 6639,
     "countInStock": 12,
-    "id": 12
+    "id": 17
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -367,9 +507,9 @@
     "description": "The Puma Future Rider Trainers offer a blend of retro style and modern comfort. Perfect for casual wear, these trainers provide a fashionable and comfortable option for everyday use.",
     "rating": 4.9,
     "numReviews": 3,
-    "price": 89.99,
+    "price": 7469,
     "countInStock": 90,
-    "id": 13
+    "id": 18
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -396,9 +536,9 @@
     "description": "The Sports Sneakers in Off White and Red combine style and functionality, making them a fashionable choice for sports enthusiasts. The red and off-white color combination adds a bold and energetic touch.",
     "rating": 4.77,
     "numReviews": 3,
-    "price": 119.99,
+    "price": 9959,
     "countInStock": 17,
-    "id": 14
+    "id": 19
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -425,9 +565,9 @@
     "description": "Another variant of the Sports Sneakers in Off White Red, featuring a unique design. These sneakers offer style and comfort for casual occasions.",
     "rating": 4.69,
     "numReviews": 3,
-    "price": 109.99,
+    "price": 9129,
     "countInStock": 62,
-    "id": 15
+    "id": 20
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -453,9 +593,9 @@
     "description": "The Brown Leather Belt Watch is a stylish timepiece with a classic design. Featuring a genuine leather strap and a sleek dial, it adds a touch of sophistication to your look.",
     "rating": 4.19,
     "numReviews": 3,
-    "price": 89.99,
+    "price": 7469,
     "countInStock": 32,
-    "id": 16
+    "id": 21
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -481,9 +621,9 @@
     "description": "The Longines Master Collection is an elegant and refined watch known for its precision and craftsmanship. With a timeless design, it's a symbol of luxury and sophistication.",
     "rating": 3.87,
     "numReviews": 3,
-    "price": 1499.99,
+    "price": 124499,
     "countInStock": 100,
-    "id": 17
+    "id": 22
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -509,9 +649,9 @@
     "description": "The Rolex Cellini Date with Black Dial is a classic and prestigious watch. With a black dial and date complication, it exudes sophistication and is a symbol of Rolex's heritage.",
     "rating": 4.97,
     "numReviews": 3,
-    "price": 8999.99,
+    "price": 746999,
     "countInStock": 40,
-    "id": 18
+    "id": 23
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -537,9 +677,9 @@
     "description": "The Rolex Cellini Moonphase is a masterpiece of horology, featuring a moon phase complication and exquisite design. It reflects Rolex's commitment to precision and elegance.",
     "rating": 2.58,
     "numReviews": 3,
-    "price": 12999.99,
+    "price": 1078999,
     "countInStock": 36,
-    "id": 19
+    "id": 24
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -565,9 +705,9 @@
     "description": "The Rolex Datejust is an iconic and versatile timepiece with a date window. Known for its timeless design and reliability, it's a symbol of Rolex's watchmaking excellence.",
     "rating": 3.66,
     "numReviews": 3,
-    "price": 10999.99,
+    "price": 912999,
     "countInStock": 86,
-    "id": 20
+    "id": 25
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -593,9 +733,9 @@
     "description": "The Rolex Submariner is a legendary dive watch with a rich history. Known for its durability and water resistance, it's a symbol of adventure and exploration.",
     "rating": 2.69,
     "numReviews": 3,
-    "price": 13999.99,
+    "price": 1161999,
     "countInStock": 55,
-    "id": 21
+    "id": 26
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -620,9 +760,9 @@
     "description": "The Amazon Echo Plus is a smart speaker with built-in Alexa voice control. It features premium sound quality and serves as a hub for controlling smart home devices.",
     "rating": 4.99,
     "numReviews": 3,
-    "price": 99.99,
+    "price": 8299,
     "countInStock": 61,
-    "id": 22
+    "id": 27
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -648,9 +788,9 @@
     "description": "The Apple Airpods offer a seamless wireless audio experience. With easy pairing, high-quality sound, and Siri integration, they are perfect for on-the-go listening.",
     "rating": 4.15,
     "numReviews": 3,
-    "price": 129.99,
+    "price": 10789,
     "countInStock": 67,
-    "id": 23
+    "id": 28
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -674,9 +814,9 @@
     "description": "The Apple AirPods Max in Silver are premium over-ear headphones with high-fidelity audio, adaptive EQ, and active noise cancellation. Experience immersive sound in style.",
     "rating": 3.47,
     "numReviews": 3,
-    "price": 549.99,
+    "price": 45649,
     "countInStock": 59,
-    "id": 24
+    "id": 29
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -700,9 +840,9 @@
     "description": "The Apple AirPower Wireless Charger provides a convenient way to charge your compatible Apple devices wirelessly. Simply place your devices on the charging mat for effortless charging.",
     "rating": 3.68,
     "numReviews": 3,
-    "price": 79.99,
+    "price": 6639,
     "countInStock": 1,
-    "id": 25
+    "id": 30
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -726,9 +866,9 @@
     "description": "The Apple HomePod Mini in Cosmic Grey is a compact smart speaker that delivers impressive audio and integrates seamlessly with the Apple ecosystem for a smart home experience.",
     "rating": 4.62,
     "numReviews": 3,
-    "price": 99.99,
+    "price": 8299,
     "countInStock": 27,
-    "id": 26
+    "id": 31
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -753,9 +893,9 @@
     "description": "The Apple iPhone Charger is a high-quality charger designed for fast and efficient charging of your iPhone. Ensure your device stays powered up and ready to go.",
     "rating": 4.15,
     "numReviews": 3,
-    "price": 19.99,
+    "price": 1659,
     "countInStock": 31,
-    "id": 27
+    "id": 32
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -780,9 +920,9 @@
     "description": "The Apple MagSafe Battery Pack is a portable and convenient way to add extra battery life to your MagSafe-compatible iPhone. Attach it magnetically for a secure connection.",
     "rating": 3.62,
     "numReviews": 3,
-    "price": 99.99,
+    "price": 8299,
     "countInStock": 1,
-    "id": 28
+    "id": 33
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -808,9 +948,9 @@
     "description": "The Apple Watch Series 4 in Gold is a stylish and advanced smartwatch with features like heart rate monitoring, fitness tracking, and a beautiful Retina display.",
     "rating": 2.74,
     "numReviews": 3,
-    "price": 349.99,
+    "price": 29049,
     "countInStock": 33,
-    "id": 29
+    "id": 34
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -834,9 +974,9 @@
     "description": "The Beats Flex Wireless Earphones offer a comfortable and versatile audio experience. With magnetic earbuds and up to 12 hours of battery life, they are ideal for everyday use.",
     "rating": 4.24,
     "numReviews": 3,
-    "price": 49.99,
+    "price": 4149,
     "countInStock": 50,
-    "id": 30
+    "id": 35
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -863,9 +1003,9 @@
     "description": "The iPhone 12 Silicone Case with MagSafe in Plum is a stylish and protective case designed for the iPhone 12. It features MagSafe technology for easy attachment of accessories.",
     "rating": 3.62,
     "numReviews": 3,
-    "price": 29.99,
+    "price": 2489,
     "countInStock": 69,
-    "id": 31
+    "id": 36
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -890,9 +1030,9 @@
     "description": "The Monopod is a versatile camera accessory for stable and adjustable shooting. Perfect for capturing selfies, group photos, and videos with ease.",
     "rating": 4.43,
     "numReviews": 3,
-    "price": 19.99,
+    "price": 1659,
     "countInStock": 48,
-    "id": 32
+    "id": 37
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -916,9 +1056,9 @@
     "description": "The Selfie Lamp with iPhone is a portable and adjustable LED light designed to enhance your selfies and video calls. Attach it to your iPhone for well-lit photos.",
     "rating": 3.55,
     "numReviews": 3,
-    "price": 14.99,
+    "price": 1244,
     "countInStock": 58,
-    "id": 33
+    "id": 38
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -942,9 +1082,9 @@
     "description": "The Selfie Stick Monopod is a extendable and foldable device for capturing the perfect selfie or group photo. Compatible with smartphones and cameras.",
     "rating": 3.88,
     "numReviews": 3,
-    "price": 12.99,
+    "price": 1078,
     "countInStock": 11,
-    "id": 34
+    "id": 39
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -968,9 +1108,154 @@
     "description": "The TV Studio Camera Pedestal is a professional-grade camera support system for smooth and precise camera movements in a studio setting. Ideal for broadcast and production.",
     "rating": 2.78,
     "numReviews": 3,
-    "price": 499.99,
+    "price": 41499,
     "countInStock": 15,
-    "id": 35
+    "id": 40
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Generic Motorcycle",
+    "image": "https://cdn.dummyjson.com/product-images/motorcycle/generic-motorcycle/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/motorcycle/generic-motorcycle/1.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/generic-motorcycle/2.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/generic-motorcycle/3.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/generic-motorcycle/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Generic Motorcycle is a versatile and reliable bike suitable for various riding preferences. With a balanced design, it provides a comfortable and efficient riding experience."
+      },
+      {
+        "highlightStat": "5/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Generic Motors",
+    "category": "Electronics",
+    "description": "The Generic Motorcycle is a versatile and reliable bike suitable for various riding preferences. With a balanced design, it provides a comfortable and efficient riding experience.",
+    "rating": 4.91,
+    "numReviews": 3,
+    "price": 331999,
+    "countInStock": 34,
+    "id": 41
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Kawasaki Z800",
+    "image": "https://cdn.dummyjson.com/product-images/motorcycle/kawasaki-z800/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/motorcycle/kawasaki-z800/1.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/kawasaki-z800/2.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/kawasaki-z800/3.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/kawasaki-z800/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Kawasaki Z800 is a powerful and agile sportbike known for its striking design and performance. It's equipped with advanced features, making it a favorite among motorcycle enthusiasts."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "Kawasaki",
+    "category": "Electronics",
+    "description": "The Kawasaki Z800 is a powerful and agile sportbike known for its striking design and performance. It's equipped with advanced features, making it a favorite among motorcycle enthusiasts.",
+    "rating": 3.98,
+    "numReviews": 3,
+    "price": 746999,
+    "countInStock": 52,
+    "id": 42
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "MotoGP CI.H1",
+    "image": "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/1.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/2.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/3.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/motogp-ci.h1/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The MotoGP CI.H1 is a high-performance motorcycle inspired by MotoGP racing technology. It offers cutting-edge features and precision engineering for an exhilarating riding experience."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "MotoGP",
+    "category": "Electronics",
+    "description": "The MotoGP CI.H1 is a high-performance motorcycle inspired by MotoGP racing technology. It offers cutting-edge features and precision engineering for an exhilarating riding experience.",
+    "rating": 2.97,
+    "numReviews": 3,
+    "price": 1244999,
+    "countInStock": 10,
+    "id": 43
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Scooter Motorcycle",
+    "image": "https://cdn.dummyjson.com/product-images/motorcycle/scooter-motorcycle/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/motorcycle/scooter-motorcycle/1.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/scooter-motorcycle/2.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/scooter-motorcycle/3.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/scooter-motorcycle/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Scooter Motorcycle is a practical and fuel-efficient bike ideal for urban commuting. It features a step-through design and user-friendly controls for easy maneuverability."
+      },
+      {
+        "highlightStat": "3/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "ScootMaster",
+    "category": "Electronics",
+    "description": "The Scooter Motorcycle is a practical and fuel-efficient bike ideal for urban commuting. It features a step-through design and user-friendly controls for easy maneuverability.",
+    "rating": 2.53,
+    "numReviews": 3,
+    "price": 248999,
+    "countInStock": 84,
+    "id": 44
+  },
+  {
+    "user": "69c236c96dfd96167594a218",
+    "name": "Sportbike Motorcycle",
+    "image": "https://cdn.dummyjson.com/product-images/motorcycle/sportbike-motorcycle/1.webp",
+    "images": [
+      "https://cdn.dummyjson.com/product-images/motorcycle/sportbike-motorcycle/1.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/sportbike-motorcycle/2.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/sportbike-motorcycle/3.webp",
+      "https://cdn.dummyjson.com/product-images/motorcycle/sportbike-motorcycle/4.webp"
+    ],
+    "qualityHighlights": [
+      {
+        "title": "Product Overview",
+        "description": "The Sportbike Motorcycle is designed for speed and agility, with a sleek and aerodynamic profile. It's suitable for riders looking for a dynamic and thrilling riding experience."
+      },
+      {
+        "highlightStat": "4/5 Stars",
+        "description": "Highly rated and trusted by customers globally."
+      }
+    ],
+    "brand": "SpeedMaster",
+    "category": "Electronics",
+    "description": "The Sportbike Motorcycle is designed for speed and agility, with a sleek and aerodynamic profile. It's suitable for riders looking for a dynamic and thrilling riding experience.",
+    "rating": 3.94,
+    "numReviews": 3,
+    "price": 622499,
+    "countInStock": 0,
+    "id": 45
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -996,9 +1281,9 @@
     "description": "The iPhone 5s is a classic smartphone known for its compact design and advanced features during its release. While it's an older model, it still provides a reliable user experience.",
     "rating": 2.83,
     "numReviews": 3,
-    "price": 199.99,
+    "price": 16599,
     "countInStock": 25,
-    "id": 36
+    "id": 46
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1024,9 +1309,9 @@
     "description": "The iPhone 6 is a stylish and capable smartphone with a larger display and improved performance. It introduced new features and design elements, making it a popular choice in its time.",
     "rating": 3.41,
     "numReviews": 3,
-    "price": 299.99,
+    "price": 24899,
     "countInStock": 60,
-    "id": 37
+    "id": 47
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1052,9 +1337,9 @@
     "description": "The iPhone 13 Pro is a cutting-edge smartphone with a powerful camera system, high-performance chip, and stunning display. It offers advanced features for users who demand top-notch technology.",
     "rating": 4.12,
     "numReviews": 3,
-    "price": 1099.99,
+    "price": 91299,
     "countInStock": 56,
-    "id": 38
+    "id": 48
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1080,9 +1365,9 @@
     "description": "The iPhone X is a flagship smartphone featuring a bezel-less OLED display, facial recognition technology (Face ID), and impressive performance. It represents a milestone in iPhone design and innovation.",
     "rating": 2.51,
     "numReviews": 3,
-    "price": 899.99,
+    "price": 74699,
     "countInStock": 37,
-    "id": 39
+    "id": 49
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1108,9 +1393,9 @@
     "description": "The Oppo A57 is a mid-range smartphone known for its sleek design and capable features. It offers a balance of performance and affordability, making it a popular choice.",
     "rating": 3.94,
     "numReviews": 3,
-    "price": 249.99,
+    "price": 20749,
     "countInStock": 19,
-    "id": 40
+    "id": 50
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1136,9 +1421,9 @@
     "description": "The Oppo F19 Pro Plus is a feature-rich smartphone with a focus on camera capabilities. It boasts advanced photography features and a powerful performance for a premium user experience.",
     "rating": 3.51,
     "numReviews": 3,
-    "price": 399.99,
+    "price": 33199,
     "countInStock": 78,
-    "id": 41
+    "id": 51
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1165,9 +1450,9 @@
     "description": "The Oppo K1 series offers a range of smartphones with various features and specifications. Known for their stylish design and reliable performance, the Oppo K1 series caters to diverse user preferences.",
     "rating": 4.25,
     "numReviews": 3,
-    "price": 299.99,
+    "price": 24899,
     "countInStock": 55,
-    "id": 42
+    "id": 52
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1193,9 +1478,9 @@
     "description": "The Realme C35 is a budget-friendly smartphone with a focus on providing essential features for everyday use. It offers a reliable performance and user-friendly experience.",
     "rating": 4.2,
     "numReviews": 3,
-    "price": 149.99,
+    "price": 12449,
     "countInStock": 48,
-    "id": 43
+    "id": 53
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1221,9 +1506,9 @@
     "description": "The Realme X is a mid-range smartphone known for its sleek design and impressive display. It offers a good balance of performance and camera capabilities for users seeking a quality device.",
     "rating": 3.7,
     "numReviews": 3,
-    "price": 299.99,
+    "price": 24899,
     "countInStock": 12,
-    "id": 44
+    "id": 54
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1249,9 +1534,9 @@
     "description": "The Realme XT is a feature-rich smartphone with a focus on camera technology. It comes equipped with advanced camera sensors, delivering high-quality photos and videos for photography enthusiasts.",
     "rating": 4.58,
     "numReviews": 3,
-    "price": 349.99,
+    "price": 29049,
     "countInStock": 80,
-    "id": 45
+    "id": 55
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1277,9 +1562,9 @@
     "description": "The Samsung Galaxy S7 is a flagship smartphone known for its sleek design and advanced features. It features a high-resolution display, powerful camera, and robust performance.",
     "rating": 3.3,
     "numReviews": 3,
-    "price": 299.99,
+    "price": 24899,
     "countInStock": 67,
-    "id": 46
+    "id": 56
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1305,9 +1590,9 @@
     "description": "The Samsung Galaxy S8 is a premium smartphone with an Infinity Display, offering a stunning visual experience. It boasts advanced camera capabilities and cutting-edge technology.",
     "rating": 4.4,
     "numReviews": 3,
-    "price": 499.99,
+    "price": 41499,
     "countInStock": 0,
-    "id": 47
+    "id": 57
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1333,9 +1618,9 @@
     "description": "The Samsung Galaxy S10 is a flagship device featuring a dynamic AMOLED display, versatile camera system, and powerful performance. It represents innovation and excellence in smartphone technology.",
     "rating": 3.06,
     "numReviews": 3,
-    "price": 699.99,
+    "price": 58099,
     "countInStock": 19,
-    "id": 48
+    "id": 58
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1361,9 +1646,9 @@
     "description": "The Vivo S1 is a stylish and mid-range smartphone offering a blend of design and performance. It features a vibrant display, capable camera system, and reliable functionality.",
     "rating": 3.5,
     "numReviews": 3,
-    "price": 249.99,
+    "price": 20749,
     "countInStock": 50,
-    "id": 49
+    "id": 59
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1389,9 +1674,9 @@
     "description": "The Vivo V9 is a smartphone known for its sleek design and emphasis on capturing high-quality selfies. It features a notch display, dual-camera setup, and a modern design.",
     "rating": 3.6,
     "numReviews": 3,
-    "price": 299.99,
+    "price": 24899,
     "countInStock": 82,
-    "id": 50
+    "id": 60
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1417,9 +1702,9 @@
     "description": "The Vivo X21 is a premium smartphone with a focus on cutting-edge technology. It features an in-display fingerprint sensor, a high-resolution display, and advanced camera capabilities.",
     "rating": 4.26,
     "numReviews": 3,
-    "price": 499.99,
+    "price": 41499,
     "countInStock": 7,
-    "id": 51
+    "id": 61
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1443,9 +1728,9 @@
     "description": "The American Football is a classic ball used in American football games. It is designed for throwing and catching, making it an essential piece of equipment for the sport.",
     "rating": 4.91,
     "numReviews": 3,
-    "price": 19.99,
+    "price": 1659,
     "countInStock": 53,
-    "id": 52
+    "id": 62
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1469,9 +1754,9 @@
     "description": "The Baseball Ball is a standard baseball used in baseball games. It features a durable leather cover and is designed for pitching, hitting, and fielding in the game of baseball.",
     "rating": 2.57,
     "numReviews": 3,
-    "price": 8.99,
+    "price": 746,
     "countInStock": 100,
-    "id": 53
+    "id": 63
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1497,9 +1782,9 @@
     "description": "The Baseball Glove is a protective glove worn by baseball players. It is designed to catch and field the baseball, providing players with comfort and control during the game.",
     "rating": 3.96,
     "numReviews": 3,
-    "price": 24.99,
+    "price": 2074,
     "countInStock": 22,
-    "id": 54
+    "id": 64
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1523,9 +1808,9 @@
     "description": "The Basketball is a standard ball used in basketball games. It is designed for dribbling, shooting, and passing in the game of basketball, suitable for both indoor and outdoor play.",
     "rating": 4.66,
     "numReviews": 3,
-    "price": 14.99,
+    "price": 1244,
     "countInStock": 75,
-    "id": 55
+    "id": 65
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1549,9 +1834,9 @@
     "description": "The Basketball Rim is a sturdy hoop and net assembly mounted on a basketball backboard. It provides a target for shooting and scoring in the game of basketball.",
     "rating": 4.6,
     "numReviews": 3,
-    "price": 39.99,
+    "price": 3319,
     "countInStock": 43,
-    "id": 56
+    "id": 66
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1575,9 +1860,9 @@
     "description": "The Cricket Ball is a hard leather ball used in the sport of cricket. It is bowled and batted in the game, and its hardness and seam contribute to the dynamics of cricket play.",
     "rating": 3.53,
     "numReviews": 3,
-    "price": 12.99,
+    "price": 1078,
     "countInStock": 30,
-    "id": 57
+    "id": 67
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1601,9 +1886,9 @@
     "description": "The Cricket Bat is an essential piece of cricket equipment used by batsmen to hit the cricket ball. It is made of wood and comes in various sizes and designs.",
     "rating": 3.17,
     "numReviews": 3,
-    "price": 29.99,
+    "price": 2489,
     "countInStock": 98,
-    "id": 58
+    "id": 68
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1630,9 +1915,9 @@
     "description": "The Cricket Helmet is a protective headgear worn by cricket players, especially batsmen and wicketkeepers. It provides protection against fast bowling and bouncers.",
     "rating": 4.69,
     "numReviews": 3,
-    "price": 44.99,
+    "price": 3734,
     "countInStock": 10,
-    "id": 59
+    "id": 69
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1656,9 +1941,9 @@
     "description": "The Cricket Wicket is a set of three stumps and two bails, forming a wicket used in the sport of cricket. Batsmen aim to protect the wicket while scoring runs.",
     "rating": 4.73,
     "numReviews": 3,
-    "price": 29.99,
+    "price": 2489,
     "countInStock": 25,
-    "id": 60
+    "id": 70
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1682,9 +1967,9 @@
     "description": "The Feather Shuttlecock is used in the sport of badminton. It features natural feathers and is designed for high-speed play, providing stability and accuracy during matches.",
     "rating": 2.85,
     "numReviews": 3,
-    "price": 5.99,
+    "price": 497,
     "countInStock": 95,
-    "id": 61
+    "id": 71
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1708,9 +1993,9 @@
     "description": "The Football, also known as a soccer ball, is the standard ball used in the sport of football (soccer). It is designed for kicking and passing in the game.",
     "rating": 3.28,
     "numReviews": 3,
-    "price": 17.99,
+    "price": 1493,
     "countInStock": 96,
-    "id": 62
+    "id": 72
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1734,9 +2019,9 @@
     "description": "The Golf Ball is a small ball used in the sport of golf. It features dimples on its surface, providing aerodynamic lift and distance when struck by a golf club.",
     "rating": 4.3,
     "numReviews": 3,
-    "price": 9.99,
+    "price": 829,
     "countInStock": 84,
-    "id": 63
+    "id": 73
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1760,9 +2045,9 @@
     "description": "The Iron Golf is a type of golf club designed for various golf shots. It features a solid metal head and is used for approach shots, chipping, and other golfing techniques.",
     "rating": 4.41,
     "numReviews": 3,
-    "price": 49.99,
+    "price": 4149,
     "countInStock": 90,
-    "id": 64
+    "id": 74
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1786,9 +2071,9 @@
     "description": "The Metal Baseball Bat is a durable and lightweight baseball bat made from metal alloys. It is commonly used in baseball games for hitting and batting practice.",
     "rating": 4.66,
     "numReviews": 3,
-    "price": 29.99,
+    "price": 2489,
     "countInStock": 16,
-    "id": 65
+    "id": 75
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1812,9 +2097,9 @@
     "description": "The Tennis Ball is a standard ball used in the sport of tennis. It is designed for bouncing and hitting with tennis rackets during matches or practice sessions.",
     "rating": 4.06,
     "numReviews": 3,
-    "price": 6.99,
+    "price": 580,
     "countInStock": 28,
-    "id": 66
+    "id": 76
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1838,9 +2123,9 @@
     "description": "The Tennis Racket is an essential piece of equipment used in the sport of tennis. It features a frame with strings and a grip, allowing players to hit the tennis ball.",
     "rating": 4.03,
     "numReviews": 3,
-    "price": 49.99,
+    "price": 4149,
     "countInStock": 6,
-    "id": 67
+    "id": 77
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1864,9 +2149,9 @@
     "description": "The Volleyball is a standard ball used in the sport of volleyball. It is designed for passing, setting, and spiking over the net during volleyball matches.",
     "rating": 3.84,
     "numReviews": 3,
-    "price": 11.99,
+    "price": 995,
     "countInStock": 0,
-    "id": 68
+    "id": 78
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1892,9 +2177,9 @@
     "description": "The Black Sun Glasses are a classic and stylish choice, featuring a sleek black frame and tinted lenses. They provide both UV protection and a fashionable look.",
     "rating": 4.41,
     "numReviews": 3,
-    "price": 29.99,
+    "price": 2489,
     "countInStock": 60,
-    "id": 69
+    "id": 79
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1920,9 +2205,9 @@
     "description": "The Classic Sun Glasses offer a timeless design with a neutral frame and UV-protected lenses. These sunglasses are versatile and suitable for various occasions.",
     "rating": 3.86,
     "numReviews": 3,
-    "price": 24.99,
+    "price": 2074,
     "countInStock": 1,
-    "id": 70
+    "id": 80
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1948,9 +2233,9 @@
     "description": "The Green and Black Glasses feature a bold combination of green and black colors, adding a touch of vibrancy to your eyewear collection. They are both stylish and eye-catching.",
     "rating": 4.55,
     "numReviews": 3,
-    "price": 34.99,
+    "price": 2904,
     "countInStock": 24,
-    "id": 71
+    "id": 81
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -1976,9 +2261,9 @@
     "description": "The Party Glasses are designed to add flair to your party outfit. With unique shapes or colorful frames, they're perfect for adding a playful touch to your look during celebrations.",
     "rating": 2.79,
     "numReviews": 3,
-    "price": 19.99,
+    "price": 1659,
     "countInStock": 86,
-    "id": 72
+    "id": 82
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2004,9 +2289,9 @@
     "description": "The Sunglasses offer a classic and simple design with a focus on functionality. These sunglasses provide essential UV protection while maintaining a timeless look.",
     "rating": 3.02,
     "numReviews": 3,
-    "price": 22.99,
+    "price": 1908,
     "countInStock": 27,
-    "id": 73
+    "id": 83
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2033,9 +2318,9 @@
     "description": "The iPad Mini 2021 in Starlight is a compact and powerful tablet from Apple. Featuring a stunning Retina display, powerful A-series chip, and a sleek design, it offers a premium tablet experience.",
     "rating": 3.18,
     "numReviews": 3,
-    "price": 499.99,
+    "price": 41499,
     "countInStock": 47,
-    "id": 74
+    "id": 84
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2062,9 +2347,9 @@
     "description": "The Samsung Galaxy Tab S8 Plus in Grey is a high-performance Android tablet by Samsung. With a large AMOLED display, powerful processor, and S Pen support, it's ideal for productivity and entertainment.",
     "rating": 4.68,
     "numReviews": 3,
-    "price": 599.99,
+    "price": 49799,
     "countInStock": 62,
-    "id": 75
+    "id": 85
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2091,9 +2376,9 @@
     "description": "The Samsung Galaxy Tab in White is a sleek and versatile Android tablet. With a vibrant display, long-lasting battery, and a range of features, it offers a great user experience for various tasks.",
     "rating": 3.72,
     "numReviews": 3,
-    "price": 349.99,
+    "price": 29049,
     "countInStock": 92,
-    "id": 76
+    "id": 86
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2120,9 +2405,9 @@
     "description": "The Blue Frock is a charming and stylish dress for various occasions. With a vibrant blue color and a comfortable design, it adds a touch of elegance to your wardrobe.",
     "rating": 4.17,
     "numReviews": 3,
-    "price": 29.99,
+    "price": 2489,
     "countInStock": 52,
-    "id": 77
+    "id": 87
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2149,9 +2434,9 @@
     "description": "The Girl Summer Dress is a cute and breezy dress designed for warm weather. With playful patterns and lightweight fabric, it's perfect for keeping cool and stylish during the summer.",
     "rating": 4.77,
     "numReviews": 3,
-    "price": 19.99,
+    "price": 1659,
     "countInStock": 43,
-    "id": 78
+    "id": 88
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2178,9 +2463,9 @@
     "description": "The Gray Dress is a versatile and chic option for various occasions. With a neutral gray color, it can be dressed up or down, making it a wardrobe staple for any fashion-forward individual.",
     "rating": 2.72,
     "numReviews": 3,
-    "price": 34.99,
+    "price": 2904,
     "countInStock": 55,
-    "id": 79
+    "id": 89
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2207,9 +2492,9 @@
     "description": "The Short Frock is a playful and trendy dress with a shorter length. Ideal for casual outings or special occasions, it combines style and comfort for a fashionable look.",
     "rating": 3.23,
     "numReviews": 3,
-    "price": 24.99,
+    "price": 2074,
     "countInStock": 22,
-    "id": 80
+    "id": 90
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2236,9 +2521,9 @@
     "description": "The Tartan Dress features a classic tartan pattern, bringing a timeless and sophisticated touch to your wardrobe. Perfect for fall and winter, it adds a hint of traditional charm.",
     "rating": 4.05,
     "numReviews": 3,
-    "price": 39.99,
+    "price": 3319,
     "countInStock": 73,
-    "id": 81
+    "id": 91
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2264,9 +2549,9 @@
     "description": "The Blue Women's Handbag is a stylish and spacious accessory for everyday use. With a vibrant blue color and multiple compartments, it combines fashion and functionality.",
     "rating": 2.92,
     "numReviews": 3,
-    "price": 49.99,
+    "price": 4149,
     "countInStock": 76,
-    "id": 82
+    "id": 92
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2292,9 +2577,9 @@
     "description": "The Heshe Women's Leather Bag is a luxurious and high-quality leather bag for the sophisticated woman. With a timeless design and durable craftsmanship, it's a versatile accessory.",
     "rating": 4.92,
     "numReviews": 3,
-    "price": 129.99,
+    "price": 10789,
     "countInStock": 99,
-    "id": 83
+    "id": 93
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2320,9 +2605,9 @@
     "description": "The Prada Women Bag is an iconic designer bag that exudes elegance and luxury. Crafted with precision and featuring the Prada logo, it's a statement piece for fashion enthusiasts.",
     "rating": 2.71,
     "numReviews": 3,
-    "price": 599.99,
+    "price": 49799,
     "countInStock": 75,
-    "id": 84
+    "id": 94
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2348,9 +2633,9 @@
     "description": "The White Faux Leather Backpack is a trendy and practical backpack for the modern woman. With a sleek white design and ample storage space, it's perfect for both casual and on-the-go styles.",
     "rating": 3.36,
     "numReviews": 3,
-    "price": 39.99,
+    "price": 3319,
     "countInStock": 39,
-    "id": 85
+    "id": 95
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2376,9 +2661,9 @@
     "description": "The Women Handbag in Black is a classic and versatile accessory that complements various outfits. With a timeless black color and functional design, it's a must-have in every woman's wardrobe.",
     "rating": 2.89,
     "numReviews": 3,
-    "price": 59.99,
+    "price": 4979,
     "countInStock": 11,
-    "id": 86
+    "id": 96
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2405,9 +2690,9 @@
     "description": "The Black Women's Gown is an elegant and timeless evening gown. With a sleek black design, it's perfect for formal events and special occasions, exuding sophistication and style.",
     "rating": 3.64,
     "numReviews": 3,
-    "price": 129.99,
+    "price": 10789,
     "countInStock": 25,
-    "id": 87
+    "id": 97
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2434,9 +2719,9 @@
     "description": "The Corset Leather With Skirt is a bold and edgy ensemble that combines a stylish corset with a matching skirt. Ideal for fashion-forward individuals, it makes a statement at any event.",
     "rating": 3.05,
     "numReviews": 3,
-    "price": 89.99,
+    "price": 7469,
     "countInStock": 30,
-    "id": 88
+    "id": 98
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2463,9 +2748,9 @@
     "description": "The Corset With Black Skirt is a chic and versatile outfit that pairs a fashionable corset with a classic black skirt. It offers a trendy and coordinated look for various occasions.",
     "rating": 4.52,
     "numReviews": 3,
-    "price": 79.99,
+    "price": 6639,
     "countInStock": 33,
-    "id": 89
+    "id": 99
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2492,9 +2777,9 @@
     "description": "The Dress Pea is a stylish and comfortable dress with a pea pattern. Perfect for casual outings, it adds a playful and fun element to your wardrobe, making it a great choice for day-to-day wear.",
     "rating": 4.88,
     "numReviews": 3,
-    "price": 49.99,
+    "price": 4149,
     "countInStock": 6,
-    "id": 90
+    "id": 100
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2521,9 +2806,9 @@
     "description": "The Marni Red & Black Suit is a sophisticated and fashion-forward suit ensemble. With a combination of red and black tones, it showcases a modern design for a bold and confident look.",
     "rating": 4.48,
     "numReviews": 3,
-    "price": 179.99,
+    "price": 14939,
     "countInStock": 62,
-    "id": 91
+    "id": 101
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2549,9 +2834,9 @@
     "description": "The Green Crystal Earring is a dazzling accessory that features a vibrant green crystal. With a classic design, it adds a touch of elegance to your ensemble, perfect for formal or special occasions.",
     "rating": 3.96,
     "numReviews": 3,
-    "price": 29.99,
+    "price": 2489,
     "countInStock": 54,
-    "id": 92
+    "id": 102
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2577,9 +2862,9 @@
     "description": "The Green Oval Earring is a stylish and versatile accessory with a unique oval shape. Whether for casual or dressy occasions, its green hue and contemporary design make it a standout piece.",
     "rating": 3.57,
     "numReviews": 3,
-    "price": 24.99,
+    "price": 2074,
     "countInStock": 73,
-    "id": 93
+    "id": 103
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2605,9 +2890,9 @@
     "description": "The Tropical Earring is a fun and playful accessory inspired by tropical elements. Featuring vibrant colors and a lively design, it's perfect for adding a touch of summer to your look.",
     "rating": 4.4,
     "numReviews": 3,
-    "price": 19.99,
+    "price": 1659,
     "countInStock": 1,
-    "id": 94
+    "id": 104
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2634,9 +2919,9 @@
     "description": "The Black & Brown Slipper is a comfortable and stylish choice for casual wear. Featuring a blend of black and brown colors, it adds a touch of sophistication to your relaxation.",
     "rating": 2.53,
     "numReviews": 3,
-    "price": 19.99,
+    "price": 1659,
     "countInStock": 3,
-    "id": 95
+    "id": 105
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2663,9 +2948,9 @@
     "description": "Calvin Klein Heel Shoes are elegant and sophisticated, designed for formal occasions. With a classic design and high-quality materials, they complement your stylish ensemble.",
     "rating": 4.92,
     "numReviews": 3,
-    "price": 79.99,
+    "price": 6639,
     "countInStock": 93,
-    "id": 96
+    "id": 106
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2692,9 +2977,9 @@
     "description": "The Golden Shoes for Women are a glamorous choice for special occasions. Featuring a golden hue and stylish design, they add a touch of luxury to your outfit.",
     "rating": 3.26,
     "numReviews": 3,
-    "price": 49.99,
+    "price": 4149,
     "countInStock": 88,
-    "id": 97
+    "id": 107
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2721,9 +3006,9 @@
     "description": "Pampi Shoes offer a blend of comfort and style for everyday use. With a versatile design, they are suitable for various casual occasions, providing a trendy and relaxed look.",
     "rating": 3.05,
     "numReviews": 3,
-    "price": 29.99,
+    "price": 2489,
     "countInStock": 49,
-    "id": 98
+    "id": 108
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2750,9 +3035,9 @@
     "description": "The Red Shoes make a bold statement with their vibrant red color. Whether for a party or a casual outing, these shoes add a pop of color and style to your wardrobe.",
     "rating": 3.25,
     "numReviews": 3,
-    "price": 34.99,
+    "price": 2904,
     "countInStock": 7,
-    "id": 99
+    "id": 109
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2778,9 +3063,9 @@
     "description": "The IWC Ingenieur Automatic Steel watch is a durable and sophisticated timepiece. With a stainless steel case and automatic movement, it combines precision and style for watch enthusiasts.",
     "rating": 2.93,
     "numReviews": 3,
-    "price": 4999.99,
+    "price": 414999,
     "countInStock": 90,
-    "id": 100
+    "id": 110
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2806,9 +3091,9 @@
     "description": "The Rolex Cellini Moonphase watch is a masterpiece of horology. Featuring a moon phase complication, it showcases the craftsmanship and elegance that Rolex is renowned for.",
     "rating": 3.83,
     "numReviews": 3,
-    "price": 15999.99,
+    "price": 1327999,
     "countInStock": 52,
-    "id": 101
+    "id": 111
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2834,9 +3119,9 @@
     "description": "The Rolex Datejust Women's watch is an iconic timepiece designed for women. With a timeless design and a date complication, it offers both elegance and functionality.",
     "rating": 2.86,
     "numReviews": 3,
-    "price": 10999.99,
+    "price": 912999,
     "countInStock": 4,
-    "id": 102
+    "id": 112
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2862,9 +3147,9 @@
     "description": "The Gold Women's Watch is a stunning accessory that combines luxury and style. Featuring a gold-plated case and a chic design, it adds a touch of glamour to any outfit.",
     "rating": 4.24,
     "numReviews": 3,
-    "price": 799.99,
+    "price": 66399,
     "countInStock": 0,
-    "id": 103
+    "id": 113
   },
   {
     "user": "69c236c96dfd96167594a218",
@@ -2890,8 +3175,8 @@
     "description": "The Women's Wrist Watch is a versatile and fashionable timepiece for everyday wear. With a comfortable strap and a simple yet elegant design, it complements various styles.",
     "rating": 3.52,
     "numReviews": 3,
-    "price": 129.99,
+    "price": 10789,
     "countInStock": 12,
-    "id": 104
+    "id": 114
   }
 ]

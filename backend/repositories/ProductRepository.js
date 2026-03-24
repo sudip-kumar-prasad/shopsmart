@@ -11,6 +11,11 @@ class ProductRepository {
   async getTopRated(limit = 1) {
     return await Product.find({}).sort({ rating: -1, numReviews: -1 }).limit(limit);
   }
+
+  async getDeals(limit = 20) {
+    // Return the absolute cheapest products
+    return await Product.find({}).sort({ price: 1 }).limit(limit);
+  }
 }
 
 module.exports = new ProductRepository();

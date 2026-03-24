@@ -67,7 +67,7 @@ const MyOrdersPage = () => {
                   </div>
                 ))}
                 <div className="o-price-area">
-                  <span className="o-total">${order.total.toFixed(2)}</span>
+                  <span className="o-total">₹{order.total.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
                 </div>
               </div>
 

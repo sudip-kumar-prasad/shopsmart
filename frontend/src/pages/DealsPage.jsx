@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ListFilter, Heart, ShoppingBag, Star, ChevronRight } from 'lucide-react';
+import { Heart, ShoppingBag, Star, ChevronRight, Tag } from 'lucide-react';
 import axios from 'axios';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
-import productsData from '../assets/products.json';
-import './ShopPage.css';
+import './ShopPage.css'; // Reusing base layout typography
+import './DealsPage.css';
 
-const ShopPage = () => {
-  const [products, setProducts] = useState(productsData);
+const DealsPage = () => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
   const searchParams = new URLSearchParams(location.search);
@@ -20,21 +21,25 @@ const ShopPage = () => {
 
   const handleAddToCart = (product) => {
     if (!user) {
-      navigate('/login?redirect=/shop');
+      navigate('/login?redirect=/deals');
       return;
     }
     addItem(product);
   };
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchDeals = async () => {
+      setLoading(true);
       let data = [];
       try {
-        const res = await axios.get('/api/products');
+        const res = await axios.get('/api/products/deals');
         data = res.data;
       } catch (error) {
-        console.log('Backend not active, using dummy data fallback for ShopPage');
-        data = productsData;
+        console.log('Backend not active or route not loaded, using fallback');
+        // Fallback: sort the dummy data by lowest price and take the top 20
+        const productsData = require('../assets/products.json');
+        const sorted = [...productsData].sort((a, b) => a.price - b.price);
+        data = sorted.slice(0, 20);
       }
       
       let filtered = data;
@@ -45,15 +50,27 @@ const ShopPage = () => {
         filtered = filtered.filter(p => p.category === selectedCategory);
       }
       setProducts(filtered);
+      setLoading(false);
     };
-    fetchProducts();
+    fetchDeals();
   }, [searchQuery, selectedCategory]);
 
   return (
     <div className="shop-page container">
       {/* Breadcrumbs */}
       <div className="breadcrumbs">
-        <Link to="/">Home</Link> <ChevronRight size={12} /> <span>Shop</span>
+        <Link to="/">Home</Link> <ChevronRight size={12} /> <span style={{ color: '#ef4444', fontWeight: 'bold' }}>Clearance Deals</span>
+      </div>
+
+      {/* Deals Header Banner */}
+      <div className="deals-banner">
+        <div className="deals-banner-content">
+          <h1>Flash Deals & Clearance</h1>
+          <p>Unbeatable prices on premium merchandise. These deals won't last long.</p>
+        </div>
+        <div className="deals-banner-icon">
+          <Tag size={64} color="#fecaca" />
+        </div>
       </div>
 
       <div className="shop-layout">
@@ -70,52 +87,12 @@ const ShopPage = () => {
               <div className="filter-list">
                 <label className={`filter-item ${selectedCategory==='' ? 'active' : ''}`}>
                   <input type="radio" name="cat" checked={selectedCategory===''} onChange={() => setSelectedCategory('')} />
-                  <span>All Collections</span>
+                  <span>All Sales</span>
                 </label>
                 {['Electronics', 'Fashion', 'Sports', 'Home'].map(cat => (
                   <label key={cat} className={`filter-item ${selectedCategory===cat ? 'active' : ''}`}>
                     <input type="radio" name="cat" checked={selectedCategory===cat} onChange={() => setSelectedCategory(cat)} />
                     <span>{cat}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            <div className="filter-section">
-              <h4>PRICE RANGE</h4>
-              <div className="price-slider-container">
-                <input type="range" min="0" max="500000" step="5000" className="price-slider" />
-                <div className="price-labels">
-                  <span>₹0</span>
-                  <span>₹500,000</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="filter-section">
-              <h4>BRAND</h4>
-              <div className="filter-list">
-                {['Apple', 'Samsung', 'Sony', 'Nike'].map(brand => (
-                  <label key={brand} className="filter-item checkbox">
-                    <input type="checkbox" />
-                    <span>{brand}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            <div className="filter-section">
-              <h4>RATINGS</h4>
-              <div className="rating-filters">
-                {[4, 3, 2].map(rating => (
-                  <label key={rating} className="filter-item rating">
-                    <input type="radio" name="rating" />
-                    <div className="stars-row">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={14} fill={i < rating ? "#fbbf24" : "none"} color={i < rating ? "#fbbf24" : "#d1d5db"} />
-                      ))}
-                      <span>& Up</span>
-                    </div>
                   </label>
                 ))}
               </div>
@@ -127,27 +104,17 @@ const ShopPage = () => {
         <main className="shop-main">
           <div className="shop-header">
             <div className="shop-title-area">
-              <h1>Explore Collections</h1>
-              <p>{products.length} products found</p>
-            </div>
-            <div className="shop-controls">
-              <div className="shop-sort">
-                <span>Sort by:</span>
-                <select>
-                  <option>Popularity</option>
-                  <option>Newest Arrivals</option>
-                  <option>Price: Low to High</option>
-                  <option>Price: High to Low</option>
-                </select>
-              </div>
+              <h2>Top {products.length} Deals</h2>
             </div>
           </div>
 
           <div className="shop-products-grid">
             {products.slice(0, limit).map(product => (
-              <div key={product.id} className="shop-product-card">
-                <div className="shop-img-wrapper">
-                  {product.isNew && <span className="new-tag">NEW</span>}
+              <div key={product.id || product._id} className="shop-product-card deals-card">
+                <div className="shop-img-wrapper deals-img-wrapper">
+                  <div className="sale-badge flash-sale">
+                    <span className="sale-text">CLEARANCE</span>
+                  </div>
                   <Link to={`/product/${product._id || product.id}`}>
                     <img src={product.image} alt={product.name} />
                   </Link>
@@ -163,16 +130,26 @@ const ShopPage = () => {
                     <Star size={12} fill="#fbbf24" color="#fbbf24" />
                     <span>{product.rating}</span>
                   </div>
-                  <p className="s-price">₹{product.price.toLocaleString()}</p>
+                  <div className="price-container">
+                    <p className="s-price deal-price">₹{product.price.toLocaleString()}</p>
+                    {/* Simulated original price for visual effect since we don't have standard price stored differently */}
+                    <p className="s-price original-price">₹{(product.price * 1.4).toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
+          {products.length === 0 && !loading && (
+            <div style={{ textAlign: 'center', padding: '4rem 0', color: '#6b7280' }}>
+              <h3>No deals found in this category.</h3>
+            </div>
+          )}
+
           {limit < products.length && (
             <div className="shop-load-more">
-               <button onClick={() => setLimit(l => l + 12)} className="load-btn">
-                 Load More Products
+               <button onClick={() => setLimit(l => l + 12)} className="load-btn deals-btn">
+                 Load More Deals
                </button>
             </div>
           )}
@@ -182,4 +159,4 @@ const ShopPage = () => {
   );
 };
 
-export default ShopPage;
+export default DealsPage;

@@ -152,7 +152,7 @@ const CheckoutPage = () => {
                     <h4>{item.name}</h4>
                     <p>Qty: {item.qty} • Size: XL</p>
                   </div>
-                  <p className="s-item-price">${(item.price * item.qty).toFixed(2)}</p>
+                  <p className="s-item-price">₹{(item.price * item.qty).toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
                 </div>
               ))}
             </div>
@@ -160,20 +160,20 @@ const CheckoutPage = () => {
             <div className="summary-totals">
               <div className="s-row">
                 <span>Subtotal</span>
-                <span>${totalPrice.toFixed(2)}</span>
+                <span>₹{totalPrice.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
               </div>
               <div className="s-row">
                 <span>Shipping</span>
-                <span className="s-free">FREE</span>
+                <span>Free</span>
               </div>
               <div className="s-row">
                 <span>Estimated Tax</span>
-                <span>${(totalPrice * 0.08).toFixed(2)}</span>
+                <span>₹{(totalPrice * 0.08).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
               </div>
-              <div className="s-divider"></div>
-              <div className="s-row s-total">
-                <span>Total Amount</span>
-                <span>${(totalPrice * 1.08).toFixed(2)}</span>
+              <hr />
+              <div className="s-row total-row">
+                <span>Total</span>
+                <span>₹{(totalPrice * 1.08).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
               </div>
             </div>
 

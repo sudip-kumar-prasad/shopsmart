@@ -168,7 +168,7 @@ const HomePage = () => {
               <div className="product-info">
                 <span className="product-brand">{product.brand}</span>
                 <h3>{product.name}</h3>
-                <p className="product-price">${product.price.toFixed(2)}</p>
+                <p className="product-price">₹{product.price.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
               </div>
             </div>
           ))}

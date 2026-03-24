@@ -35,4 +35,17 @@ const getTrending = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { getProducts, getProductById, getTrending };
+// @desc    Fetch deals products
+// @route   GET /api/products/deals
+// @access  Public
+const getDeals = asyncHandler(async (req, res) => {
+  try {
+    const products = await ProductService.getDealsProducts(20);
+    res.json(products);
+  } catch (error) {
+    res.status(error.status || 500);
+    throw new Error(error.message);
+  }
+});
+
+module.exports = { getProducts, getProductById, getTrending, getDeals };

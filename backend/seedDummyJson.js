@@ -24,8 +24,8 @@ const importDummyData = async () => {
     console.log(`Fetched ${data.products.length} products total.`);
     
     // Define category mappings
-    const electronicsCats = ['smartphones', 'laptops', 'mobile-accessories', 'tablets'];
-    const fashionCats = ['womens-dresses', 'womens-shoes', 'mens-shirts', 'mens-shoes', 'mens-watches', 'womens-watches', 'womens-bags', 'womens-jewellery', 'sunglasses', 'tops'];
+    const electronicsCats = ['smartphones', 'laptops', 'mobile-accessories', 'tablets', 'motorcycle', 'automotive'];
+    const fashionCats = ['womens-dresses', 'womens-shoes', 'mens-shirts', 'mens-shoes', 'mens-watches', 'womens-watches', 'womens-bags', 'womens-jewellery', 'sunglasses', 'tops', 'fragrances', 'skincare'];
     const sportsCats = ['sports-accessories'];
 
     const filteredProducts = data.products.filter(p => 
@@ -34,7 +34,7 @@ const importDummyData = async () => {
       sportsCats.includes(p.category)
     );
 
-    console.log(`Filtered down to ${filteredProducts.length} Electronics, Fashion, and Sports products. Clearing existing database...`);
+    console.log(`Processing ${filteredProducts.length} filtered products (no groceries). Clearing existing database...`);
     await Product.deleteMany({});
     
     const sampleProducts = filteredProducts.map((p) => {
@@ -58,7 +58,7 @@ const importDummyData = async () => {
         description: p.description,
         rating: p.rating,
         numReviews: p.reviews ? p.reviews.length : Math.floor(Math.random() * 50),
-        price: p.price,
+        price: Math.round(p.price * 83), // Convert USD base to realistic INR
         countInStock: p.stock
       };
     });

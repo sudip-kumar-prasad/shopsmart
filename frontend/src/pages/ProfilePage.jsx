@@ -146,7 +146,7 @@ const ProfilePage = () => {
                   <div key={order.id} className="order-summary-row">
                     <div className="order-id">#{order.id}</div>
                     <div className="order-date">{order.date}</div>
-                    <div className="order-price">${order.total.toFixed(2)}</div>
+                    <div className="order-price">₹{order.total.toLocaleString(undefined, { maximumFractionDigits: 2 })}</div>
                     <div className={`order-status ${order.status.toLowerCase()}`}>{order.status}</div>
                   </div>
                 ))}

@@ -30,9 +30,9 @@ const Navbar = () => {
 
         {/* Desktop Links */}
         <div className="navbar-links">
-          <Link to="/shop">Categories</Link>
-          <Link to="/shop">Deals</Link>
-          <Link to="/orders">Orders</Link>
+          <Link to="/shop">Shop</Link>
+          <Link to="/deals">Deals</Link>
+          <Link to="/about">About</Link>
         </div>
 
         {/* Search Bar */}
@@ -83,9 +83,9 @@ const Navbar = () => {
             <input type="text" placeholder="Search for products..." />
             <Search className="search-icon" size={18} />
           </div>
-          <Link to="/shop" onClick={() => setIsMenuOpen(false)}>Categories</Link>
-          <Link to="/shop" onClick={() => setIsMenuOpen(false)}>Deals</Link>
-          <Link to="/orders" onClick={() => setIsMenuOpen(false)}>Orders</Link>
+          <Link to="/shop" onClick={() => setIsMenuOpen(false)}>Shop</Link>
+          <Link to="/deals" onClick={() => setIsMenuOpen(false)}>Deals</Link>
+          <Link to="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
           {user ? (
             <button className="mobile-logout" onClick={() => { logout(); setIsMenuOpen(false); }}>Logout</button>
           ) : (

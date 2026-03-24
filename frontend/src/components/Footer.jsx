@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Mail, Facebook, Twitter, Instagram } from 'lucide-react';
 import './Footer.css';
 
@@ -21,7 +22,7 @@ const Footer = () => {
           <ul>
             <li><a href="#">Categories</a></li>
             <li><a href="#">New Arrivals</a></li>
-            <li><a href="#">Weekly Deals</a></li>
+            <li><Link to="/deals">Weekly Deals</Link></li>
             <li><a href="#">Exclusive Drops</a></li>
           </ul>
         </div>

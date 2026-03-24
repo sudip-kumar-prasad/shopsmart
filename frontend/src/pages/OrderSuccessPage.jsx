@@ -43,23 +43,28 @@ const OrderSuccessPage = () => {
                   <p>Size: {item.size} • Qty: {item.qty}</p>
                 </div>
                 <div className="item-price">
-                  ${item.price.toFixed(2)}
+                  ₹{item.price.toLocaleString(undefined, { maximumFractionDigits: 2 })}
                 </div>
               </div>
             ))}
           </div>
           <div className="success-totals">
-            <div className="total-row">
+            <div className="r-row">
               <span>Subtotal</span>
-              <span>$518.99</span>
+              <span>₹{order?.totalPrice?.toLocaleString() || "518.99"}</span>
             </div>
-            <div className="total-row">
+            <div className="r-row">
               <span>Shipping</span>
-              <span>FREE</span>
+              <span>Free</span>
             </div>
-            <div className="total-row final-total">
-              <span>Total</span>
-              <span>$518.99</span>
+            <div className="r-row">
+              <span>Tax (8%)</span>
+              <span>₹{(order?.taxPrice || 41.51).toLocaleString()}</span>
+            </div>
+            <hr />
+            <div className="r-row sum-total">
+              <span>Total Paid</span>
+              <span>₹{order?.totalPrice?.toLocaleString() || "518.99"}</span>
             </div>
           </div>
         </div>

@@ -111,9 +111,10 @@ const ProductPage = () => {
             <span className="rating-count">{product.rating} ({product.numReviews} Reviews)</span>
           </div>
 
-          <div className="product-price-block">
-            <span className="current-price">${product.price.toLocaleString()}</span>
-            <span className="original-price">${(product.price * 1.15).toFixed(2)}</span>
+          <div className="price-tag">
+            <span className="current-price">₹{product.price.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
+            <span className="original-price">₹{(product.price * 1.15).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
+            <span className="discount-badge">15% OFF</span>
           </div>
 
           <p className="product-description">
@@ -222,7 +223,7 @@ const ProductPage = () => {
                 {item.label && <span className="pair-label">{item.label}</span>}
               </div>
               <h4>{item.name}</h4>
-              <p>${item.price.toFixed(2)}</p>
+              <p>₹{item.price.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
             </div>
           ))}
         </div>

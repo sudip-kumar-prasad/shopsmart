@@ -38,7 +38,7 @@ const CartPage = () => {
                     <p className="item-desc">{item.description || 'Premium quality addition to your collection.'}</p>
                   </div>
                   <div className="item-price-row">
-                    <p className="item-price">${item.price.toFixed(2)}</p>
+                    <p className="item-price">₹{item.price.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
                     <div className="cart-item-actions">
                       <div className="item-qty-selector">
                         <button onClick={() => item.qty > 1 ? updateQty(item.id, item.qty - 1) : removeItem(item.id)}>
@@ -66,7 +66,7 @@ const CartPage = () => {
               <div className="summary-rows">
                 <div className="summary-row">
                   <span>Subtotal</span>
-                  <strong>${totalPrice.toFixed(2)}</strong>
+                  <strong>₹{totalPrice.toLocaleString(undefined, { maximumFractionDigits: 2 })}</strong>
                 </div>
                 <div className="summary-row">
                   <span>Shipping</span>
@@ -74,7 +74,7 @@ const CartPage = () => {
                 </div>
                 <div className="summary-row">
                   <span>Estimated Tax</span>
-                  <strong>${(totalPrice * 0.08).toFixed(2)}</strong>
+                  <strong>₹{(totalPrice * 0.08).toLocaleString(undefined, { maximumFractionDigits: 2 })}</strong>
                 </div>
               </div>
               
@@ -86,7 +86,7 @@ const CartPage = () => {
               
               <div className="summary-row total-row">
                 <span>Total</span>
-                <span className="final-price">${(totalPrice * 1.08).toFixed(2)}</span>
+                <span className="final-price">₹{(totalPrice * 1.08).toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
               </div>
               
               <Link to="/checkout" className="proceed-btn">
@@ -124,7 +124,7 @@ const CartPage = () => {
               </div>
               <div className="suggest-info">
                 <h4>{s.name}</h4>
-                <p>${s.price.toFixed(2)}</p>
+                <p>₹{s.price.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
               </div>
             </div>
           ))}

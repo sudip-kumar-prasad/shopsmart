@@ -28,6 +28,10 @@ class ProductService {
     
     return trending;
   }
+
+  async getDealsProducts(limit = 20) {
+    return await ProductRepository.getDeals(limit);
+  }
 }
 
 module.exports = new ProductService();
