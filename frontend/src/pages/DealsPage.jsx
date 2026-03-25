@@ -89,7 +89,7 @@ const DealsPage = () => {
                   <input type="radio" name="cat" checked={selectedCategory===''} onChange={() => setSelectedCategory('')} />
                   <span>All Sales</span>
                 </label>
-                {['Electronics', 'Fashion', 'Sports', 'Home'].map(cat => (
+                {['Electronics', 'Fashion', 'Sports'].map(cat => (
                   <label key={cat} className={`filter-item ${selectedCategory===cat ? 'active' : ''}`}>
                     <input type="radio" name="cat" checked={selectedCategory===cat} onChange={() => setSelectedCategory(cat)} />
                     <span>{cat}</span>

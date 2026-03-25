@@ -8,15 +8,24 @@ import productsData from '../assets/products.json';
 import './ShopPage.css';
 
 const ShopPage = () => {
+  const [rawProducts, setRawProducts] = useState(productsData);
   const [products, setProducts] = useState(productsData);
+  const [topBrands, setTopBrands] = useState([]);
+  const [limit, setLimit] = useState(12);
+
+  // Filter States
   const location = useLocation();
-  const navigate = useNavigate();
   const searchParams = new URLSearchParams(location.search);
   const searchQuery = searchParams.get('search') || '';
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedBrands, setSelectedBrands] = useState([]);
+  const [priceMax, setPriceMax] = useState(200000);
+  const [selectedRating, setSelectedRating] = useState(0);
+  const [sortOption, setSortOption] = useState('Popularity');
+
+  const navigate = useNavigate();
   const { addItem } = useCart();
   const { user } = useAuth();
-  const [limit, setLimit] = useState(12);
 
   const handleAddToCart = (product) => {
     if (!user) {
@@ -26,6 +35,21 @@ const ShopPage = () => {
     addItem(product);
   };
 
+  const handleBrandToggle = (brand) => {
+    setSelectedBrands(prev => 
+      prev.includes(brand) ? prev.filter(b => b !== brand) : [...prev, brand]
+    );
+  };
+
+  const handleReset = () => {
+    setSelectedCategory('');
+    setSelectedBrands([]);
+    setPriceMax(200000);
+    setSelectedRating(0);
+    setSortOption('Popularity');
+  };
+
+  // Fetch initial raw products and dynamic brands
   useEffect(() => {
     const fetchProducts = async () => {
       let data = [];
@@ -36,18 +60,59 @@ const ShopPage = () => {
         console.log('Backend not active, using dummy data fallback for ShopPage');
         data = productsData;
       }
+      setRawProducts(data);
       
-      let filtered = data;
-      if (searchQuery) {
-        filtered = filtered.filter(p => p.name.toLowerCase().includes(searchQuery.toLowerCase()));
-      }
-      if (selectedCategory) {
-        filtered = filtered.filter(p => p.category === selectedCategory);
-      }
-      setProducts(filtered);
+      // Dynamically extract the top 5 most common brands
+      const counts = data.reduce((acc, p) => {
+        if (p.brand && p.brand.toLowerCase() !== 'sports') {
+          acc[p.brand] = (acc[p.brand] || 0) + 1;
+        }
+        return acc;
+      }, {});
+      setTopBrands(Object.keys(counts).sort((a, b) => counts[b] - counts[a]).slice(0, 5));
     };
     fetchProducts();
-  }, [searchQuery, selectedCategory]);
+  }, []);
+
+  // Main Filtering Pipeline
+  useEffect(() => {
+    let filtered = [...rawProducts];
+    
+    // 1. Search Query
+    if (searchQuery) {
+      filtered = filtered.filter(p => p.name.toLowerCase().includes(searchQuery.toLowerCase()));
+    }
+    // 2. Category Check
+    if (selectedCategory) {
+      filtered = filtered.filter(p => p.category === selectedCategory);
+    }
+    // 3. Price Ceiling
+    filtered = filtered.filter(p => p.price <= priceMax);
+    
+    // 4. Brands Validation
+    if (selectedBrands.length > 0) {
+      filtered = filtered.filter(p => selectedBrands.includes(p.brand));
+    }
+    
+    // 5. Rating Validation
+    if (selectedRating > 0) {
+      filtered = filtered.filter(p => p.rating >= selectedRating);
+    }
+    
+    // 6. Sorting Order
+    if (sortOption === 'Popularity') {
+      filtered.sort((a, b) => (b.numReviews || 0) - (a.numReviews || 0));
+    } else if (sortOption === 'Newest Arrivals') {
+      filtered.sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0));
+    } else if (sortOption === 'Price: Low to High') {
+      filtered.sort((a, b) => a.price - b.price);
+    } else if (sortOption === 'Price: High to Low') {
+      filtered.sort((a, b) => b.price - a.price);
+    }
+    
+    setProducts(filtered);
+    setLimit(12); // Reset infinite scroll length
+  }, [rawProducts, searchQuery, selectedCategory, selectedBrands, priceMax, selectedRating, sortOption]);
 
   return (
     <div className="shop-page container">
@@ -62,7 +127,7 @@ const ShopPage = () => {
           <div className="filter-card">
             <div className="filter-header">
               <h3>Filters</h3>
-              <button className="reset-btn" onClick={() => setSelectedCategory('')}>Reset All</button>
+              <button className="reset-btn" onClick={handleReset}>Reset All</button>
             </div>
             
             <div className="filter-section">
@@ -72,7 +137,7 @@ const ShopPage = () => {
                   <input type="radio" name="cat" checked={selectedCategory===''} onChange={() => setSelectedCategory('')} />
                   <span>All Collections</span>
                 </label>
-                {['Electronics', 'Fashion', 'Sports', 'Home'].map(cat => (
+                {['Electronics', 'Fashion', 'Sports'].map(cat => (
                   <label key={cat} className={`filter-item ${selectedCategory===cat ? 'active' : ''}`}>
                     <input type="radio" name="cat" checked={selectedCategory===cat} onChange={() => setSelectedCategory(cat)} />
                     <span>{cat}</span>
@@ -84,10 +149,18 @@ const ShopPage = () => {
             <div className="filter-section">
               <h4>PRICE RANGE</h4>
               <div className="price-slider-container">
-                <input type="range" min="0" max="500000" step="5000" className="price-slider" />
+                <input 
+                  type="range" 
+                  min="0" 
+                  max="200000" 
+                  step="1000" 
+                  className="price-slider" 
+                  value={priceMax} 
+                  onChange={(e) => setPriceMax(Number(e.target.value))} 
+                />
                 <div className="price-labels">
                   <span>₹0</span>
-                  <span>₹500,000</span>
+                  <span>₹{priceMax.toLocaleString()}</span>
                 </div>
               </div>
             </div>
@@ -95,27 +168,44 @@ const ShopPage = () => {
             <div className="filter-section">
               <h4>BRAND</h4>
               <div className="filter-list">
-                {['Apple', 'Samsung', 'Sony', 'Nike'].map(brand => (
-                  <label key={brand} className="filter-item checkbox">
-                    <input type="checkbox" />
-                    <span>{brand}</span>
-                  </label>
-                ))}
+                {topBrands.length > 0 ? (
+                  topBrands.map(brand => (
+                    <label key={brand} className="filter-item checkbox">
+                      <input 
+                        type="checkbox" 
+                        checked={selectedBrands.includes(brand)} 
+                        onChange={() => handleBrandToggle(brand)} 
+                      />
+                      <span>{brand}</span>
+                    </label>
+                  ))
+                ) : (
+                  <span style={{ fontSize: '0.9rem', color: '#9ca3af' }}>No brands available.</span>
+                )}
               </div>
             </div>
 
             <div className="filter-section">
               <h4>RATINGS</h4>
               <div className="rating-filters">
-                {[4, 3, 2].map(rating => (
+                {[4, 3, 2, 0].map(rating => (
                   <label key={rating} className="filter-item rating">
-                    <input type="radio" name="rating" />
-                    <div className="stars-row">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={14} fill={i < rating ? "#fbbf24" : "none"} color={i < rating ? "#fbbf24" : "#d1d5db"} />
-                      ))}
-                      <span>& Up</span>
-                    </div>
+                    <input 
+                      type="radio" 
+                      name="rating" 
+                      checked={selectedRating === rating} 
+                      onChange={() => setSelectedRating(rating)} 
+                    />
+                    {rating > 0 ? (
+                      <div className="stars-row">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} size={14} fill={i < rating ? "#fbbf24" : "none"} color={i < rating ? "#fbbf24" : "#d1d5db"} />
+                        ))}
+                        <span>& Up</span>
+                      </div>
+                    ) : (
+                      <span style={{ fontSize: '0.9rem' }}>Any Rating</span>
+                    )}
                   </label>
                 ))}
               </div>
@@ -133,7 +223,7 @@ const ShopPage = () => {
             <div className="shop-controls">
               <div className="shop-sort">
                 <span>Sort by:</span>
-                <select>
+                <select value={sortOption} onChange={(e) => setSortOption(e.target.value)}>
                   <option>Popularity</option>
                   <option>Newest Arrivals</option>
                   <option>Price: Low to High</option>
@@ -145,7 +235,7 @@ const ShopPage = () => {
 
           <div className="shop-products-grid">
             {products.slice(0, limit).map(product => (
-              <div key={product.id} className="shop-product-card">
+              <div key={product.id || product._id} className="shop-product-card">
                 <div className="shop-img-wrapper">
                   {product.isNew && <span className="new-tag">NEW</span>}
                   <Link to={`/product/${product._id || product.id}`}>
@@ -168,6 +258,13 @@ const ShopPage = () => {
               </div>
             ))}
           </div>
+
+          {products.length === 0 && (
+            <div style={{ textAlign: 'center', padding: '4rem 0', color: '#6b7280' }}>
+              <h3>No products match your active filters.</h3>
+              <button onClick={handleReset} style={{ marginTop: '1rem', padding: '0.5rem 1rem', background: '#e5e7eb', borderRadius: '0.5rem', border: 'none', cursor: 'pointer' }}>Clear Filters</button>
+            </div>
+          )}
 
           {limit < products.length && (
             <div className="shop-load-more">
