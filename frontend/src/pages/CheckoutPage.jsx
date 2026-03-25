@@ -16,7 +16,13 @@ const CheckoutPage = () => {
 
     try {
       const orderData = {
-        orderItems: items.map(i => ({ ...i, product: i._id || i.id })),
+        orderItems: items.map(i => ({ 
+          name: i.name, 
+          qty: i.qty, 
+          image: i.image, 
+          price: i.price, 
+          product: i._id || i.id 
+        })),
         shippingAddress: { address: '123 Main St', city: 'NY', postalCode: '10001', country: 'US' },
         paymentMethod: payMethod,
         itemsPrice: totalPrice,
