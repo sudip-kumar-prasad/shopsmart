@@ -30,11 +30,11 @@ const CheckoutPage = () => {
       });
       
       clearCart();
-      navigate('/order-success');
+      navigate('/order-success', { state: { items, totalPrice: totalPrice * 1.08, taxPrice: totalPrice * 0.08 } });
     } catch (error) {
       console.log('Backend not available, using localized fallback');
       clearCart();
-      navigate('/order-success');
+      navigate('/order-success', { state: { items, totalPrice: totalPrice * 1.08, taxPrice: totalPrice * 0.08 } });
     }
   };
 

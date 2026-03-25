@@ -32,7 +32,7 @@ const Navbar = () => {
         <div className="navbar-links">
           <Link to="/shop">Shop</Link>
           <Link to="/deals">Deals</Link>
-          <Link to="/about">About</Link>
+          <Link to="/orders">Orders</Link>
         </div>
 
         {/* Search Bar */}
@@ -85,7 +85,7 @@ const Navbar = () => {
           </div>
           <Link to="/shop" onClick={() => setIsMenuOpen(false)}>Shop</Link>
           <Link to="/deals" onClick={() => setIsMenuOpen(false)}>Deals</Link>
-          <Link to="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
+          <Link to="/orders" onClick={() => setIsMenuOpen(false)}>Orders</Link>
           {user ? (
             <button className="mobile-logout" onClick={() => { logout(); setIsMenuOpen(false); }}>Logout</button>
           ) : (

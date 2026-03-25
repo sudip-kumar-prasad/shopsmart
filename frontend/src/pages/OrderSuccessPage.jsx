@@ -1,22 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { CheckCircle2, ShoppingBag, FileText, MessageSquare, ArrowRight } from 'lucide-react';
-import { useCart } from '../context/CartContext';
+import { CheckCircle2, ShoppingBag, FileText, MessageSquare } from 'lucide-react';
 import './OrderSuccessPage.css';
 
 const OrderSuccessPage = () => {
-  const { clearCart } = useCart();
   const location = useLocation();
-  const orderId = "ORD-5290F"; // Static for mockup matching
-
-  useEffect(() => {
-    clearCart();
-  }, [clearCart]);
-
-  const orderItems = [
-    { name: 'Air-Max Pro Runner', size: 'US 10', qty: 1, price: 189.99, image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=200' },
-    { name: 'SmartPulse Watch Series 4', size: 'One Size', qty: 1, price: 299.00, image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=200' }
-  ];
+  const { items = [], totalPrice = 0, taxPrice = 0 } = location.state || {};
+  const orderId = `ORD-${Math.random().toString(36).substring(2, 7).toUpperCase()}`;
+  const subtotal = totalPrice - taxPrice;
 
   return (
     <div className="order-success-page container">
@@ -33,25 +24,27 @@ const OrderSuccessPage = () => {
         <div className="success-card order-summary-section">
           <h3>Order Summary</h3>
           <div className="success-item-list">
-            {orderItems.map((item, index) => (
+            {items.length > 0 ? items.map((item, index) => (
               <div key={index} className="success-item-row">
                 <div className="item-img">
                   <img src={item.image} alt={item.name} />
                 </div>
                 <div className="item-info">
                   <h4>{item.name}</h4>
-                  <p>Size: {item.size} • Qty: {item.qty}</p>
+                  <p>Qty: {item.qty}</p>
                 </div>
                 <div className="item-price">
-                  ₹{item.price.toLocaleString(undefined, { maximumFractionDigits: 2 })}
+                  ₹{(item.price * item.qty).toLocaleString(undefined, { maximumFractionDigits: 2 })}
                 </div>
               </div>
-            ))}
+            )) : (
+              <p style={{ color: '#6b7280', textAlign: 'center', padding: '1rem' }}>Your order has been placed successfully!</p>
+            )}
           </div>
           <div className="success-totals">
             <div className="r-row">
               <span>Subtotal</span>
-              <span>₹{order?.totalPrice?.toLocaleString() || "518.99"}</span>
+              <span>₹{subtotal.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
             </div>
             <div className="r-row">
               <span>Shipping</span>
@@ -59,12 +52,12 @@ const OrderSuccessPage = () => {
             </div>
             <div className="r-row">
               <span>Tax (8%)</span>
-              <span>₹{(order?.taxPrice || 41.51).toLocaleString()}</span>
+              <span>₹{taxPrice.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
             </div>
             <hr />
             <div className="r-row sum-total">
               <span>Total Paid</span>
-              <span>₹{order?.totalPrice?.toLocaleString() || "518.99"}</span>
+              <span>₹{totalPrice.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
             </div>
           </div>
         </div>
@@ -73,12 +66,10 @@ const OrderSuccessPage = () => {
         <div className="details-sidebar">
           <div className="success-card delivery-details">
             <h3>Delivery Details</h3>
-            <p className="delivery-date">Estimated Delivery: <strong>Friday, Oct 25, 2023</strong></p>
+            <p className="delivery-date">Estimated Delivery: <strong>Within 3-5 business days</strong></p>
             <div className="delivery-address">
-              <strong>Alex Thompson</strong>
-              <p>2356 Highland Avenue</p>
-              <p>Suite 405, Brooklyn, NY 11201</p>
-              <p>United States</p>
+              <strong>Shipping to your address</strong>
+              <p>You will receive a confirmation email soon.</p>
             </div>
             <div className="shipping-method">
               <ShoppingBag size={18} />
@@ -103,9 +94,9 @@ const OrderSuccessPage = () => {
         <Link to="/shop" className="continue-btn">
           Continue Shopping
         </Link>
-        <button className="download-btn">
-          <FileText size={18} /> Download Invoice
-        </button>
+        <Link to="/orders" className="download-btn">
+          <FileText size={18} /> View My Orders
+        </Link>
       </div>
     </div>
   );
