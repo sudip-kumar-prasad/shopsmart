@@ -4,7 +4,7 @@ import {
   User, Package, MapPin, Settings, LogOut, 
   ChevronRight, Edit2, Plus, ArrowRight, Heart,
   LayoutDashboard, ShoppingBag, Bell, X, Check,
-  Trash2
+  Trash2, Lock
 } from 'lucide-react';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
