@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Search, User, ShoppingBag, Menu, X, LogOut } from 'lucide-react';
+import { Search, User, ShoppingBag, Menu, X, LogOut, Heart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
+import { useWishlist } from '../context/WishlistContext';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const { totalItems } = useCart();
+  const { wishlistItems } = useWishlist();
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
@@ -61,6 +63,12 @@ const Navbar = () => {
               <User size={22} />
             </Link>
           )}
+
+          <Link to="/profile?tab=wishlist" className="icon-link wishlist-btn" title="Wishlist">
+            <Heart size={22} />
+            {wishlistItems.length > 0 && <span className="wishlist-badge">{wishlistItems.length}</span>}
+          </Link>
+
           <button className="icon-link cart-btn" onClick={() => navigate('/cart')}>
             <ShoppingBag size={22} />
             {totalItems > 0 && <span className="cart-badge">{totalItems}</span>}

@@ -270,6 +270,98 @@
   font-weight: 600;
 }
 
+/* Saved Addresses Selector */
+.saved-addresses-selector {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.selector-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.address-pills {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: #e2e8f0 transparent;
+}
+
+.address-pills::-webkit-scrollbar {
+  height: 4px;
+}
+
+.address-pills::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.address-pills::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 4px;
+}
+
+.address-pill {
+  flex: 0 0 auto;
+  min-width: 220px;
+  max-width: 280px;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.address-pill:hover {
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+}
+
+.address-pill.active {
+  border-color: #f97316;
+  background-color: #fff7ed;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.pill-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  overflow: hidden;
+}
+
+.pill-content strong {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.pill-content span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pill-check {
+  color: #f97316;
+  flex-shrink: 0;
+  margin-left: 0.75rem;
+}
+
 @media (max-width: 1024px) {
   .checkout-layout {
     grid-template-columns: 1fr;

@@ -21,6 +21,20 @@ const userSchema = mongoose.Schema(
       required: true,
       default: false,
     },
+    addresses: [
+      {
+        name: { type: String, required: true },
+        addressLine: { type: String, required: true },
+        city: { type: String, required: true },
+        postalCode: { type: String, required: true },
+        country: { type: String, required: true },
+        isDefault: { type: Boolean, default: false },
+      },
+    ],
+    notificationPrefs: {
+      orderUpdates: { type: Boolean, default: true },
+      promotionalEmails: { type: Boolean, default: true },
+    },
   },
   {
     timestamps: true,
@@ -28,9 +42,9 @@ const userSchema = mongoose.Schema(
 );
 
 // Hash password before saving
-userSchema.pre('save', async function (next) {
+userSchema.pre('save', async function () {
   if (!this.isModified('password')) {
-    return next();
+    return;
   }
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);

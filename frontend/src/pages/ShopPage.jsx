@@ -4,6 +4,7 @@ import { ListFilter, Heart, ShoppingBag, Star, ChevronRight } from 'lucide-react
 import axios from 'axios';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
+import { useWishlist } from '../context/WishlistContext';
 import productsData from '../assets/products.json';
 import './ShopPage.css';
 
@@ -26,6 +27,7 @@ const ShopPage = () => {
   const navigate = useNavigate();
   const { addItem } = useCart();
   const { user } = useAuth();
+  const { toggleWishlist, isInWishlist } = useWishlist();
 
   const handleAddToCart = (product) => {
     if (!user) {
@@ -242,7 +244,13 @@ const ShopPage = () => {
                     <img src={product.image} alt={product.name} />
                   </Link>
                   <div className="hover-actions">
-                    <button className="h-btn"><Heart size={18} /></button>
+                    <button 
+                      className={`h-btn ${isInWishlist(product._id || product.id) ? 'active' : ''}`}
+                      onClick={() => toggleWishlist(product)}
+                      title={isInWishlist(product._id || product.id) ? "Remove from Wishlist" : "Add to Wishlist"}
+                    >
+                      <Heart size={18} fill={isInWishlist(product._id || product.id) ? "currentColor" : "none"} />
+                    </button>
                     <button onClick={() => handleAddToCart({...product, id: product.id || product._id, qty: 1})} className="h-btn active"><ShoppingBag size={18} /></button>
                   </div>
                 </div>

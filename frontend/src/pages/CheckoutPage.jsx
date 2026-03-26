@@ -1,14 +1,80 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { CreditCard, MapPin, ChevronLeft, Lock } from 'lucide-react';
+import { CreditCard, MapPin, ChevronLeft, Lock, Loader2, CheckCircle2 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
 import './CheckoutPage.css';
 
 const CheckoutPage = () => {
   const { items, totalPrice, clearCart } = useCart();
+  const { user } = useAuth();
   const [payMethod, setPayMethod] = useState('card');
   const navigate = useNavigate();
+
+  // Address State
+  const [addressData, setAddressData] = useState({
+    firstName: user?.name.split(' ')[0] || '',
+    lastName: user?.name.split(' ')[1] || '',
+    address: '',
+    city: '',
+    state: '',
+    zip: '',
+    country: 'IN'
+  });
+
+  const [savedAddresses, setSavedAddresses] = useState([]);
+  const [loadingProfile, setLoadingProfile] = useState(true);
+  const [selectedAddrId, setSelectedAddrId] = useState(null);
+
+  // Fetch Saved Addresses
+  useEffect(() => {
+    const fetchProfile = async () => {
+      if (!user) {
+        setLoadingProfile(false);
+        return;
+      }
+      try {
+        const { data } = await axios.get('/api/users/profile', {
+          headers: { Authorization: `Bearer ${user.token}` }
+        });
+        
+        if (data.addresses && data.addresses.length > 0) {
+          setSavedAddresses(data.addresses);
+          
+          // Auto-select default address
+          const defaultAddr = data.addresses.find(a => a.isDefault) || data.addresses[0];
+          if (defaultAddr) {
+            handleSelectAddress(defaultAddr);
+          }
+        }
+      } catch (err) {
+        console.error('Failed to load profile addresses', err);
+      } finally {
+        setLoadingProfile(false);
+      }
+    };
+    fetchProfile();
+  }, [user]);
+
+  const handleSelectAddress = (addr) => {
+    setSelectedAddrId(addr._id);
+    setAddressData({
+      ...addressData,
+      address: addr.addressLine,
+      city: addr.city,
+      zip: addr.postalCode,
+      country: addr.country,
+      state: addr.state || '' // Backend might not have state yet but we'll include it
+    });
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setAddressData(prev => ({ ...prev, [name]: value }));
+    // If user typed, deselect the saved address pill
+    setSelectedAddrId(null);
+  };
 
   const handlePlaceOrder = async (e) => {
     e.preventDefault();
@@ -23,7 +89,12 @@ const CheckoutPage = () => {
           price: i.price, 
           product: i._id || i.id 
         })),
-        shippingAddress: { address: '123 Main St', city: 'NY', postalCode: '10001', country: 'US' },
+        shippingAddress: { 
+          address: addressData.address, 
+          city: addressData.city, 
+          postalCode: addressData.zip, 
+          country: addressData.country 
+        },
         paymentMethod: payMethod,
         itemsPrice: totalPrice,
         taxPrice: totalPrice * 0.08,
@@ -32,15 +103,14 @@ const CheckoutPage = () => {
       };
 
       await axios.post('/api/orders', orderData, {
-        headers: { Authorization: `Bearer ${JSON.parse(localStorage.getItem('shopsmart_user'))?.token}` }
+        headers: { Authorization: `Bearer ${user.token}` }
       });
       
       clearCart();
       navigate('/order-success', { state: { items, totalPrice: totalPrice * 1.08, taxPrice: totalPrice * 0.08 } });
     } catch (error) {
-      console.log('Backend not available, using localized fallback');
-      clearCart();
-      navigate('/order-success', { state: { items, totalPrice: totalPrice * 1.08, taxPrice: totalPrice * 0.08 } });
+      console.error('Order placement failed', error);
+      alert('Failed to place order. Please try again.');
     }
   };
 
@@ -55,47 +125,120 @@ const CheckoutPage = () => {
       <div className="checkout-layout">
         {/* Left Form Area */}
         <div className="checkout-main">
+          
           <section className="checkout-card">
             <div className="card-header-row">
               <span className="step-num">1</span>
               <h2>Shipping Address</h2>
             </div>
             
-            <form className="checkout-form">
+            {/* Saved Addresses Picker */}
+            {!loadingProfile && savedAddresses.length > 0 && (
+              <div className="saved-addresses-selector">
+                <p className="selector-label"><MapPin size={14} /> Choose a saved address:</p>
+                <div className="address-pills">
+                  {savedAddresses.map(addr => (
+                    <button 
+                      key={addr._id}
+                      type="button"
+                      className={`address-pill ${selectedAddrId === addr._id ? 'active' : ''}`}
+                      onClick={() => handleSelectAddress(addr)}
+                    >
+                      <div className="pill-content">
+                        <strong>{addr.name}</strong>
+                        <span>{addr.addressLine}, {addr.city}</span>
+                      </div>
+                      {selectedAddrId === addr._id && <CheckCircle2 size={16} className="pill-check" />}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <form className="checkout-form" onSubmit={handlePlaceOrder}>
               <div className="input-row">
                 <div className="input-field">
                   <label>First Name</label>
-                  <input type="text" placeholder="Alex" required />
+                  <input 
+                    name="firstName"
+                    type="text" 
+                    placeholder="Alex" 
+                    required 
+                    value={addressData.firstName} 
+                    onChange={handleInputChange} 
+                  />
                 </div>
                 <div className="input-field">
                   <label>Last Name</label>
-                  <input type="text" placeholder="Thompson" required />
+                  <input 
+                    name="lastName"
+                    type="text" 
+                    placeholder="Thompson" 
+                    required 
+                    value={addressData.lastName} 
+                    onChange={handleInputChange} 
+                  />
                 </div>
               </div>
               <div className="input-field">
                 <label>Street Address</label>
-                <input type="text" placeholder="2356 Highland Avenue" required />
+                <input 
+                  name="address"
+                  type="text" 
+                  placeholder="2356 Highland Avenue" 
+                  required 
+                  value={addressData.address} 
+                  onChange={handleInputChange} 
+                />
               </div>
               <div className="input-row">
                 <div className="input-field">
                   <label>City</label>
-                  <input type="text" placeholder="Brooklyn" required />
+                  <input 
+                    name="city"
+                    type="text" 
+                    placeholder="Brooklyn" 
+                    required 
+                    value={addressData.city} 
+                    onChange={handleInputChange} 
+                  />
                 </div>
                 <div className="input-field">
                   <label>State / Province</label>
-                  <input type="text" placeholder="NY" required />
+                  <input 
+                    name="state"
+                    type="text" 
+                    placeholder="NY" 
+                    required 
+                    value={addressData.state} 
+                    onChange={handleInputChange} 
+                  />
                 </div>
               </div>
               <div className="input-row">
                 <div className="input-field">
                   <label>Zip Code</label>
-                  <input type="text" placeholder="11201" required />
+                  <input 
+                    name="zip"
+                    type="text" 
+                    placeholder="11201" 
+                    required 
+                    value={addressData.zip} 
+                    onChange={handleInputChange} 
+                  />
                 </div>
                 <div className="input-field">
                   <label>Country</label>
-                  <select required>
+                  <select 
+                    name="country"
+                    required 
+                    value={addressData.country} 
+                    onChange={handleInputChange}
+                  >
                     <option value="US">United States</option>
                     <option value="IN">India</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="CA">Canada</option>
                   </select>
                 </div>
               </div>

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Star, Heart, ShoppingBag, Truck, RotateCcw, Plus, Minus } from 'lucide-react';
 import axios from 'axios';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useWishlist } from '../context/WishlistContext';
 import productsData from '../assets/products.json';
 import './ProductPage.css';
 
@@ -30,6 +30,7 @@ const ProductPage = () => {
   const [qty, setQty] = useState(1);
   const { addItem } = useCart();
   const { user } = useAuth();
+  const { toggleWishlist, isInWishlist } = useWishlist();
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
@@ -93,7 +94,12 @@ const ProductPage = () => {
           </div>
           <div className="main-image">
             <img src={thumbnails[selectedImg]} alt={product.name} />
-            <button onClick={() => alert('Added to Wishlist!')} className="wishlist-btn"><Heart size={20} /></button>
+            <button 
+              className={`wishlist-btn ${product && isInWishlist(product._id || product.id) ? 'active' : ''}`}
+              onClick={() => product && toggleWishlist(product)}
+            >
+              <Heart size={20} fill={product && isInWishlist(product._id || product.id) ? "currentColor" : "none"} />
+            </button>
           </div>
         </div>
 

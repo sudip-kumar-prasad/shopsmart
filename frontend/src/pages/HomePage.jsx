@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
+import { useWishlist } from '../context/WishlistContext';
 import './HomePage.css';
 
 
 // We'll hardcode the category cards to match the specific masonry layout
-
 
 const featuredProducts = [
   { id: 101, name: 'Acoustic Pro Headphones', brand: 'BLUE TRENDS', price: 299.0, bg: 'linear-gradient(to bottom right, #51543d, #27281c)', image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400' },
@@ -24,6 +24,7 @@ const HomePage = () => {
   const navigate = useNavigate();
   const { addItem } = useCart();
   const { user } = useAuth();
+  const { toggleWishlist, isInWishlist } = useWishlist();
 
   const handleAddToCart = (product) => {
     if (!user) {
@@ -32,6 +33,7 @@ const HomePage = () => {
     }
     addItem(product);
   };
+
 
   const handleScroll = (dir) => {
     const grid = document.querySelector('.featured-section .products-grid');
@@ -161,7 +163,13 @@ const HomePage = () => {
               <div className="product-img-wrapper" style={{ background: product.bg }}>
                 <img src={product.image} alt={product.name} />
                 <div className="product-actions">
-                  <button onClick={() => alert('Added to Wishlist!')} className="action-btn"><Heart size={18} /></button>
+                  <button 
+                    onClick={() => toggleWishlist(product)} 
+                    className={`action-btn ${isInWishlist(product.id || product._id) ? 'active' : ''}`}
+                    title={isInWishlist(product.id || product._id) ? "Remove from Wishlist" : "Add to Wishlist"}
+                  >
+                    <Heart size={18} fill={isInWishlist(product.id || product._id) ? "currentColor" : "none"} />
+                  </button>
                   <button onClick={() => handleAddToCart({...product, id: product.id || product._id, qty: 1})} className="action-btn"><ShoppingBag size={18} /></button>
                 </div>
               </div>
