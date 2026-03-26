@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const session = require('express-session');
+const passport = require('./config/passport');
 
 const db = require('./config/db.js');
 const userRoutes = require('./routes/userRoutes.js');
@@ -15,8 +17,18 @@ db();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  credentials: true,
+}));
 app.use(express.json());
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'shopsmart_secret',
+  resave: false,
+  saveUninitialized: false,
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Basic Route
 app.get('/', (req, res) => {

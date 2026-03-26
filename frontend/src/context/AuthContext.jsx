@@ -34,6 +34,12 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem('shopsmart_user');
   };
 
+  // Used by the OAuth callback page to log in with a pre-formed user + token
+  const loginWithToken = (userData) => {
+    setUser(userData);
+    localStorage.setItem('shopsmart_user', JSON.stringify(userData));
+  };
+
   const register = async (name, email, password) => {
     try {
       const { data } = await axios.post('/api/users', { name, email, password });
@@ -53,7 +59,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, register }}>
+    <AuthContext.Provider value={{ user, login, logout, register, loginWithToken }}>
       {children}
     </AuthContext.Provider>
   );

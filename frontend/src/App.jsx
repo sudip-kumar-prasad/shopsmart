@@ -12,6 +12,7 @@ import ForgotPasswordPage from './pages/ForgotPasswordPage'
 import OrderSuccessPage from './pages/OrderSuccessPage'
 import ProfilePage from './pages/ProfilePage'
 import MyOrdersPage from './pages/MyOrdersPage'
+import OAuthCallbackPage from './pages/OAuthCallbackPage'
 import { WishlistProvider } from './context/WishlistContext'
 import { CartProvider } from './context/CartContext'
 import { AuthProvider } from './context/AuthContext'
@@ -37,6 +38,7 @@ function App() {
                 <Route path="/order-success" element={<OrderSuccessPage />} />
                 <Route path="/profile" element={<ProfilePage />} />
                 <Route path="/orders" element={<MyOrdersPage />} />
+                <Route path="/oauth-callback" element={<OAuthCallbackPage />} />
               </Routes>
             </Layout>
           </Router>
