@@ -30,7 +30,9 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Basic Route
+const path = require('path');
+
+// Basic Route (for development fallback)
 app.get('/', (req, res) => {
   res.send('ShopSmart API is running...');
 });
@@ -39,6 +41,16 @@ app.get('/', (req, res) => {
 app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
+
+// Serve frontend in production
+if (process.env.NODE_ENV === 'production') {
+  const __dirname = path.resolve();
+  app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+  app.get('*', (req, res) =>
+    res.sendFile(path.resolve(__dirname, '../frontend', 'dist', 'index.html'))
+  );
+}
 
 // Error Handling Middleware
 app.use((err, req, res, next) => {
