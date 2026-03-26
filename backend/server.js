@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+
+dotenv.config();
+
 const session = require('express-session');
 const passport = require('./config/passport');
 
@@ -8,8 +11,6 @@ const db = require('./config/db.js');
 const userRoutes = require('./routes/userRoutes.js');
 const productRoutes = require('./routes/productRoutes.js');
 const orderRoutes = require('./routes/orderRoutes.js');
-
-dotenv.config();
 
 // Connect to database
 db();
