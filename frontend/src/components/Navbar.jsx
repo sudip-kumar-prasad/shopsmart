@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Search, User, ShoppingBag, Menu, X, LogOut, Heart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
@@ -13,10 +13,35 @@ const Navbar = () => {
   const { wishlistItems } = useWishlist();
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Sync the local search bar text with the URL when navigating back/forward
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const query = searchParams.get('search');
+    if (query !== null) {
+      setSearchTerm(query);
+    } else if (location.pathname !== '/shop') {
+      setSearchTerm('');
+    }
+  }, [location.search, location.pathname]);
+
+  const handleInputChange = (e) => {
+    const val = e.target.value;
+    setSearchTerm(val);
+    
+    // Live search as the user types
+    if (val.trim()) {
+      navigate(`/shop?search=${encodeURIComponent(val)}`);
+    } else if (location.pathname === '/shop') {
+      // If they delete everything, just show all products on the shop page
+      navigate('/shop');
+    }
+  };
 
   const handleSearch = (e) => {
     if (e.key === 'Enter' && searchTerm.trim()) {
-      navigate(`/shop?search=${searchTerm}`);
+      navigate(`/shop?search=${encodeURIComponent(searchTerm)}`);
       setIsMenuOpen(false);
     }
   };
@@ -43,7 +68,7 @@ const Navbar = () => {
             type="text" 
             placeholder="Search for products..." 
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={handleInputChange}
             onKeyDown={handleSearch}
           />
           <Search 
@@ -102,7 +127,7 @@ const Navbar = () => {
               type="text" 
               placeholder="Search for products..." 
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={handleInputChange}
               onKeyDown={handleSearch}
             />
             <Search 
