@@ -73,11 +73,11 @@ const MyOrdersPage = () => {
 
       <div className="orders-list">
         {filteredOrders.length === 0 ? (
-          <div className="no-orders text-center">
-            <Package size={64} className="mb-4 text-muted" />
-            <h2>No orders yet</h2>
-            <p>Collections you've ordered will appear here.</p>
-            <Link to="/shop" style={{ marginTop: '1rem', display: 'inline-block', padding: '0.75rem 2rem', background: '#111827', color: '#fff', borderRadius: '0.5rem', textDecoration: 'none' }}>
+          <div className="orders-empty-state" style={{ textAlign: 'center', padding: '6rem 2rem', background: '#f9fafb', borderRadius: '1rem', marginTop: '1rem' }}>
+            <Package size={64} color="#9ca3af" style={{ margin: '0 auto 1.5rem auto' }} />
+            <h2 style={{ fontSize: '1.5rem', color: '#111827', marginBottom: '0.5rem' }}>No orders yet</h2>
+            <p style={{ color: '#6b7280', marginBottom: '2rem' }}>Collections you've ordered will appear here.</p>
+            <Link to="/shop" style={{ display: 'inline-block', padding: '0.875rem 2.5rem', background: '#111827', color: '#fff', borderRadius: '0.5rem', textDecoration: 'none', fontWeight: '500' }}>
               Start Shopping
             </Link>
           </div>

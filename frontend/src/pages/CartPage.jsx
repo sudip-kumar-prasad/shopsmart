@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Trash2, Plus, Minus, ArrowRight, Lock, RotateCcw } from 'lucide-react';
+import { Trash2, Plus, Minus, ArrowRight, Lock, RotateCcw, ShoppingBag } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import './CartPage.css';
 
@@ -19,9 +19,13 @@ const CartPage = () => {
       </div>
 
       {items.length === 0 ? (
-        <div className="cart-empty success-card">
-          <p>Your cart is empty.</p>
-          <Link to="/shop" className="btn btn-primary">Continue Shopping</Link>
+        <div className="cart-empty-state" style={{ textAlign: 'center', padding: '6rem 2rem', background: '#f9fafb', borderRadius: '1rem', marginTop: '2rem' }}>
+          <ShoppingBag size={64} color="#9ca3af" style={{ margin: '0 auto 1.5rem auto' }} />
+          <h2 style={{ fontSize: '1.5rem', color: '#111827', marginBottom: '0.5rem' }}>Your cart is empty</h2>
+          <p style={{ color: '#6b7280', marginBottom: '2rem' }}>Looks like you haven't added anything to your cart yet.</p>
+          <Link to="/shop" style={{ display: 'inline-block', padding: '0.875rem 2.5rem', background: '#111827', color: '#fff', borderRadius: '0.5rem', textDecoration: 'none', fontWeight: '500' }}>
+            Start Shopping
+          </Link>
         </div>
       ) : (
         <div className="cart-layout">
@@ -108,28 +112,6 @@ const CartPage = () => {
         </div>
       )}
 
-      {/* Pairs Perfectly With */}
-      <section className="cart-suggestions">
-        <h2>Pairs perfectly with</h2>
-        <div className="suggestion-grid">
-          {[
-            { id: 21, name: "Leather Cat's Case", price: 420.00, image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80&w=300' },
-            { id: 22, name: 'Quick Charge Pad', price: 95.00, image: 'https://images.unsplash.com/photo-1608156639585-34052e35a962?auto=format&fit=crop&q=80&w=300' },
-            { id: 23, name: 'Eco Soap Set', price: 65.00, image: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&q=80&w=300' },
-            { id: 24, name: 'Minimal Wallet', price: 85.00, image: 'https://images.unsplash.com/photo-1576833975527-6e82ce15af6b?auto=format&fit=crop&q=80&w=300' },
-          ].map(s => (
-            <div key={s.id} className="suggest-card">
-              <div className="suggest-img">
-                <img src={s.image} alt={s.name} />
-              </div>
-              <div className="suggest-info">
-                <h4>{s.name}</h4>
-                <p>₹{s.price.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
     </div>
   );
 };
