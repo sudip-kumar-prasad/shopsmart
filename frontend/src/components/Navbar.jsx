@@ -46,7 +46,17 @@ const Navbar = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
             onKeyDown={handleSearch}
           />
-          <Search className="search-icon" size={18} />
+          <Search 
+            className="search-icon" 
+            size={18} 
+            onClick={() => {
+              if (searchTerm.trim()) {
+                navigate(`/shop?search=${searchTerm}`);
+                setIsMenuOpen(false);
+              }
+            }}
+            style={{ cursor: 'pointer' }}
+          />
         </div>
 
         {/* Icons Area */}
@@ -88,8 +98,24 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="mobile-menu container">
            <div className="navbar-search mobile">
-            <input type="text" placeholder="Search for products..." />
-            <Search className="search-icon" size={18} />
+            <input 
+              type="text" 
+              placeholder="Search for products..." 
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyDown={handleSearch}
+            />
+            <Search 
+              className="search-icon" 
+              size={18} 
+              onClick={() => {
+                if (searchTerm.trim()) {
+                  navigate(`/shop?search=${searchTerm}`);
+                  setIsMenuOpen(false);
+                }
+              }}
+              style={{ cursor: 'pointer' }}
+            />
           </div>
           <Link to="/shop" onClick={() => setIsMenuOpen(false)}>Shop</Link>
           <Link to="/deals" onClick={() => setIsMenuOpen(false)}>Deals</Link>
