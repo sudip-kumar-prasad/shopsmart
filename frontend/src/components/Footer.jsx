@@ -10,11 +10,6 @@ const Footer = () => {
         <div className="footer-brand">
           <div className="logo">Shop<span>Smart</span></div>
           <p>Elevating everyday commerce through a curated digital experience. Quality over quantity, always.</p>
-          <div className="social-links">
-            <a href="#"><Facebook size={20} /></a>
-            <a href="#"><Twitter size={20} /></a>
-            <a href="#"><Instagram size={20} /></a>
-          </div>
         </div>
 
         <div className="footer-links">
