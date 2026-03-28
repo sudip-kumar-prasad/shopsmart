@@ -116,11 +116,6 @@ const MyOrdersPage = () => {
                   <span className="o-total">₹{order.totalPrice?.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
                 </div>
               </div>
-
-              <div className="order-row-footer">
-                <button className="link-action">Track Package</button>
-                <button className="link-action secondary">View Details <ChevronRight size={14} /></button>
-              </div>
             </div>
           ))
         )}

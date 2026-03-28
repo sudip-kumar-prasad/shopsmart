@@ -345,7 +345,6 @@ const ProfilePage = () => {
                              {order.orderItems.length} {order.orderItems.length === 1 ? 'item' : 'items'}
                           </div>
                           <div className="h-total">₹{order.totalPrice.toLocaleString()}</div>
-                          <button className="btn-details" onClick={() => navigate('/orders')}>Track Order <ArrowRight size={14} /></button>
                        </div>
                     </div>
                   ))
