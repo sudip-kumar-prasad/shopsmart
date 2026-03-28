@@ -429,7 +429,126 @@
   background-color: #f8fafc;
   padding: 2rem;
   border-radius: 1.25rem;
-  border: 1px solid #f1f5f9;
+  border: 1px solid #e2e8f0;
+}
+
+.dashboard-section-card .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 1rem;
+}
+
+.dashboard-section-card .section-header h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.edit-link-btn, .view-link {
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.2s;
+  padding: 0;
+}
+
+.edit-link-btn:hover, .view-link:hover {
+  color: var(--primary-color);
+}
+
+.personal-info-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.info-label {
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.info-value {
+  color: #1e293b;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.orders-summary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.order-summary-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: white;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  font-size: 0.85rem;
+  transition: border-color 0.2s;
+}
+
+.order-summary-row:hover {
+  border-color: #cbd5e1;
+}
+
+.order-id {
+  font-family: monospace;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.order-date {
+  color: #475569;
+}
+
+.order-price {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.order-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.order-status.paid { background: #dcfce7; color: #16a34a; }
+.order-status.pending { background: #fff7ed; color: #f97316; }
+
+@media (max-width: 600px) {
+  .order-summary-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
 }
 
 .edit-form {
