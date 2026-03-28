@@ -311,7 +311,13 @@ const ProfilePage = () => {
                       <div className="order-price">₹{order.totalPrice.toLocaleString()}</div>
                       <div className={`order-status ${order.isPaid ? 'paid' : 'pending'}`}>{order.isPaid ? 'Paid' : 'Pending'}</div>
                     </div>
-                  )) : <p className="empty-text">No orders yet.</p>}
+                  )) : (
+                    <div className="dashboard-empty-orders" style={{ textAlign: 'center', padding: '3rem 1rem', background: '#f8fafc', borderRadius: '0.75rem', marginTop: '1rem', border: '2px dashed #e2e8f0' }}>
+                      <Package size={32} color="#94a3b8" style={{ margin: '0 auto 1rem auto' }} />
+                      <p style={{ color: '#475569', fontWeight: '600', fontSize: '0.95rem', margin: '0 0 0.25rem 0' }}>No recent orders</p>
+                      <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>When you place an order, it will appear here.</span>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
