@@ -17,6 +17,9 @@ db();
 
 const app = express();
 
+// Trust proxy for production redirects
+app.set('trust proxy', 1);
+
 // Middleware
 app.use(cors({
   origin: process.env.FRONTEND_URL || 'http://localhost:5173',

@@ -57,7 +57,7 @@ const LoginPage = () => {
               type="button" 
               className="social-button google" 
               style={{ width: '100%' }}
-              onClick={() => { window.location.href = 'http://localhost:5001/api/users/auth/google'; }}
+              onClick={() => { window.location.href = '/api/users/auth/google'; }}
             >
               <img src="https://fonts.gstatic.com/s/i/productlogos/googleg/v6/24px.svg" alt="Google" width="18" height="18" />
               Continue with Google
