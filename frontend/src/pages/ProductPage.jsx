@@ -11,12 +11,27 @@ import Skeleton from '../components/Skeleton';
 import productsData from '../assets/products.json';
 import './ProductPage.css';
 
-const relatedProducts = [
-  { id: 11, name: 'Pro Case Ltd Edition', price: 89.0, image: 'https://images.unsplash.com/photo-1608156639585-34052e35a962?auto=format&fit=crop&q=80&w=400', label: 'CASE' },
-  { id: 12, name: 'NuPhone 15 Pro', price: 1099.0, image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=400', label: 'PHONE' },
-  { id: 13, name: 'QuickCharge Stand', price: 89.0, image: 'https://images.unsplash.com/photo-1583394293884-b32c35b3c8a5?auto=format&fit=crop&q=80&w=400', label: 'CHARGER' },
-  { id: 14, name: 'AmpFlow Pro DAC', price: 349.0, image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400', label: 'AUDIO' },
-];
+// Helper to pick dynamic related products
+const getRecommendedProducts = (currentId, category, allProducts) => {
+  if (!allProducts || !allProducts.length) return [];
+  
+  // Filter out the current product and try to find others in the same category
+  const related = allProducts.filter(p => 
+    (p._id !== currentId && p.id !== currentId) && 
+    (p.category === category)
+  ).slice(0, 4);
+
+  // If we don't have enough same-category items, pick some random ones
+  if (related.length < 4) {
+    const others = allProducts.filter(p => 
+      (p._id !== currentId && p.id !== currentId) && 
+      !related.find(r => r.id === p.id || r._id === p._id)
+    ).slice(0, 4 - related.length);
+    return [...related, ...others].slice(0, 4);
+  }
+  
+  return related;
+};
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -101,6 +116,11 @@ const ProductPage = () => {
     fetchProduct();
     window.scrollTo(0,0);
   }, [id]);
+
+  const recommendedItems = React.useMemo(() => 
+    getRecommendedProducts(product._id || product.id, product.category, productsData),
+    [product, productsData]
+  );
 
   const thumbnails = product.images && product.images.length >= 3 ? product.images : [
     product.image,
@@ -363,15 +383,15 @@ const ProductPage = () => {
       <section className="pairs-section section">
         <h2>Pairs Perfectly With</h2>
         <div className="pairs-grid">
-          {relatedProducts.map(item => (
-            <div key={item.id} className="pair-card">
+          {recommendedItems.map(item => (
+            <Link key={item._id || item.id} to={`/product/${item._id || item.id}`} className="pair-card" style={{ textDecoration: 'none', color: 'inherit' }}>
               <div className="pair-img">
                 <img src={item.image} alt={item.name} />
-                {item.label && <span className="pair-label">{item.label}</span>}
+                {item.category && <span className="pair-label">{item.category.toUpperCase()}</span>}
               </div>
               <h4>{item.name}</h4>
               <p>₹{item.price.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
