@@ -1,9 +1,20 @@
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
+import { Heart, ShoppingBag, ArrowRight } from 'lucide-react';
+import axios from 'axios';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { useWishlist } from '../context/WishlistContext';
 import './HomePage.css';
+
+const featuredProducts = [
+  { id: '1', name: 'Premium Leather Bag', brand: 'LeatherCo', price: 12500, bg: '#fef3c7', image: 'https://images.unsplash.com/photo-1548036627-19f2b161c5e2?auto=format&fit=crop&q=80&w=400' },
+  { id: '2', name: 'Minimalist Watch', brand: 'Tempo', price: 8900, bg: '#f1f5f9', image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=400' },
+  { id: '3', name: 'Wireless Headphones', brand: 'AudioX', price: 15400, bg: '#ecfdf5', image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400' },
+  { id: '4', name: 'Luxe Sunglasses', brand: 'Vision', price: 6200, bg: '#fff7ed', image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&q=80&w=400' },
+];
 
 const HomePage = () => {
   const [featured, setFeatured] = useState(featuredProducts);
@@ -293,3 +304,5 @@ const HomePage = () => {
     </motion.div>
   );
 };
+
+export default HomePage;

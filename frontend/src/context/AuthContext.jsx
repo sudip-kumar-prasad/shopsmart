@@ -7,7 +7,14 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() => {
     // Check if user is saved in localStorage on load
     const savedUser = localStorage.getItem('shopsmart_user');
-    return savedUser ? JSON.parse(savedUser) : null;
+    if (!savedUser) return null;
+    try {
+      return JSON.parse(savedUser);
+    } catch (e) {
+      console.error('Error parsing saved user', e);
+      localStorage.removeItem('shopsmart_user');
+      return null;
+    }
   });
 
   const login = async (email, password) => {

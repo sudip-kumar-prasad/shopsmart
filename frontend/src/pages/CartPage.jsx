@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'sonner';
 import { Trash2, Plus, Minus, ArrowRight, Lock, RotateCcw, ShoppingBag } from 'lucide-react';

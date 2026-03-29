@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { useWishlist } from '../context/WishlistContext';
+import productsData from '../assets/products.json';
 import './ShopPage.css'; // Reusing base layout typography
 import './DealsPage.css';
 
@@ -39,7 +40,6 @@ const DealsPage = () => {
       } catch (error) {
         console.log('Backend not active or route not loaded, using fallback');
         // Fallback: sort the dummy data by lowest price and take the top 20
-        const productsData = require('../assets/products.json');
         const sorted = [...productsData].sort((a, b) => a.price - b.price);
         data = sorted.slice(0, 20);
       }
