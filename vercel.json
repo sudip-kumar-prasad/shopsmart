@@ -5,7 +5,7 @@
       "destination": "https://shopsmart-2-f0jd.onrender.com/api/$1"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
   ],
