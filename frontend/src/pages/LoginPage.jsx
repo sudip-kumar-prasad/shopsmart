@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { toast } from 'sonner';
 import { useAuth } from '../context/AuthContext';
 import './AuthPages.css';
 
@@ -19,9 +21,10 @@ const LoginPage = () => {
     try {
       const res = await login(formData.email, formData.password);
       if (res.success) {
+        toast.success('Welcome back!');
         navigate(redirectPath);
       } else {
-        alert(res.error || 'Login failed. Please check credentials.');
+        toast.error(res.error || 'Login failed. Please check credentials.');
       }
     } finally {
       setIsLoading(false);
@@ -29,7 +32,12 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="auth-page">
+    <motion.div 
+      className="auth-page"
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.95 }}
+    >
       <div className="auth-card">
         <div className="auth-header">
           <h1>Shop<span>Smart</span></h1>
@@ -78,7 +86,7 @@ const LoginPage = () => {
         
         <p className="auth-switch">Don't have an account? <Link to="/register">Sign up</Link></p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

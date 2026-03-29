@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Star, Heart, ShoppingBag, Truck, RotateCcw, Plus, Minus } from 'lucide-react';
 import axios from 'axios';
+import { motion } from 'framer-motion';
+import { toast } from 'sonner';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { useWishlist } from '../context/WishlistContext';
+import Skeleton from '../components/Skeleton';
 import productsData from '../assets/products.json';
 import './ProductPage.css';
 
@@ -15,19 +18,21 @@ const relatedProducts = [
   { id: 14, name: 'AmpFlow Pro DAC', price: 349.0, image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400', label: 'AUDIO' },
 ];
 
-const reviews = [
-  { id: 1, name: 'Jillian B.', rating: 5, date: '06.11.2023', text: "The best noise cancelling I've ever experienced. I use them daily for my morning commute and the battery seems to last forever. Definitely worth the premium price tag." },
-  { id: 2, name: 'Marcus R.', rating: 5, date: '14.10.2023', text: "Incredible sound profile. It handles deep bass, crisp highs with ease. Vocal clarity is unmatched in this price range. The build quality here truly feels robust and premium." },
-];
-
 const ProductPage = () => {
   const { id } = useParams();
   
   // Fallback to dummy data immediately on mount just in case
   const fallbackProduct = productsData.find(p => p.id === parseInt(id) || p._id === id) || productsData[0];
   const [product, setProduct] = useState(fallbackProduct);
+  const [isLoading, setIsLoading] = useState(true);
   const [selectedImg, setSelectedImg] = useState(0);
   const [qty, setQty] = useState(1);
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState('');
+  const [showReviewForm, setShowReviewForm] = useState(false);
+  const [loadingReview, setLoadingReview] = useState(false);
+  const [errorReview, setErrorReview] = useState(null);
+
   const { addItem } = useCart();
   const { user } = useAuth();
   const { toggleWishlist, isInWishlist } = useWishlist();
@@ -39,6 +44,7 @@ const ProductPage = () => {
       return;
     }
     addItem({...product, id: product.id || product._id, qty});
+    toast.success('Added to cart!');
   };
 
   const handleBuyNow = () => {
@@ -50,8 +56,39 @@ const ProductPage = () => {
     navigate('/checkout');
   };
 
-  React.useEffect(() => {
+  const submitReviewHandler = async (e) => {
+    e.preventDefault();
+    if (rating === 0) {
+      toast.error('Please select a rating');
+      return;
+    }
+    setLoadingReview(true);
+    setErrorReview(null);
+    try {
+      const config = {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${user.token}`,
+        },
+      };
+      const { data } = await axios.post(`/api/products/${id}/reviews`, { rating, comment }, config);
+      setProduct(data.product);
+      setRating(0);
+      setComment('');
+      setShowReviewForm(false);
+      toast.success('Review submitted successfully!');
+    } catch (error) {
+      const msg = error.response && error.response.data.message ? error.response.data.message : error.message;
+      setErrorReview(msg);
+      toast.error(msg);
+    } finally {
+      setLoadingReview(false);
+    }
+  };
+
+  useEffect(() => {
     const fetchProduct = async () => {
+      setIsLoading(true);
       try {
         const { data } = await axios.get(`/api/products/${id}`);
         setProduct(data);
@@ -59,6 +96,7 @@ const ProductPage = () => {
       } catch (error) {
         console.log('Backend not active, using dummy data fallback for ProductPage');
       }
+      setTimeout(() => setIsLoading(false), 800);
     };
     fetchProduct();
     window.scrollTo(0,0);
@@ -70,8 +108,33 @@ const ProductPage = () => {
     product.image
   ];
 
+  if (isLoading) {
+    return (
+      <div className="product-page container">
+        <div className="product-layout">
+          <div className="product-gallery">
+            <Skeleton height="500px" borderRadius="1.5rem" />
+          </div>
+          <div className="product-info-panel">
+            <Skeleton width="100px" height="1rem" className="mb-4" />
+            <Skeleton width="80%" height="3rem" className="mb-4" />
+            <Skeleton width="40%" height="1.5rem" className="mb-4" />
+            <Skeleton height="100px" className="mb-4" />
+            <Skeleton height="50px" width="200px" />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="product-page container">
+    <motion.div 
+      className="product-page container"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       {/* Breadcrumbs */}
       <div className="breadcrumbs">
         <Link to="/">Home</Link> / <Link to="/shop">Electronics</Link> / <span>{product.name}</span>
@@ -96,7 +159,12 @@ const ProductPage = () => {
             <img src={thumbnails[selectedImg]} alt={product.name} />
             <button 
               className={`wishlist-btn ${product && isInWishlist(product._id || product.id) ? 'active' : ''}`}
-              onClick={() => product && toggleWishlist(product)}
+              onClick={() => {
+                toggleWishlist(product);
+                if (!isInWishlist(product._id || product.id)) {
+                  toast.success('Added to wishlist');
+                }
+              }}
             >
               <Heart size={20} fill={product && isInWishlist(product._id || product.id) ? "currentColor" : "none"} />
             </button>
@@ -114,7 +182,7 @@ const ProductPage = () => {
                 <Star key={i} size={16} fill={i < Math.floor(product.rating) ? '#fbbf24' : 'none'} color="#fbbf24" />
               ))}
             </div>
-            <span className="rating-count">{product.rating} ({product.numReviews} Reviews)</span>
+            <span className="rating-count">{product.rating.toFixed(1)} ({product.numReviews} Reviews)</span>
           </div>
 
           <div className="price-tag">
@@ -181,15 +249,74 @@ const ProductPage = () => {
         </div>
       </div>
 
-      {/* Reviews */}
+      {/* Reviews Section */}
       <section className="reviews-section section">
         <div className="reviews-header">
           <h2>User Voices</h2>
-          <button onClick={() => alert('Review portal opening soon!')} className="btn btn-secondary">Write a Review</button>
+          <button 
+            onClick={() => {
+              if (!user) {
+                navigate(`/login?redirect=/product/${id}`);
+              } else {
+                setShowReviewForm(!showReviewForm);
+              }
+            }} 
+            className="btn btn-secondary"
+          >
+            {showReviewForm ? 'Cancel' : 'Write a Review'}
+          </button>
         </div>
+
+        {showReviewForm && (
+          <motion.div 
+            className="review-form-container"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+          >
+            <h3>Share your experience</h3>
+            <form onSubmit={submitReviewHandler} className="review-form">
+              <div className="form-group">
+                <label>Rating</label>
+                <div className="star-selector">
+                  {[1, 2, 3, 4, 5].map((s) => (
+                    <button
+                      key={s}
+                      type="button"
+                      onClick={() => setRating(s)}
+                      onMouseEnter={() => setRating(s)}
+                      className="star-btn"
+                    >
+                      <Star
+                        size={24}
+                        fill={s <= rating ? '#fbbf24' : 'none'}
+                        color={s <= rating ? '#fbbf24' : '#d1d5db'}
+                      />
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className="form-group">
+                <label>Your Review</label>
+                <textarea
+                  value={comment}
+                  onChange={(e) => setComment(e.target.value)}
+                  placeholder="What did you like or dislike? How was the quality?"
+                  required
+                  rows="4"
+                ></textarea>
+              </div>
+              {errorReview && <p className="error-message">{errorReview}</p>}
+              <button type="submit" className="btn btn-primary" disabled={loadingReview}>
+                {loadingReview ? 'Submitting...' : 'Post Review'}
+              </button>
+            </form>
+          </motion.div>
+        )}
+
         <div className="reviews-layout">
           <div className="rating-summary">
-            <span className="big-rating">{product.rating}</span>
+            <span className="big-rating">{product.rating.toFixed(1)}</span>
             <div className="stars">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} size={20} fill={i < Math.floor(product.rating) ? '#fbbf24' : 'none'} color="#fbbf24" />
@@ -198,22 +325,36 @@ const ProductPage = () => {
             <p>{product.numReviews} Reviews</p>
           </div>
           <div className="review-cards">
-            {reviews.map(review => (
-              <div key={review.id} className="review-card">
-                <div className="review-header">
-                  <div>
-                    <strong>{review.name}</strong>
-                    <span className="review-date">Verified Buyer</span>
+            {(product.reviews && product.reviews.length > 0) ? (
+              product.reviews.map((review, i) => (
+                <motion.div 
+                  key={review._id || i} 
+                  className="review-card"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <div className="review-header">
+                    <div>
+                      <strong>{review.name}</strong>
+                      <span className="review-date">
+                        {new Date(review.createdAt).toLocaleDateString()} • Verified Buyer
+                      </span>
+                    </div>
+                    <div className="stars">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={14} fill={i < review.rating ? '#fbbf24' : 'none'} color="#fbbf24" />
+                      ))}
+                    </div>
                   </div>
-                  <div className="stars">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={14} fill={i < review.rating ? '#fbbf24' : 'none'} color="#fbbf24" />
-                    ))}
-                  </div>
-                </div>
-                <p>{review.text}</p>
+                  <p>{review.comment || review.text}</p>
+                </motion.div>
+              ))
+            ) : (
+              <div style={{ padding: '2rem 1rem', background: '#f9fafb', borderRadius: '1rem', textAlign: 'center', gridColumn: 'span 2' }}>
+                <p style={{ color: '#6b7280' }}>No reviews yet for this product. Be the first to share your thoughts!</p>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -234,7 +375,7 @@ const ProductPage = () => {
           ))}
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

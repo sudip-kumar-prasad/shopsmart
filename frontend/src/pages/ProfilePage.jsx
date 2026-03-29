@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { toast } from 'sonner';
 import { 
   User, Package, MapPin, Settings, LogOut, 
   ChevronRight, Edit2, Plus, ArrowRight, Heart,
@@ -10,6 +12,7 @@ import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 import { useWishlist } from '../context/WishlistContext';
 import { useCart } from '../context/CartContext';
+import Skeleton from '../components/Skeleton';
 import './ProfilePage.css';
 
 const ProfilePage = () => {
@@ -72,7 +75,7 @@ const ProfilePage = () => {
     } catch (err) {
       console.error('Failed to fetch profile', err);
     } finally {
-      setLoadingProfile(false);
+      setTimeout(() => setLoadingProfile(false), 800);
     }
   };
 
@@ -93,7 +96,7 @@ const ProfilePage = () => {
         } catch (err) {
           console.error('Failed to fetch orders', err);
         } finally {
-          setLoadingOrders(false);
+          setTimeout(() => setLoadingOrders(false), 800);
         }
       };
       fetchOrders();
@@ -102,6 +105,7 @@ const ProfilePage = () => {
 
   const handleLogout = () => {
     logout();
+    toast.success('Signed out successfully');
     navigate('/');
   };
 
@@ -113,16 +117,16 @@ const ProfilePage = () => {
       );
       setProfile(data);
       setIsEditing(false);
-      alert('Profile updated successfully!');
+      toast.success('Profile updated successfully!');
     } catch (err) {
-      alert('Failed to update profile');
+      toast.error('Failed to update profile');
     }
   };
 
   const handlePasswordChange = async (e) => {
     e.preventDefault();
     if (passwordForm.newPassword !== passwordForm.confirmPassword) {
-      alert('Passwords do not match');
+      toast.error('Passwords do not match');
       return;
     }
     try {
@@ -130,11 +134,11 @@ const ProfilePage = () => {
         { password: passwordForm.newPassword },
         { headers: { Authorization: `Bearer ${user.token}` } }
       );
-      alert('Password updated successfully!');
+      toast.success('Password updated successfully!');
       setIsChangingPassword(false);
       setPasswordForm({ newPassword: '', confirmPassword: '' });
     } catch (err) {
-      alert('Failed to update password');
+      toast.error('Failed to update password');
     }
   };
 
@@ -152,18 +156,24 @@ const ProfilePage = () => {
         { notificationPrefs: updatedPrefs },
         { headers: { Authorization: `Bearer ${user.token}` } }
       );
+      toast.success('Preferences updated');
     } catch (err) {
-      alert('Failed to update notifications');
+      toast.error('Failed to update notifications');
       // Revert if failed
       fetchProfile();
     }
   };
 
   const handleDeactivateAccount = () => {
-    if (window.confirm('Are you SURE you want to delete your account? This cannot be undone.')) {
-      alert('Account deactivation request received. This would connect to a DELETE endpoint in a real app.');
-      // logout();
-    }
+    toast((t) => (
+      <span>
+        Are you sure? This cannot be undone.
+        <button className="btn btn-danger btn-sm ml-2" onClick={() => {
+          toast.dismiss(t.id);
+          toast.success('Account deletion request received.');
+        }}>Confirm</button>
+      </span>
+    ));
   };
 
   const handleAddAddress = async (e) => {
@@ -177,14 +187,13 @@ const ProfilePage = () => {
       setProfile(data);
       setIsAddingAddress(false);
       setNewAddress({ name: '', addressLine: '', city: '', postalCode: '', country: '', isDefault: false });
-      alert('Address added successfully!');
+      toast.success('Address added successfully!');
     } catch (err) {
-      alert('Failed to add address');
+      toast.error('Failed to add address');
     }
   };
 
   const handleDeleteAddress = async (addrId) => {
-    if (!window.confirm('Are you sure you want to remove this address?')) return;
     const updatedAddresses = profile.addresses.filter(a => a._id !== addrId);
     try {
       const { data } = await axios.put('/api/users/profile', 
@@ -192,8 +201,9 @@ const ProfilePage = () => {
         { headers: { Authorization: `Bearer ${user.token}` } }
       );
       setProfile(data);
+      toast.info('Address removed');
     } catch (err) {
-      alert('Failed to remove address');
+      toast.error('Failed to remove address');
     }
   };
 
@@ -208,8 +218,9 @@ const ProfilePage = () => {
         { headers: { Authorization: `Bearer ${user.token}` } }
       );
       setProfile(data);
+      toast.success('Default address updated');
     } catch (err) {
-      alert('Failed to set default address');
+      toast.error('Failed to set default address');
     }
   };
 
@@ -222,19 +233,44 @@ const ProfilePage = () => {
     );
   }
 
+  const containerVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.1 } }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   const renderContent = () => {
-    if (loadingProfile && activeTab === 'dashboard') return <p>Loading profile...</p>;
+    if (loadingProfile && activeTab === 'dashboard') {
+      return (
+        <div className="profile-skeleton-view">
+          <Skeleton height="100px" className="mb-8" />
+          <div className="stats-row mb-8">
+            <Skeleton width="30%" height="100px" />
+            <Skeleton width="30%" height="100px" />
+            <Skeleton width="30%" height="100px" />
+          </div>
+          <div className="dashboard-sections-grid">
+            <Skeleton height="300px" />
+            <Skeleton height="300px" />
+          </div>
+        </div>
+      );
+    }
 
     switch (activeTab) {
       case 'dashboard':
         return (
-          <>
-            <div className="welcome-section">
+          <motion.div variants={containerVariants} initial="hidden" animate="visible">
+            <motion.div className="welcome-section" variants={itemVariants}>
               <h2>Welcome back, {profile?.name?.split(' ')[0] || user.name?.split(' ')[0] || 'Member'}!</h2>
               <p>From your account dashboard you can view your recent orders and manage your account settings.</p>
-            </div>
+            </motion.div>
 
-            <div className="stats-row">
+            <motion.div className="stats-row" variants={itemVariants}>
               <div className="stats-card">
                 <div className="stats-icon icon-circle orange"><Package size={24} /></div>
                 <div className="stats-info">
@@ -256,10 +292,10 @@ const ProfilePage = () => {
                   <p>Premium</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             <div className="dashboard-sections-grid">
-              <div className="dashboard-section-card">
+              <motion.div className="dashboard-section-card" variants={itemVariants}>
                 <div className="section-header">
                   <h3>Personal Information</h3>
                   {!isEditing ? (
@@ -295,15 +331,15 @@ const ProfilePage = () => {
                     </>
                   )}
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="dashboard-section-card">
+              <motion.div className="dashboard-section-card" variants={itemVariants}>
                 <div className="section-header">
                   <h3>Recent Orders</h3>
                   <button onClick={() => setActiveTab('orders')} className="view-link">View All</button>
                 </div>
                 <div className="orders-summary-list">
-                  {loadingOrders ? <p>Loading...</p> : 
+                  {loadingOrders ? <Skeleton height="200px" /> : 
                    orders.length > 0 ? orders.slice(0, 3).map(order => (
                     <div key={order._id} className="order-summary-row">
                       <div className="order-id">#{order._id.slice(-6).toUpperCase()}</div>
@@ -319,22 +355,22 @@ const ProfilePage = () => {
                     </div>
                   )}
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </>
+          </motion.div>
         );
 
       case 'orders':
         return (
-          <div className="tab-view-container">
+          <motion.div className="tab-view-container" variants={containerVariants} initial="hidden" animate="visible">
             <div className="section-header">
               <h2>My Order History</h2>
             </div>
             <div className="orders-history-list">
-               {loadingOrders ? <p>Loading orders...</p> : 
+               {loadingOrders ? [1, 2, 3].map(i => <Skeleton key={i} height="100px" className="mb-4" />) : 
                 orders.length > 0 ? (
                   orders.map(order => (
-                    <div key={order._id} className="history-order-card">
+                    <motion.div key={order._id} className="history-order-card" variants={itemVariants}>
                        <div className="h-order-header">
                           <div className="h-id">Order ID: #{order._id.toUpperCase()}</div>
                           <div className={`h-status ${order.isPaid ? 'paid' : 'pending'}`}>{order.isPaid ? 'Order Paid' : 'Payment Pending'}</div>
@@ -346,7 +382,7 @@ const ProfilePage = () => {
                           </div>
                           <div className="h-total">₹{order.totalPrice.toLocaleString()}</div>
                        </div>
-                    </div>
+                    </motion.div>
                   ))
                 ) : (
                   <div className="empty-state">
@@ -357,12 +393,12 @@ const ProfilePage = () => {
                 )
                }
             </div>
-          </div>
+          </motion.div>
         );
 
       case 'wishlist':
         return (
-          <div className="tab-view-container">
+          <motion.div className="tab-view-container" variants={containerVariants} initial="hidden" animate="visible">
             <div className="section-header">
               <h2>My Wishlist</h2>
               <span className="count-badge">{wishlistItems.length} items saved</span>
@@ -370,19 +406,25 @@ const ProfilePage = () => {
             <div className="wishlist-grid">
               {wishlistItems.length > 0 ? (
                 wishlistItems.map(item => (
-                  <div key={item.id} className="wishlist-item-card">
+                  <motion.div key={item.id} className="wishlist-item-card" variants={itemVariants}>
                     <div className="w-img">
                       <img src={item.image} alt={item.name} />
-                      <button className="w-remove" onClick={() => removeFromWishlist(item.id)}><Trash2 size={16} /></button>
+                      <button className="w-remove" onClick={() => {
+                        removeFromWishlist(item.id);
+                        toast.info('Removed from wishlist');
+                      }}><Trash2 size={16} /></button>
                     </div>
                     <div className="w-info">
                       <h4>{item.name}</h4>
                       <p className="w-price">₹{item.price.toLocaleString()}</p>
-                      <button className="w-add-cart" onClick={() => addItem({...item, qty: 1})}>
+                      <button className="w-add-cart" onClick={() => {
+                        addItem({...item, qty: 1});
+                        toast.success('Added to cart!');
+                      }}>
                         <Plus size={14} /> ADD TO CART
                       </button>
                     </div>
-                  </div>
+                  </motion.div>
                 ))
               ) : (
                 <div className="empty-state">
@@ -392,12 +434,12 @@ const ProfilePage = () => {
                 </div>
               )}
             </div>
-          </div>
+          </motion.div>
         );
 
       case 'addresses':
         return (
-          <div className="tab-view-container">
+          <motion.div className="tab-view-container" variants={containerVariants} initial="hidden" animate="visible">
             <div className="section-header">
               <h2>Shipping Addresses</h2>
               <button 
@@ -408,29 +450,37 @@ const ProfilePage = () => {
               </button>
             </div>
 
-            {isAddingAddress && (
-              <form className="add-address-form" onSubmit={handleAddAddress}>
-                <h3>New Delivery Address</h3>
-                <div className="form-grid">
-                  <input required placeholder="Address Name (e.g. Home, Office)" value={newAddress.name} onChange={e => setNewAddress({...newAddress, name: e.target.value})} />
-                  <input required placeholder="Street Address" value={newAddress.addressLine} onChange={e => setNewAddress({...newAddress, addressLine: e.target.value})} />
-                  <input required placeholder="City" value={newAddress.city} onChange={e => setNewAddress({...newAddress, city: e.target.value})} />
-                  <input required placeholder="Postal Code" value={newAddress.postalCode} onChange={e => setNewAddress({...newAddress, postalCode: e.target.value})} />
-                  <input required placeholder="Country" value={newAddress.country} onChange={e => setNewAddress({...newAddress, country: e.target.value})} />
-                </div>
-                <div className="form-footer">
-                  <label>
-                    <input type="checkbox" checked={newAddress.isDefault} onChange={e => setNewAddress({...newAddress, isDefault: e.target.checked})} /> Set as default address
-                  </label>
-                  <button type="submit" className="btn btn-primary">Save Address</button>
-                </div>
-              </form>
-            )}
+            <AnimatePresence>
+              {isAddingAddress && (
+                <motion.form 
+                  className="add-address-form" 
+                  onSubmit={handleAddAddress}
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                >
+                  <h3>New Delivery Address</h3>
+                  <div className="form-grid">
+                    <input required placeholder="Address Name (e.g. Home, Office)" value={newAddress.name} onChange={e => setNewAddress({...newAddress, name: e.target.value})} />
+                    <input required placeholder="Street Address" value={newAddress.addressLine} onChange={e => setNewAddress({...newAddress, addressLine: e.target.value})} />
+                    <input required placeholder="City" value={newAddress.city} onChange={e => setNewAddress({...newAddress, city: e.target.value})} />
+                    <input required placeholder="Postal Code" value={newAddress.postalCode} onChange={e => setNewAddress({...newAddress, postalCode: e.target.value})} />
+                    <input required placeholder="Country" value={newAddress.country} onChange={e => setNewAddress({...newAddress, country: e.target.value})} />
+                  </div>
+                  <div className="form-footer">
+                    <label>
+                      <input type="checkbox" checked={newAddress.isDefault} onChange={e => setNewAddress({...newAddress, isDefault: e.target.checked})} /> Set as default address
+                    </label>
+                    <button type="submit" className="btn btn-primary">Save Address</button>
+                  </div>
+                </motion.form>
+              )}
+            </AnimatePresence>
 
             <div className="address-list">
               {profile?.addresses?.length > 0 ? (
                 profile.addresses.map(addr => (
-                  <div key={addr._id} className={`address-card ${addr.isDefault ? 'default' : ''}`}>
+                  <motion.div key={addr._id} className={`address-card ${addr.isDefault ? 'default' : ''}`} variants={itemVariants}>
                     {addr.isDefault && <div className="address-badge">DEFAULT</div>}
                     <h4>{addr.name}</h4>
                     <p>{addr.addressLine}, {addr.city}</p>
@@ -441,7 +491,7 @@ const ProfilePage = () => {
                       )}
                       <button className="action-link delete" onClick={() => handleDeleteAddress(addr._id)}>Remove</button>
                     </div>
-                  </div>
+                  </motion.div>
                 ))
               ) : !isAddingAddress && (
                 <div className="empty-state">
@@ -450,18 +500,18 @@ const ProfilePage = () => {
                 </div>
               )}
             </div>
-          </div>
+          </motion.div>
         );
 
       case 'settings':
         return (
-          <div className="tab-view-container">
+          <motion.div className="tab-view-container" variants={containerVariants} initial="hidden" animate="visible">
             <div className="section-header">
               <h2>Account Settings</h2>
             </div>
             <div className="settings-options">
               {/* Security Section */}
-              <div className="settings-group card">
+              <motion.div className="settings-group card" variants={itemVariants}>
                 <div className="group-header">
                   <Lock size={20} className="group-icon text-indigo-600" />
                   <h3>Security</h3>
@@ -498,10 +548,10 @@ const ProfilePage = () => {
                     </div>
                   </form>
                 )}
-              </div>
+              </motion.div>
 
               {/* Notifications Section */}
-              <div className="settings-group card">
+              <motion.div className="settings-group card" variants={itemVariants}>
                 <div className="group-header">
                   <Bell size={20} className="group-icon text-orange-500" />
                   <h3>Notifications</h3>
@@ -530,10 +580,10 @@ const ProfilePage = () => {
                     </div>
                   </label>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Danger Zone */}
-              <div className="settings-group card danger-zone">
+              <motion.div className="settings-group card danger-zone" variants={itemVariants}>
                 <div className="group-header">
                   <Trash2 size={20} className="group-icon text-red-500" />
                   <h3 className="text-red-600">Danger Zone</h3>
@@ -542,9 +592,9 @@ const ProfilePage = () => {
                   <p>Permanently delete your account and all associated data. This action is irreversible.</p>
                   <button className="btn-danger" onClick={handleDeactivateAccount}>Delete Account</button>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         );
 
       default:
@@ -608,4 +658,3 @@ const ProfilePage = () => {
 };
 
 export default ProfilePage;
-

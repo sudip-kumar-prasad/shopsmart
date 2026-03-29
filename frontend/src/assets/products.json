@@ -22,7 +22,15 @@
     "category": "Fashion",
     "description": "CK One by Calvin Klein is a classic unisex fragrance, known for its fresh and clean scent. It's a versatile fragrance suitable for everyday wear.",
     "rating": 4.37,
-    "numReviews": 3,
+    "numReviews": 1,
+    "reviews": [
+      {
+        "name": "Alex M.",
+        "rating": 5,
+        "comment": "Smells amazing and lasts all day. Highly recommend for daily wear!",
+        "createdAt": "2023-11-20T10:00:00.000Z"
+      }
+    ],
     "price": 4149,
     "countInStock": 29,
     "id": 1
@@ -50,7 +58,15 @@
     "category": "Fashion",
     "description": "Coco Noir by Chanel is an elegant and mysterious fragrance, featuring notes of grapefruit, rose, and sandalwood. Perfect for evening occasions.",
     "rating": 4.26,
-    "numReviews": 3,
+    "numReviews": 1,
+    "reviews": [
+      {
+        "name": "Sarah J.",
+        "rating": 4,
+        "comment": "Very elegant and sophisticated. Perfect for events.",
+        "createdAt": "2023-11-20T10:00:00.000Z"
+      }
+    ],
     "price": 10789,
     "countInStock": 58,
     "id": 2

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { toast } from 'sonner';
 import { Trash2, Plus, Minus, ArrowRight, Lock, RotateCcw, ShoppingBag } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import './CartPage.css';
@@ -7,8 +7,19 @@ import './CartPage.css';
 const CartPage = () => {
   const { items, removeItem, updateQty, totalPrice, totalItems } = useCart();
 
+  const handleRemove = (id, name) => {
+    removeItem(id);
+    toast.info(`${name} removed from cart`);
+  };
+
   return (
-    <div className="cart-page container">
+    <motion.div 
+      className="cart-page container"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 20 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="cart-header">
         <h1 className="cart-title">Shopping Cart</h1>
         <p className="cart-subtitle">
@@ -31,36 +42,45 @@ const CartPage = () => {
         <div className="cart-layout">
           {/* Cart Items */}
           <div className="cart-items">
-            {items.map(item => (
-              <div key={item.id} className="cart-item-card">
-                <div className="cart-item-img">
-                  <img src={item.image} alt={item.name} />
-                </div>
-                <div className="cart-item-details">
-                  <div className="item-meta">
-                    <h3>{item.name}</h3>
-                    <p className="item-desc">{item.description || 'Premium quality addition to your collection.'}</p>
+            <AnimatePresence>
+              {items.map((item, index) => (
+                <motion.div 
+                  key={item.id} 
+                  className="cart-item-card"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 20 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <div className="cart-item-img">
+                    <img src={item.image} alt={item.name} />
                   </div>
-                  <div className="item-price-row">
-                    <p className="item-price">₹{item.price.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
-                    <div className="cart-item-actions">
-                      <div className="item-qty-selector">
-                        <button onClick={() => item.qty > 1 ? updateQty(item.id, item.qty - 1) : removeItem(item.id)}>
-                          <Minus size={14} />
-                        </button>
-                        <span>{item.qty}</span>
-                        <button onClick={() => updateQty(item.id, item.qty + 1)}>
-                          <Plus size={14} />
+                  <div className="cart-item-details">
+                    <div className="item-meta">
+                      <h3>{item.name}</h3>
+                      <p className="item-desc">{item.description || 'Premium quality addition to your collection.'}</p>
+                    </div>
+                    <div className="item-price-row">
+                      <p className="item-price">₹{item.price.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
+                      <div className="cart-item-actions">
+                        <div className="item-qty-selector">
+                          <button onClick={() => item.qty > 1 ? updateQty(item.id, item.qty - 1) : handleRemove(item.id, item.name)}>
+                            <Minus size={14} />
+                          </button>
+                          <span>{item.qty}</span>
+                          <button onClick={() => updateQty(item.id, item.qty + 1)}>
+                            <Plus size={14} />
+                          </button>
+                        </div>
+                        <button className="remove-link" onClick={() => handleRemove(item.id, item.name)}>
+                          Remove
                         </button>
                       </div>
-                      <button className="remove-link" onClick={() => removeItem(item.id)}>
-                        Remove
-                      </button>
                     </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </div>
 
           {/* Order Summary */}
@@ -112,7 +132,7 @@ const CartPage = () => {
         </div>
       )}
 
-    </div>
+    </motion.div>
   );
 };
 

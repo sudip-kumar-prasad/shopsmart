@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { Package, Search, ChevronRight, ShoppingBag } from 'lucide-react';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
+import Skeleton from '../components/Skeleton';
 import './MyOrdersPage.css';
 
 const MyOrdersPage = () => {
@@ -18,6 +18,7 @@ const MyOrdersPage = () => {
       return;
     }
     const fetchOrders = async () => {
+      setLoading(true);
       try {
         const { data } = await axios.get('/api/orders/myorders', {
           headers: { Authorization: `Bearer ${user.token}` }
@@ -27,7 +28,7 @@ const MyOrdersPage = () => {
         console.log('Could not fetch orders from backend:', error.message);
         setOrders([]);
       } finally {
-        setLoading(false);
+        setTimeout(() => setLoading(false), 800);
       }
     };
     fetchOrders();
@@ -48,16 +49,36 @@ const MyOrdersPage = () => {
     });
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: { opacity: 1, x: 0 }
+  };
+
   if (loading) {
     return (
-      <div className="orders-page container" style={{ textAlign: 'center', padding: '4rem' }}>
-        <p style={{ color: '#6b7280' }}>Loading your orders...</p>
+      <div className="orders-page container">
+        <Skeleton height="60px" width="300px" className="mb-4" />
+        <Skeleton height="50px" className="mb-8" />
+        {[1, 2, 3].map(i => (
+          <Skeleton key={i} height="150px" className="mb-4" borderRadius="1rem" />
+        ))}
       </div>
     );
   }
 
   return (
-    <div className="orders-page container">
+    <motion.div 
+      className="orders-page container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="orders-header">
         <h1 className="page-title">My Orders</h1>
         <div className="orders-search">
@@ -71,7 +92,12 @@ const MyOrdersPage = () => {
         </div>
       </div>
 
-      <div className="orders-list">
+      <motion.div 
+        className="orders-list"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         {filteredOrders.length === 0 ? (
           <div className="orders-empty-state" style={{ textAlign: 'center', padding: '6rem 2rem', background: '#f9fafb', borderRadius: '1rem', marginTop: '1rem' }}>
             <Package size={64} color="#9ca3af" style={{ margin: '0 auto 1.5rem auto' }} />
@@ -83,7 +109,7 @@ const MyOrdersPage = () => {
           </div>
         ) : (
           filteredOrders.map(order => (
-            <div key={order._id} className="order-item-card">
+            <motion.div key={order._id} className="order-item-card" variants={itemVariants}>
               <div className="order-row-header">
                 <div className="order-meta">
                   <span className="o-id">#{order._id?.slice(-8).toUpperCase()}</span>
@@ -116,11 +142,11 @@ const MyOrdersPage = () => {
                   <span className="o-total">₹{order.totalPrice?.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))
         )}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

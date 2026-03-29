@@ -13,6 +13,8 @@ import OrderSuccessPage from './pages/OrderSuccessPage'
 import ProfilePage from './pages/ProfilePage'
 import MyOrdersPage from './pages/MyOrdersPage'
 import OAuthCallbackPage from './pages/OAuthCallbackPage'
+import { Toaster } from 'sonner'
+import { AnimatePresence } from 'framer-motion'
 import { WishlistProvider } from './context/WishlistContext'
 import { CartProvider } from './context/CartContext'
 import { AuthProvider } from './context/AuthContext'
@@ -23,23 +25,26 @@ function App() {
     <AuthProvider>
       <WishlistProvider>
         <CartProvider>
+          <Toaster position="bottom-right" richColors />
           <Router>
             <Layout>
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/shop" element={<ShopPage />} />
-                <Route path="/deals" element={<DealsPage />} />
-                <Route path="/product/:id" element={<ProductPage />} />
-                <Route path="/cart" element={<CartPage />} />
-                <Route path="/checkout" element={<CheckoutPage />} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/register" element={<RegisterPage />} />
-                <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-                <Route path="/order-success" element={<OrderSuccessPage />} />
-                <Route path="/profile" element={<ProfilePage />} />
-                <Route path="/orders" element={<MyOrdersPage />} />
-                <Route path="/oauth-callback" element={<OAuthCallbackPage />} />
-              </Routes>
+              <AnimatePresence mode="wait">
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/shop" element={<ShopPage />} />
+                  <Route path="/deals" element={<DealsPage />} />
+                  <Route path="/product/:id" element={<ProductPage />} />
+                  <Route path="/cart" element={<CartPage />} />
+                  <Route path="/checkout" element={<CheckoutPage />} />
+                  <Route path="/login" element={<LoginPage />} />
+                  <Route path="/register" element={<RegisterPage />} />
+                  <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+                  <Route path="/order-success" element={<OrderSuccessPage />} />
+                  <Route path="/profile" element={<ProfilePage />} />
+                  <Route path="/orders" element={<MyOrdersPage />} />
+                  <Route path="/oauth-callback" element={<OAuthCallbackPage />} />
+                </Routes>
+              </AnimatePresence>
             </Layout>
           </Router>
         </CartProvider>

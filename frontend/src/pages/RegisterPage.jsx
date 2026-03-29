@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { toast } from 'sonner';
 import { useAuth } from '../context/AuthContext';
 import './AuthPages.css';
 
@@ -23,16 +25,17 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.password !== formData.confirmPassword) {
-      alert('Passwords do not match!');
+      toast.error('Passwords do not match!');
       return;
     }
     setIsLoading(true);
     try {
       const res = await register(formData.name, formData.email, formData.password);
       if (res.success) {
+        toast.success('Account created successfully!');
         navigate('/');
       } else {
-        alert(res.error || 'Registration failed. Please try again.');
+        toast.error(res.error || 'Registration failed. Please try again.');
       }
     } finally {
       setIsLoading(false);
@@ -40,7 +43,12 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="auth-page">
+    <motion.div 
+      className="auth-page"
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.95 }}
+    >
       <div className="auth-card auth-card-wide">
         <div className="auth-banner auth-banner-register">
           <h2 className="banner-logo">ShopSmart</h2>
@@ -125,7 +133,7 @@ const RegisterPage = () => {
                 type="button" 
                 className="social-button google" 
                 style={{ width: '100%' }}
-                onClick={() => { window.location.href = 'http://localhost:5001/api/users/auth/google'; }}
+                onClick={() => { window.location.href = '/api/users/auth/google'; }}
               >
                 <img src="https://fonts.gstatic.com/s/i/productlogos/googleg/v6/24px.svg" alt="Google" width="18" height="18" />
                 Sign up with Google
@@ -134,11 +142,11 @@ const RegisterPage = () => {
           </div>
 
           <p className="auth-switch">
-            Already have an account? <Link to="/login">Sign In</Link>
+             Already have an account? <Link to="/login">Sign In</Link>
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

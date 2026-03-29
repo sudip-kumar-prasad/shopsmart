@@ -5,14 +5,18 @@ import axios from 'axios';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { useWishlist } from '../context/WishlistContext';
+import { motion } from 'framer-motion';
+import { toast } from 'sonner';
+import { ProductSkeleton } from '../components/Skeleton';
 import productsData from '../assets/products.json';
 import './ShopPage.css';
 
 const ShopPage = () => {
-  const [rawProducts, setRawProducts] = useState(productsData);
-  const [products, setProducts] = useState(productsData);
+  const [rawProducts, setRawProducts] = useState([]);
+  const [products, setProducts] = useState([]);
   const [topBrands, setTopBrands] = useState([]);
   const [limit, setLimit] = useState(12);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Filter States
   const location = useLocation();
@@ -35,6 +39,7 @@ const ShopPage = () => {
       return;
     }
     addItem(product);
+    toast.success(`${product.name} added to cart!`);
   };
 
   const handleBrandToggle = (brand) => {
@@ -49,11 +54,13 @@ const ShopPage = () => {
     setPriceMax(200000);
     setSelectedRating(0);
     setSortOption('Popularity');
+    toast.info('Filters reset');
   };
 
   // Fetch initial raw products and dynamic brands
   useEffect(() => {
     const fetchProducts = async () => {
+      setIsLoading(true);
       let data = [];
       try {
         const res = await axios.get('/api/products');
@@ -72,6 +79,10 @@ const ShopPage = () => {
         return acc;
       }, {});
       setTopBrands(Object.keys(counts).sort((a, b) => counts[b] - counts[a]).slice(0, 5));
+      
+      // Artificial delay for skeleton demonstration if needed, 
+      // but usually real fetch is fast enough or slow enough naturally.
+      setTimeout(() => setIsLoading(false), 800);
     };
     fetchProducts();
   }, []);
@@ -116,8 +127,26 @@ const ShopPage = () => {
     setLimit(12); // Reset infinite scroll length
   }, [rawProducts, searchQuery, selectedCategory, selectedBrands, priceMax, selectedRating, sortOption]);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1 }
+  };
+
   return (
-    <div className="shop-page container">
+    <motion.div 
+      className="shop-page container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       {/* Breadcrumbs */}
       <div className="breadcrumbs">
         <Link to="/">Home</Link> <ChevronRight size={12} /> <span>Shop</span>
@@ -235,46 +264,66 @@ const ShopPage = () => {
             </div>
           </div>
 
-          <div className="shop-products-grid">
-            {products.slice(0, limit).map(product => (
-              <div key={product.id || product._id} className="shop-product-card">
-                <div className="shop-img-wrapper">
-                  {product.isNew && <span className="new-tag">NEW</span>}
-                  <Link to={`/product/${product._id || product.id}`}>
-                    <img src={product.image} alt={product.name} />
-                  </Link>
-                  <div className="hover-actions">
-                    <button 
-                      className={`h-btn ${isInWishlist(product._id || product.id) ? 'active' : ''}`}
-                      onClick={() => toggleWishlist(product)}
-                      title={isInWishlist(product._id || product.id) ? "Remove from Wishlist" : "Add to Wishlist"}
-                    >
-                      <Heart size={18} fill={isInWishlist(product._id || product.id) ? "currentColor" : "none"} />
-                    </button>
-                    <button onClick={() => handleAddToCart({...product, id: product.id || product._id, qty: 1})} className="h-btn active"><ShoppingBag size={18} /></button>
+          {isLoading ? (
+            <div className="shop-products-grid">
+              {[...Array(8)].map((_, i) => <ProductSkeleton key={i} />)}
+            </div>
+          ) : (
+            <motion.div 
+              className="shop-products-grid"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              {products.slice(0, limit).map(product => (
+                <motion.div 
+                  key={product.id || product._id} 
+                  className="shop-product-card"
+                  variants={itemVariants}
+                >
+                  <div className="shop-img-wrapper">
+                    {product.isNew && <span className="new-tag">NEW</span>}
+                    <Link to={`/product/${product._id || product.id}`}>
+                      <img src={product.image} alt={product.name} />
+                    </Link>
+                    <div className="hover-actions">
+                      <button 
+                        className={`h-btn ${isInWishlist(product._id || product.id) ? 'active' : ''}`}
+                        onClick={() => {
+                          toggleWishlist(product);
+                          if (!isInWishlist(product._id || product.id)) {
+                            toast.success('Added to wishlist');
+                          }
+                        }}
+                        title={isInWishlist(product._id || product.id) ? "Remove from Wishlist" : "Add to Wishlist"}
+                      >
+                        <Heart size={18} fill={isInWishlist(product._id || product.id) ? "currentColor" : "none"} />
+                      </button>
+                      <button onClick={() => handleAddToCart({...product, id: product.id || product._id, qty: 1})} className="h-btn active"><ShoppingBag size={18} /></button>
+                    </div>
                   </div>
-                </div>
-                <div className="shop-product-info">
-                  <p className="s-brand">{product.brand}</p>
-                  <h3><Link to={`/product/${product._id || product.id}`}>{product.name}</Link></h3>
-                  <div className="s-rating">
-                    <Star size={12} fill="#fbbf24" color="#fbbf24" />
-                    <span>{product.rating}</span>
+                  <div className="shop-product-info">
+                    <p className="s-brand">{product.brand}</p>
+                    <h3><Link to={`/product/${product._id || product.id}`}>{product.name}</Link></h3>
+                    <div className="s-rating">
+                      <Star size={12} fill="#fbbf24" color="#fbbf24" />
+                      <span>{product.rating}</span>
+                    </div>
+                    <p className="s-price">₹{product.price.toLocaleString()}</p>
                   </div>
-                  <p className="s-price">₹{product.price.toLocaleString()}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
 
-          {products.length === 0 && (
+          {!isLoading && products.length === 0 && (
             <div style={{ textAlign: 'center', padding: '4rem 0', color: '#6b7280' }}>
               <h3>No products match your active filters.</h3>
               <button onClick={handleReset} style={{ marginTop: '1rem', padding: '0.5rem 1rem', background: '#e5e7eb', borderRadius: '0.5rem', border: 'none', cursor: 'pointer' }}>Clear Filters</button>
             </div>
           )}
 
-          {limit < products.length && (
+          {!isLoading && limit < products.length && (
             <div className="shop-load-more">
                <button onClick={() => setLimit(l => l + 12)} className="load-btn">
                  Load More Products
@@ -283,7 +332,7 @@ const ShopPage = () => {
           )}
         </main>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

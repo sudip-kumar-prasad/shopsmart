@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { toast } from 'sonner';
 import { CreditCard, MapPin, ChevronLeft, Lock, Loader2, CheckCircle2 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
@@ -107,15 +107,22 @@ const CheckoutPage = () => {
       });
       
       clearCart();
+      toast.success('Order placed successfully!');
       navigate('/order-success', { state: { items, totalPrice: totalPrice * 1.08, taxPrice: totalPrice * 0.08 } });
     } catch (error) {
       console.error('Order placement failed', error);
-      alert('Failed to place order. Please try again.');
+      toast.error('Failed to place order. Please try again.');
     }
   };
 
   return (
-    <div className="checkout-page container">
+    <motion.div 
+      className="checkout-page container"
+      initial={{ opacity: 0, scale: 0.98 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.98 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="checkout-back">
         <Link to="/cart"><ChevronLeft size={16} /> Back to Cart</Link>
       </div>
@@ -266,24 +273,32 @@ const CheckoutPage = () => {
               </button>
             </div>
 
-            {payMethod === 'card' && (
-              <div className="card-details-form">
-                <div className="input-field">
-                  <label>Card Number</label>
-                  <input type="text" placeholder="0000 0000 0000 0000" />
-                </div>
-                <div className="input-row">
+            <AnimatePresence mode="wait">
+              {payMethod === 'card' && (
+                <motion.div 
+                  className="card-details-form"
+                  key="card-form"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                >
                   <div className="input-field">
-                    <label>Expiry Date</label>
-                    <input type="text" placeholder="MM / YY" />
+                    <label>Card Number</label>
+                    <input type="text" placeholder="0000 0000 0000 0000" />
                   </div>
-                  <div className="input-field">
-                    <label>CVV</label>
-                    <input type="password" placeholder="***" />
+                  <div className="input-row">
+                    <div className="input-field">
+                      <label>Expiry Date</label>
+                      <input type="text" placeholder="MM / YY" />
+                    </div>
+                    <div className="input-field">
+                      <label>CVV</label>
+                      <input type="password" placeholder="***" />
+                    </div>
                   </div>
-                </div>
-              </div>
-            )}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </section>
         </div>
 
@@ -336,7 +351,7 @@ const CheckoutPage = () => {
           </div>
         </aside>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
