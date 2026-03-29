@@ -5,6 +5,7 @@ import './AuthPages.css';
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({ email: 'admin@example.com', password: 'password123' });
+  const [isLoading, setIsLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -14,11 +15,16 @@ const LoginPage = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const res = await login(formData.email, formData.password);
-    if (res.success) {
-      navigate(redirectPath);
-    } else {
-      alert(res.error || 'Login failed. Please check credentials.');
+    setIsLoading(true);
+    try {
+      const res = await login(formData.email, formData.password);
+      if (res.success) {
+        navigate(redirectPath);
+      } else {
+        alert(res.error || 'Login failed. Please check credentials.');
+      }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -45,7 +51,12 @@ const LoginPage = () => {
           <div className="auth-row" style={{ marginTop: '-0.5rem' }}>
             <label className="checkbox-label"><input type="checkbox" /> Remember me</label>
           </div>
-          <button type="submit" className="btn btn-cta-cart auth-submit">Sign In</button>
+          <button type="submit" className="btn btn-cta-cart auth-submit" disabled={isLoading}>
+            <div className="btn-content">
+              {isLoading && <span className="spinner"></span>}
+              {isLoading ? 'Signing In...' : 'Sign In'}
+            </div>
+          </button>
         </form>
 
         <div className="social-login-container">

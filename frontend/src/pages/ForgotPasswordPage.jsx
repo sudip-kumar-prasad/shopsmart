@@ -7,12 +7,17 @@ import './AuthPages.css';
 const ForgotPasswordPage = () => {
   const [email, setEmail] = useState('');
   const [sent, setSent] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: hook up to backend
-    console.log('reset link sent to:', email);
-    setSent(true);
+    setIsLoading(true);
+    // Simulate API call
+    setTimeout(() => {
+      console.log('reset link sent to:', email);
+      setSent(true);
+      setIsLoading(false);
+    }, 1500);
   };
 
   return (
@@ -47,8 +52,11 @@ const ForgotPasswordPage = () => {
                 required
               />
             </div>
-            <button type="submit" className="btn btn-cta-cart auth-submit" style={{ marginTop: '1rem' }}>
-              Send Reset Link
+            <button type="submit" className="btn btn-cta-cart auth-submit" style={{ marginTop: '1rem' }} disabled={isLoading}>
+              <div className="btn-content">
+                {isLoading && <span className="spinner"></span>}
+                {isLoading ? 'Sending Link...' : 'Send Reset Link'}
+              </div>
             </button>
             <Link to="/login" className="auth-switch" style={{ display: 'block', textAlign: 'center', marginTop: '1.5rem', fontSize: '0.9rem', color: '#6b7280', fontWeight: '500' }}>
               Wait, I remember my password

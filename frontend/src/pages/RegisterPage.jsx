@@ -12,6 +12,7 @@ const RegisterPage = () => {
     confirmPassword: ''
   });
 
+  const [isLoading, setIsLoading] = useState(false);
   const { register } = useAuth();
   const navigate = useNavigate();
 
@@ -25,11 +26,16 @@ const RegisterPage = () => {
       alert('Passwords do not match!');
       return;
     }
-    const res = await register(formData.name, formData.email, formData.password);
-    if (res.success) {
-      navigate('/');
-    } else {
-      alert(res.error || 'Registration failed. Please try again.');
+    setIsLoading(true);
+    try {
+      const res = await register(formData.name, formData.email, formData.password);
+      if (res.success) {
+        navigate('/');
+      } else {
+        alert(res.error || 'Registration failed. Please try again.');
+      }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -102,8 +108,11 @@ const RegisterPage = () => {
                 <span style={{ fontSize: '0.8rem', lineHeight: '1.4' }}>I agree to the <a href="#">Terms of Conditions</a> and <a href="#">Privacy Policy</a>.</span>
               </label>
             </div>
-            <button type="submit" className="btn btn-cta-cart auth-submit">
-              Create Account
+            <button type="submit" className="btn btn-cta-cart auth-submit" disabled={isLoading}>
+              <div className="btn-content">
+                {isLoading && <span className="spinner"></span>}
+                {isLoading ? 'Creating Account...' : 'Create Account'}
+              </div>
             </button>
           </form>
 
