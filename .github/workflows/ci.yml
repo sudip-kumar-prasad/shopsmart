@@ -7,9 +7,7 @@ on:
     branches: [main, dev]
 
 jobs:
-  # ─────────────────────────────────────────────
   # Frontend CI
-  # ─────────────────────────────────────────────
   frontend:
     name: Frontend — Install & Build
     runs-on: ubuntu-latest
@@ -42,9 +40,7 @@ jobs:
           path: frontend/dist/
           retention-days: 1
 
-  # ─────────────────────────────────────────────
   # Backend CI
-  # ─────────────────────────────────────────────
   backend:
     name: Backend — Install & Validate
     runs-on: ubuntu-latest
@@ -70,9 +66,7 @@ jobs:
       - name: Check for syntax errors
         run: node --check server.js
 
-  # ─────────────────────────────────────────────
   # Docker Build (validates multi-stage Dockerfile)
-  # ─────────────────────────────────────────────
   docker-build:
     name: Docker — Build Production Image
     runs-on: ubuntu-latest
