@@ -11,7 +11,7 @@ import './CheckoutPage.css';
 const CheckoutPage = () => {
   const { items, totalPrice, clearCart } = useCart();
   const { user } = useAuth();
-  const [payMethod, setPayMethod] = useState('card');
+  const [payMethod, setPayMethod] = useState('razorpay');
   const navigate = useNavigate();
 
   // Address State
@@ -78,6 +78,16 @@ const CheckoutPage = () => {
     setSelectedAddrId(null);
   };
 
+  const loadRazorpayScript = () => {
+    return new Promise((resolve) => {
+      const script = document.createElement('script');
+      script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+      script.onload = () => resolve(true);
+      script.onerror = () => resolve(false);
+      document.body.appendChild(script);
+    });
+  };
+
   const handlePlaceOrder = async (e) => {
     e.preventDefault();
     if (items.length === 0) return;
@@ -104,16 +114,75 @@ const CheckoutPage = () => {
         totalPrice: totalPrice * 1.08,
       };
 
-      await axios.post('/api/orders', orderData, {
+      const { data: dbOrder } = await axios.post('/api/orders', orderData, {
         headers: { Authorization: `Bearer ${user.token}` }
       });
       
-      clearCart();
-      toast.success('Order placed successfully!');
-      navigate('/order-success', { state: { items, totalPrice: totalPrice * 1.08, taxPrice: totalPrice * 0.08 } });
+      if (payMethod === 'razorpay') {
+        const isLoaded = await loadRazorpayScript();
+        if (!isLoaded) {
+          toast.error('Razorpay SDK failed to load. Are you online?');
+          return;
+        }
+
+        const { data: rpOrderData } = await axios.post('/api/orders/razorpay/create-order', {
+          amount: totalPrice * 1.08
+        }, {
+          headers: { Authorization: `Bearer ${user.token}` }
+        });
+
+        const options = {
+          key: rpOrderData.keyId,
+          amount: rpOrderData.amount,
+          currency: rpOrderData.currency,
+          name: 'ShopSmart',
+          description: 'Secure Payment',
+          order_id: rpOrderData.orderId,
+          handler: async function (response) {
+            try {
+              await axios.post('/api/orders/razorpay/verify', {
+                razorpayOrderId: response.razorpay_order_id,
+                razorpayPaymentId: response.razorpay_payment_id,
+                razorpaySignature: response.razorpay_signature,
+                dbOrderId: dbOrder._id
+              }, {
+                headers: { Authorization: `Bearer ${user.token}` }
+              });
+              
+              clearCart();
+              toast.success('Payment successful & Order placed!');
+              navigate('/order-success', { state: { items, totalPrice: totalPrice * 1.08, taxPrice: totalPrice * 0.08 } });
+            } catch (err) {
+              console.error(err);
+              toast.error('Payment verification failed.');
+            }
+          },
+          prefill: {
+            name: `${addressData.firstName} ${addressData.lastName}`,
+            email: user?.email || '',
+            contact: '9999999999'
+          },
+          theme: {
+            color: '#3498db' // primary color approx
+          }
+        };
+
+        const rzp = new window.Razorpay(options);
+        rzp.on('payment.failed', function (response) {
+          toast.error(`Payment failed: ${response.error.description}`);
+        });
+        rzp.open();
+      } else {
+        // Fallback for non-razorpay logic, though we only support razorpay for now
+        clearCart();
+        toast.success('Order placed successfully!');
+        navigate('/order-success', { state: { items, totalPrice: totalPrice * 1.08, taxPrice: totalPrice * 0.08 } });
+      }
+
     } catch (error) {
       console.error('Order placement failed', error);
-      toast.error('Failed to place order. Please try again.');
+      const errorMsg = error.response?.data?.message || 'Failed to place order. Please try again.';
+      toast.error(errorMsg);
     }
   };
 
@@ -261,43 +330,41 @@ const CheckoutPage = () => {
             </div>
             
             <div className="payment-selector">
-              <button className={`p-method ${payMethod==='card' ? 'active' : ''}`} onClick={() => setPayMethod('card')}>
+              <button className={`p-method ${payMethod==='razorpay' ? 'active' : ''}`} onClick={() => setPayMethod('razorpay')}>
                 <div className="p-radio"></div>
-                <span>Credit Card / Debit Card</span>
+                <span>Pay via Razorpay</span>
               </button>
-              <button className={`p-method ${payMethod==='paypal' ? 'active' : ''}`} onClick={() => setPayMethod('paypal')}>
+              <button className={`p-method ${payMethod==='cod' ? 'active' : ''}`} onClick={() => setPayMethod('cod')}>
                 <div className="p-radio"></div>
-                <span>PayPal</span>
-              </button>
-              <button className={`p-method ${payMethod==='gpay' ? 'active' : ''}`} onClick={() => setPayMethod('gpay')}>
-                <div className="p-radio"></div>
-                <span>Google Pay</span>
+                <span>Cash on Delivery</span>
               </button>
             </div>
 
             <AnimatePresence mode="wait">
-              {payMethod === 'card' && (
+              {payMethod === 'razorpay' && (
                 <motion.div 
-                  className="card-details-form"
-                  key="card-form"
+                  className="card-details-form razorpay-details"
+                  key="razorpay-form"
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
                 >
-                  <div className="input-field">
-                    <label>Card Number</label>
-                    <input type="text" placeholder="0000 0000 0000 0000" />
-                  </div>
-                  <div className="input-row">
-                    <div className="input-field">
-                      <label>Expiry Date</label>
-                      <input type="text" placeholder="MM / YY" />
-                    </div>
-                    <div className="input-field">
-                      <label>CVV</label>
-                      <input type="password" placeholder="***" />
-                    </div>
-                  </div>
+                  <p style={{ color: '#666', fontSize: '14px', marginTop: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <Lock size={14} /> You will be redirected to Razorpay to complete your purchase securely. Cards, UPI, and Netbanking are supported.
+                  </p>
+                </motion.div>
+              )}
+              {payMethod === 'cod' && (
+                <motion.div 
+                  className="card-details-form cod-details"
+                  key="cod-form"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                >
+                  <p style={{ color: '#666', fontSize: '14px', marginTop: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <CheckCircle2 size={14} color="#2e7d32" /> Pay with cash when your order arrives at your doorstep. No hidden fees.
+                  </p>
                 </motion.div>
               )}
             </AnimatePresence>

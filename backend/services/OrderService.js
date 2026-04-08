@@ -25,6 +25,19 @@ class OrderService {
     }
     return order;
   }
+
+  async updateOrderToPaid(id, paymentData) {
+    const order = await this.getOrderById(id);
+    
+    order.isPaid = true;
+    order.paidAt = Date.now();
+    order.paymentMethod = 'razorpay';
+    order.razorpayOrderId = paymentData.razorpayOrderId;
+    order.razorpayPaymentId = paymentData.razorpayPaymentId;
+    order.razorpaySignature = paymentData.razorpaySignature;
+
+    return await order.save();
+  }
 }
 
 module.exports = new OrderService();
