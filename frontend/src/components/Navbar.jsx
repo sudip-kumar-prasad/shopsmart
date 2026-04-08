@@ -101,7 +101,6 @@ const Navbar = () => {
 
           <Link to="/profile?tab=wishlist" className="icon-link wishlist-btn" title="Wishlist">
             <Heart size={22} />
-            {wishlistItems.length > 0 && <span className="wishlist-badge">{wishlistItems.length}</span>}
           </Link>
 
           <button className="icon-link cart-btn" onClick={() => navigate('/cart')}>
