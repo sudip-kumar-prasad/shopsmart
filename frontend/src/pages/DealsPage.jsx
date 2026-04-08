@@ -11,6 +11,7 @@ import './DealsPage.css';
 
 const DealsPage = () => {
   const [products, setProducts] = useState([]);
+  const [rawProducts, setRawProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
@@ -20,6 +21,8 @@ const DealsPage = () => {
   const { addItem } = useCart();
   const { user } = useAuth();
   const { toggleWishlist, isInWishlist } = useWishlist();
+  const [absoluteMaxPrice, setAbsoluteMaxPrice] = useState(200000);
+  const [priceMax, setPriceMax] = useState(200000);
   const [limit, setLimit] = useState(12);
 
   const handleAddToCart = (product) => {
@@ -43,19 +46,29 @@ const DealsPage = () => {
         const sorted = [...productsData].sort((a, b) => a.price - b.price);
         data = sorted.slice(0, 20);
       }
-      
-      let filtered = data;
-      if (searchQuery) {
-        filtered = filtered.filter(p => p.name.toLowerCase().includes(searchQuery.toLowerCase()));
+      setRawProducts(data);
+      if (data.length > 0) {
+        const topPrice = Math.max(...data.map(p => p.price));
+        setAbsoluteMaxPrice(topPrice + 500);
+        setPriceMax(topPrice + 500);
       }
-      if (selectedCategory) {
-        filtered = filtered.filter(p => p.category === selectedCategory);
-      }
-      setProducts(filtered);
       setLoading(false);
     };
     fetchDeals();
-  }, [searchQuery, selectedCategory]);
+  }, []);
+
+  useEffect(() => {
+    let filtered = [...rawProducts];
+    if (searchQuery) {
+      filtered = filtered.filter(p => p.name.toLowerCase().includes(searchQuery.toLowerCase()));
+    }
+    if (selectedCategory) {
+      filtered = filtered.filter(p => p.category === selectedCategory);
+    }
+    filtered = filtered.filter(p => p.price <= priceMax);
+    
+    setProducts(filtered);
+  }, [rawProducts, searchQuery, selectedCategory, priceMax]);
 
   return (
     <div className="shop-page container">
@@ -81,7 +94,7 @@ const DealsPage = () => {
           <div className="filter-card">
             <div className="filter-header">
               <h3>Filters</h3>
-              <button className="reset-btn" onClick={() => setSelectedCategory('')}>Reset All</button>
+              <button className="reset-btn" onClick={() => { setSelectedCategory(''); setPriceMax(absoluteMaxPrice); }}>Reset All</button>
             </div>
             
             <div className="filter-section">
@@ -97,6 +110,25 @@ const DealsPage = () => {
                     <span>{cat}</span>
                   </label>
                 ))}
+              </div>
+            </div>
+
+            <div className="filter-section">
+              <h4>PRICE RANGE</h4>
+              <div className="price-slider-container">
+                <input 
+                  type="range" 
+                  min="0" 
+                  max={absoluteMaxPrice} 
+                  step="100" 
+                  className="price-slider" 
+                  value={priceMax} 
+                  onChange={(e) => setPriceMax(Number(e.target.value))} 
+                />
+                <div className="price-labels">
+                  <span>₹0</span>
+                  <span>₹{priceMax.toLocaleString()}</span>
+                </div>
               </div>
             </div>
           </div>

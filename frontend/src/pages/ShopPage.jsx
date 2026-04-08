@@ -24,6 +24,7 @@ const ShopPage = () => {
   const searchQuery = searchParams.get('search') || '';
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedBrands, setSelectedBrands] = useState([]);
+  const [absoluteMaxPrice, setAbsoluteMaxPrice] = useState(200000);
   const [priceMax, setPriceMax] = useState(200000);
   const [selectedRating, setSelectedRating] = useState(0);
   const [sortOption, setSortOption] = useState('Popularity');
@@ -51,7 +52,7 @@ const ShopPage = () => {
   const handleReset = () => {
     setSelectedCategory('');
     setSelectedBrands([]);
-    setPriceMax(200000);
+    setPriceMax(absoluteMaxPrice);
     setSelectedRating(0);
     setSortOption('Popularity');
     toast.info('Filters reset');
@@ -70,6 +71,11 @@ const ShopPage = () => {
         data = productsData;
       }
       setRawProducts(data);
+      if (data.length > 0) {
+        const topPrice = Math.max(...data.map(p => p.price));
+        setAbsoluteMaxPrice(topPrice + 500);
+        setPriceMax(topPrice + 500);
+      }
       
       // Dynamically extract the top 5 most common brands
       const counts = data.reduce((acc, p) => {
@@ -183,8 +189,8 @@ const ShopPage = () => {
                 <input 
                   type="range" 
                   min="0" 
-                  max="200000" 
-                  step="1000" 
+                  max={absoluteMaxPrice} 
+                  step="100" 
                   className="price-slider" 
                   value={priceMax} 
                   onChange={(e) => setPriceMax(Number(e.target.value))} 
