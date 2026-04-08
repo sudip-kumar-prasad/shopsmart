@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { Toaster } from 'sonner';
 import { AnimatePresence } from 'framer-motion';
 import { WishlistProvider } from './context/WishlistContext';
@@ -32,7 +32,8 @@ function App() {
           <Layout>
             <AnimatePresence mode="wait">
               <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<HomePage />} />
+                <Route path="/" element={<Navigate to="/shop" replace />} />
+                <Route path="/home" element={<HomePage />} />
                 <Route path="/shop" element={<ShopPage />} />
                 <Route path="/deals" element={<DealsPage />} />
                 <Route path="/product/:id" element={<ProductPage />} />
