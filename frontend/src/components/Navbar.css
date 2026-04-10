@@ -19,6 +19,9 @@
 }
 
 .navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
   font-size: 1.5rem;
   font-weight: 700;
   color: #000;
@@ -26,7 +29,13 @@
   flex-shrink: 0;
 }
 
-.navbar-logo span {
+.logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar-logo .logo-text span {
   color: var(--primary-color);
 }
 

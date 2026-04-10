@@ -52,7 +52,8 @@ const Navbar = () => {
 
         {/* Logo */}
         <Link to="/" className="navbar-logo">
-          Shop<span>Smart</span>
+          <img src="/logo.png" alt="ShopSmart Logo" className="logo-img" />
+          <span className="logo-text">Shop<span>Smart</span></span>
         </Link>
 
         {/* Desktop Links */}
