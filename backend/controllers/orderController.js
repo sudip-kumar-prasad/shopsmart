@@ -65,6 +65,7 @@ const createRazorpayOrder = asyncHandler(async (req, res) => {
     receipt: `receipt_order_${Date.now()}`,
   };
 
+  try {
     if (!process.env.RAZORPAY_KEY_ID) {
       return res.status(500).json({ message: 'Razorpay Key ID is missing on the server environment.' });
     }
