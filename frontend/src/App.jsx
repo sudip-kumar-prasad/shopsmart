@@ -32,8 +32,8 @@ function App() {
           <Layout>
             <AnimatePresence mode="wait">
               <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<Navigate to="/shop" replace />} />
-                <Route path="/home" element={<HomePage />} />
+                <Route index element={<HomePage />} />
+                <Route path="/home" element={<Navigate to="/" replace />} />
                 <Route path="/shop" element={<ShopPage />} />
                 <Route path="/deals" element={<DealsPage />} />
                 <Route path="/product/:id" element={<ProductPage />} />

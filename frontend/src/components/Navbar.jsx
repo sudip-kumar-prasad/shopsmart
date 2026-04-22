@@ -51,7 +51,7 @@ const Navbar = () => {
       <div className="navbar-container container">
 
         {/* Logo */}
-        <Link to="/" className="navbar-logo">
+        <Link to="/" className="navbar-logo" onClick={(e) => { e.preventDefault(); window.location.href = '/'; }}>
           <img src="/logo.png" alt="ShopSmart Logo" className="logo-img" />
           <span className="logo-text">Shop<span>Smart</span></span>
         </Link>

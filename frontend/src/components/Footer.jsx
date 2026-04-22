@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <div className="logo">Shop<span>Smart</span></div>
+          <Link to="/" className="logo" onClick={(e) => { e.preventDefault(); window.location.href = '/'; }}>Shop<span>Smart</span></Link>
           <p>Elevating everyday commerce through a curated digital experience. Quality over quantity, always.</p>
         </div>
 
