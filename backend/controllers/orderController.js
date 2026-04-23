@@ -45,14 +45,14 @@ const getMyOrders = asyncHandler(async (req, res) => {
   }
 });
 
-const crypto = require('crypto');
 
-const razorpayInstance = require('../config/razorpay.js');
 
 // @desc    Create Razorpay Order
 // @route   POST /api/orders/razorpay/create-order
 // @access  Private
 const createRazorpayOrder = asyncHandler(async (req, res) => {
+  // Lazy-load to prevent module-load crash if env vars are missing
+  const razorpayInstance = require('../config/razorpay.js');
   const { amount } = req.body;
 
   if (!razorpayInstance) {
@@ -95,6 +95,7 @@ const createRazorpayOrder = asyncHandler(async (req, res) => {
 // @route   POST /api/orders/razorpay/verify
 // @access  Private
 const verifyRazorpayPayment = asyncHandler(async (req, res) => {
+  const crypto = require('crypto');
   const { razorpayOrderId, razorpayPaymentId, razorpaySignature, dbOrderId } = req.body;
 
   const generatedSignature = crypto

@@ -51,6 +51,11 @@ if (process.env.NODE_ENV === 'production') {
   const __dirname = path.resolve();
   app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
+  // Ensure API routes that don't match return JSON, not the SPA
+  app.use('/api/*', (req, res) => {
+    res.status(404).json({ message: 'API route not found' });
+  });
+
   // Catch-all route to serve index.html for React Router
   app.use((req, res) => {
     res.sendFile(path.resolve(__dirname, '../frontend', 'dist', 'index.html'));
