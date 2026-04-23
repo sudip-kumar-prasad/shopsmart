@@ -56,7 +56,11 @@ const createRazorpayOrder = asyncHandler(async (req, res) => {
   const { amount } = req.body;
 
   if (!razorpayInstance) {
-    return res.status(500).json({ message: 'Razorpay is not configured on the server. Please check .env and npm install.' });
+    console.error('Razorpay Instance is NULL. Check environment variables on the server.');
+    return res.status(500).json({ 
+      message: 'Razorpay is not configured on the server. Please check server environment variables (RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET).',
+      debug: { hasInstance: !!razorpayInstance, hasKeyId: !!process.env.RAZORPAY_KEY_ID }
+    });
   }
 
   const options = {
@@ -67,7 +71,8 @@ const createRazorpayOrder = asyncHandler(async (req, res) => {
 
   try {
     if (!process.env.RAZORPAY_KEY_ID) {
-      return res.status(500).json({ message: 'Razorpay Key ID is missing on the server environment.' });
+      console.error('RAZORPAY_KEY_ID is missing in process.env');
+      return res.status(500).json({ message: 'Razorpay Key ID is missing on the server environment. Deployment needs RAZORPAY_KEY_ID set.' });
     }
 
     const order = await razorpayInstance.orders.create(options);

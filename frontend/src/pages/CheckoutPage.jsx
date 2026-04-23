@@ -131,8 +131,9 @@ const CheckoutPage = () => {
           headers: { Authorization: `Bearer ${user.token}` }
         });
 
-        if (!rpOrderData.keyId) {
-          toast.error('Razorpay configuration is missing. Please contact support or check server env variables.');
+        if (!rpOrderData || !rpOrderData.keyId) {
+          console.error('Razorpay Order Creation Response Missing Key:', rpOrderData);
+          toast.error('Razorpay configuration is missing or invalid. Check server logs and env variables.');
           return;
         }
 
