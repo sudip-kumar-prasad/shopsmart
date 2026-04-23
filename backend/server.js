@@ -52,7 +52,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
   // Ensure API routes that don't match return JSON, not the SPA
-  app.use('/api/*', (req, res) => {
+  app.use('/api', (req, res) => {
     res.status(404).json({ message: 'API route not found' });
   });
 
