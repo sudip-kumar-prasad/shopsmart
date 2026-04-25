@@ -41,6 +41,11 @@ app.get('/', (req, res) => {
   res.send('ShopSmart API is running...');
 });
 
+// Health check for Load Balancer
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'UP', timestamp: new Date().toISOString() });
+});
+
 // Routes
 app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
