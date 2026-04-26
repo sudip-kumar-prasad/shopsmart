@@ -167,28 +167,10 @@ resource "aws_lb_listener" "http" {
   }
 }
 
-# --- IAM Roles ---
+# --- IAM Roles (Using AWS Academy pre-created LabRole) ---
 
-resource "aws_iam_role" "ecs_task_execution_role" {
-  name = "shopsmart-ecs-task-execution-role"
-
-  assume_role_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Action = "sts:AssumeRole"
-        Effect = "Allow"
-        Principal = {
-          Service = "ecs-tasks.amazonaws.com"
-        }
-      },
-    ]
-  })
-}
-
-resource "aws_iam_role_policy_attachment" "ecs_task_execution_role_policy" {
-  role       = aws_iam_role.ecs_task_execution_role.name
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
+data "aws_iam_role" "lab_role" {
+  name = "LabRole"
 }
 
 # --- ECS Task Definition & Service ---
@@ -204,7 +186,8 @@ resource "aws_ecs_task_definition" "app" {
   requires_compatibilities = ["FARGATE"]
   cpu                      = "256"
   memory                   = "512"
-  execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
+  execution_role_arn       = data.aws_iam_role.lab_role.arn
+  task_role_arn            = data.aws_iam_role.lab_role.arn
 
   container_definitions = jsonencode([
     {
