@@ -36,8 +36,8 @@ app.use(passport.session());
 
 const path = require('path');
 
-// Basic Route (for development fallback)
-app.get('/', (req, res) => {
+// API status route (instead of blocking the root)
+app.get('/api/status', (req, res) => {
   res.send('ShopSmart API is running...');
 });
 

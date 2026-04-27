@@ -29,7 +29,7 @@ aws ecr get-login-password --region ${REGION} | docker login --username AWS --pa
 # 5. Build and Push Docker Image
 echo "Building and pushing Docker image..."
 cd ..
-docker build -t ${REPO_NAME} .
+docker build --platform linux/amd64 -t ${REPO_NAME} .
 docker tag ${REPO_NAME}:latest ${ECR_URL}/${REPO_NAME}:latest
 docker push ${ECR_URL}/${REPO_NAME}:latest
 
