@@ -1,33 +1,37 @@
 {
-    "family": "shopsmart-task",
-    "networkMode": "awsvpc",
-    "containerDefinitions": [
+  "family": "shopsmart-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::772850395967:role/LabRole",
+  "taskRoleArn": "arn:aws:iam::772850395967:role/LabRole",
+  "containerDefinitions": [
+    {
+      "name": "shopsmart-container",
+      "image": "772850395967.dkr.ecr.us-east-1.amazonaws.com/shopsmart-app:latest",
+      "portMappings": [
         {
-            "name": "shopsmart-container",
-            "image": "REPLACE_ME_WITH_ECR_URL",
-            "cpu": 256,
-            "memory": 512,
-            "essential": true,
-            "portMappings": [
-                {
-                    "containerPort": 5000,
-                    "hostPort": 5000,
-                    "protocol": "tcp"
-                }
-            ],
-            "logConfiguration": {
-                "logDriver": "awslogs",
-                "options": {
-                    "awslogs-group": "/ecs/shopsmart",
-                    "awslogs-region": "us-east-1",
-                    "awslogs-stream-prefix": "ecs"
-                }
-            }
+          "containerPort": 5000,
+          "hostPort": 5000,
+          "protocol": "tcp"
         }
-    ],
-    "requiresCompatibilities": [
-        "FARGATE"
-    ],
-    "cpu": "256",
-    "memory": "512"
+      ],
+      "essential": true,
+      "environment": [
+        { "name": "NODE_ENV", "value": "production" },
+        { "name": "PORT", "value": "5000" }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/shopsmart",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
 }
