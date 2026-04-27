@@ -1,9 +1,0 @@
-aws_region           = "us-east-1"
-app_port             = 5000
-mongo_uri            = "<REPLACE_WITH_YOUR_MONGODB_URI>"
-jwt_secret           = "<REPLACE_WITH_YOUR_JWT_SECRET>"
-session_secret       = "<REPLACE_WITH_YOUR_SESSION_SECRET>"
-google_client_id     = "<REPLACE_WITH_YOUR_GOOGLE_CLIENT_ID>"
-google_client_secret = "<REPLACE_WITH_YOUR_GOOGLE_CLIENT_SECRET>"
-razorpay_key_id      = "<REPLACE_WITH_YOUR_RAZORPAY_KEY_ID>"
-razorpay_key_secret   = "<REPLACE_WITH_YOUR_RAZORPAY_KEY_SECRET>"
